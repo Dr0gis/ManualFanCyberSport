@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Drawing;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -12,7 +13,51 @@ namespace CourseProject0_1
         public static List<List<Player>> ListPlayerInDiscypline;
         public static MainForm MainFormObject;
         public static float[][] ArrayCoordsPentagons;
-        public static System.Drawing.Graphics graphic;
+
+        public static void DrawindPentagonPlayer(PictureBox PictureBoxPentagon, int[] SelectedPlayerPentagon)
+        {
+            Graphics g = PictureBoxPentagon.CreateGraphics();
+            g.DrawLine
+            (
+                Pens.Red,
+                ArrayCoordsPentagons[SelectedPlayerPentagon[0] - 1][0],
+                ArrayCoordsPentagons[SelectedPlayerPentagon[0] - 1][1],
+                ArrayCoordsPentagons[SelectedPlayerPentagon[1] - 1][2],
+                ArrayCoordsPentagons[SelectedPlayerPentagon[1] - 1][3]
+            );
+            g.DrawLine
+            (
+                Pens.Red,
+                ArrayCoordsPentagons[SelectedPlayerPentagon[1] - 1][2],
+                ArrayCoordsPentagons[SelectedPlayerPentagon[1] - 1][3],
+                ArrayCoordsPentagons[SelectedPlayerPentagon[2] - 1][4],
+                ArrayCoordsPentagons[SelectedPlayerPentagon[2] - 1][5]
+            );
+            g.DrawLine
+            (
+                Pens.Red,
+                ArrayCoordsPentagons[SelectedPlayerPentagon[2] - 1][4],
+                ArrayCoordsPentagons[SelectedPlayerPentagon[2] - 1][5],
+                ArrayCoordsPentagons[SelectedPlayerPentagon[3] - 1][6],
+                ArrayCoordsPentagons[SelectedPlayerPentagon[3] - 1][7]
+            );
+            g.DrawLine
+            (
+                Pens.Red,
+                ArrayCoordsPentagons[SelectedPlayerPentagon[3] - 1][6],
+                ArrayCoordsPentagons[SelectedPlayerPentagon[3] - 1][7],
+                ArrayCoordsPentagons[SelectedPlayerPentagon[4] - 1][8],
+                ArrayCoordsPentagons[SelectedPlayerPentagon[4] - 1][9]
+            );
+            g.DrawLine
+            (
+                Pens.Red,
+                ArrayCoordsPentagons[SelectedPlayerPentagon[4] - 1][8],
+                ArrayCoordsPentagons[SelectedPlayerPentagon[4] - 1][9],
+                ArrayCoordsPentagons[SelectedPlayerPentagon[0] - 1][0],
+                ArrayCoordsPentagons[SelectedPlayerPentagon[0] - 1][1]
+            );
+        }
     }
     class MethodsReadFile
     {

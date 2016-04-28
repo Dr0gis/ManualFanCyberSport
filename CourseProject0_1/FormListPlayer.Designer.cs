@@ -49,7 +49,6 @@
             this.LabelProcentWin = new System.Windows.Forms.Label();
             this.LabelMMR = new System.Windows.Forms.Label();
             this.PictureBoxPentagon = new System.Windows.Forms.PictureBox();
-            this.TextBoxPentagonTemp = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.PictureBoxLogoGame)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.PictureSelectedPlayer)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.PictureBoxPentagon)).BeginInit();
@@ -69,9 +68,9 @@
             // 
             // textBoxExample
             // 
-            this.textBoxExample.Location = new System.Drawing.Point(259, 376);
+            this.textBoxExample.Location = new System.Drawing.Point(705, 470);
             this.textBoxExample.Name = "textBoxExample";
-            this.textBoxExample.Size = new System.Drawing.Size(492, 143);
+            this.textBoxExample.Size = new System.Drawing.Size(46, 49);
             this.textBoxExample.TabIndex = 9;
             this.textBoxExample.Text = "";
             // 
@@ -276,19 +275,13 @@
             // 
             // PictureBoxPentagon
             // 
+            this.PictureBoxPentagon.BackColor = System.Drawing.Color.Transparent;
             this.PictureBoxPentagon.Location = new System.Drawing.Point(542, 136);
             this.PictureBoxPentagon.Name = "PictureBoxPentagon";
             this.PictureBoxPentagon.Size = new System.Drawing.Size(200, 200);
             this.PictureBoxPentagon.TabIndex = 27;
             this.PictureBoxPentagon.TabStop = false;
             this.PictureBoxPentagon.Paint += new System.Windows.Forms.PaintEventHandler(this.PictureBoxPentagon_Paint);
-            // 
-            // TextBoxPentagonTemp
-            // 
-            this.TextBoxPentagonTemp.Location = new System.Drawing.Point(542, 350);
-            this.TextBoxPentagonTemp.Name = "TextBoxPentagonTemp";
-            this.TextBoxPentagonTemp.Size = new System.Drawing.Size(200, 20);
-            this.TextBoxPentagonTemp.TabIndex = 28;
             // 
             // FormListPlayer
             // 
@@ -297,7 +290,6 @@
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.ClientSize = new System.Drawing.Size(754, 521);
             this.Controls.Add(this.textBoxExample);
-            this.Controls.Add(this.TextBoxPentagonTemp);
             this.Controls.Add(this.PictureBoxPentagon);
             this.Controls.Add(this.LabelMMR);
             this.Controls.Add(this.LabelProcentWin);
@@ -351,6 +343,5 @@
         public System.Windows.Forms.Label LabelMMR;
         public System.Windows.Forms.Label LabelRole;
         public System.Windows.Forms.PictureBox PictureBoxPentagon;
-        public System.Windows.Forms.TextBox TextBoxPentagonTemp;
     }
 }

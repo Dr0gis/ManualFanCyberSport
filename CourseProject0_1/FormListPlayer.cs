@@ -76,7 +76,7 @@ namespace CourseProject0_1
             LabelNumberGames.Text = "Количество игр: " + SelectedPlayerNumberGames;
             LabelProcentWin.Text = "Процент побед: " + SelectedPlayerProcentWin;
             LabelMMR.Text = "MMR: " + SelectedPlayerMMR;
-            textBoxExample.Text = string.Join("; ", GlobalVariables.ArrayCoordsPentagons[0]);
+            /*textBoxExample.Text = string.Join("; ", GlobalVariables.ArrayCoordsPentagons[0]);
             textBoxExample.Text += "\n";
             textBoxExample.Text += string.Join("; ", GlobalVariables.ArrayCoordsPentagons[1]);
             textBoxExample.Text += "\n";
@@ -94,60 +94,12 @@ namespace CourseProject0_1
             textBoxExample.Text += "\n";
             textBoxExample.Text += string.Join("; ", GlobalVariables.ArrayCoordsPentagons[8]);
             textBoxExample.Text += "\n";
-            textBoxExample.Text += string.Join("; ", GlobalVariables.ArrayCoordsPentagons[9]);
+            textBoxExample.Text += string.Join("; ", GlobalVariables.ArrayCoordsPentagons[9]);*/
 
             // Прорисовка отрезков сторон пятиугольника игрока
+            PictureBoxPentagon.Refresh();
+            GlobalVariables.DrawindPentagonPlayer(PictureBoxPentagon, SelectedPlayerPentagon);
 
-            Graphics g = PictureBoxPentagon.CreateGraphics();
-
-            /*g.DrawLine(Pens.Red, 5F, 77F, 100F, 18.1F);
-            g.DrawLine(Pens.Red, 100F, 18.1F, 176F, 81.6F);
-            g.DrawLine(Pens.Red, 176F, 81.6F, 140.6F, 163.7F);
-            g.DrawLine(Pens.Red, 140.6F, 163.7F, 66.2F, 154.6F);
-            g.DrawLine(Pens.Red, 66.2F, 154.6F, 5F, 77F);*/
-
-            
-            g.DrawLine
-            (
-                Pens.Red, 
-                GlobalVariables.ArrayCoordsPentagons[SelectedPlayerPentagon[0] - 1][0], 
-                GlobalVariables.ArrayCoordsPentagons[SelectedPlayerPentagon[0] - 1][1], 
-                GlobalVariables.ArrayCoordsPentagons[SelectedPlayerPentagon[1] - 1][2], 
-                GlobalVariables.ArrayCoordsPentagons[SelectedPlayerPentagon[1] - 1][3]
-            );
-            g.DrawLine
-            (
-                Pens.Red, 
-                GlobalVariables.ArrayCoordsPentagons[SelectedPlayerPentagon[1] - 1][2], 
-                GlobalVariables.ArrayCoordsPentagons[SelectedPlayerPentagon[1] - 1][3], 
-                GlobalVariables.ArrayCoordsPentagons[SelectedPlayerPentagon[2] - 1][4], 
-                GlobalVariables.ArrayCoordsPentagons[SelectedPlayerPentagon[2] - 1][5]
-            );
-            g.DrawLine
-            (
-                Pens.Red, 
-                GlobalVariables.ArrayCoordsPentagons[SelectedPlayerPentagon[2] - 1][4], 
-                GlobalVariables.ArrayCoordsPentagons[SelectedPlayerPentagon[2] - 1][5], 
-                GlobalVariables.ArrayCoordsPentagons[SelectedPlayerPentagon[3] - 1][6], 
-                GlobalVariables.ArrayCoordsPentagons[SelectedPlayerPentagon[3] - 1][7]
-            );
-            g.DrawLine
-            (
-                Pens.Red, 
-                GlobalVariables.ArrayCoordsPentagons[SelectedPlayerPentagon[3] - 1][6], 
-                GlobalVariables.ArrayCoordsPentagons[SelectedPlayerPentagon[3] - 1][7], 
-                GlobalVariables.ArrayCoordsPentagons[SelectedPlayerPentagon[4] - 1][8], 
-                GlobalVariables.ArrayCoordsPentagons[SelectedPlayerPentagon[4] - 1][9]
-            );
-            g.DrawLine
-            (
-                Pens.Red, 
-                GlobalVariables.ArrayCoordsPentagons[SelectedPlayerPentagon[4] - 1][8], 
-                GlobalVariables.ArrayCoordsPentagons[SelectedPlayerPentagon[4] - 1][9], 
-                GlobalVariables.ArrayCoordsPentagons[SelectedPlayerPentagon[0] - 1][0], 
-                GlobalVariables.ArrayCoordsPentagons[SelectedPlayerPentagon[0] - 1][1]
-            );
-            //TextBoxPentagonTemp.Text = SelectedPlayerPentagon;
 
             Bitmap tempImage = new Bitmap(Environment.CurrentDirectory + @"\image\" + SelectedPlayerPhotoProfile, true);
             PictureSelectedPlayer.Image = tempImage;
@@ -162,29 +114,28 @@ namespace CourseProject0_1
         {
             float[][] ArrayCoordsPentagons = new float[10][];
             Graphics g = e.Graphics;
-            GlobalVariables.graphic = g;
             float kooficient = 10F;
             float slagaemoe = 90F;
             for (int i = 2; i <= 11; i++)
             {
                 ArrayCoordsPentagons[i - 2] = new float[10];
-                g.DrawLine(Pens.DarkGray, 5F / kooficient + slagaemoe, 77F / kooficient + slagaemoe, 100F / kooficient + slagaemoe, 9F / kooficient + slagaemoe);
+                g.DrawLine(Pens.Black, 5F / kooficient + slagaemoe, 77F / kooficient + slagaemoe, 100F / kooficient + slagaemoe, 9F / kooficient + slagaemoe);
                 ArrayCoordsPentagons[i - 2][0] = 5F / kooficient + slagaemoe;
                 ArrayCoordsPentagons[i - 2][1] = 77F / kooficient + slagaemoe;
 
-                g.DrawLine(Pens.DarkGray, 100F / kooficient + slagaemoe, 9F / kooficient + slagaemoe, 195F / kooficient + slagaemoe, 77F / kooficient + slagaemoe);
+                g.DrawLine(Pens.Black, 100F / kooficient + slagaemoe, 9F / kooficient + slagaemoe, 195F / kooficient + slagaemoe, 77F / kooficient + slagaemoe);
                 ArrayCoordsPentagons[i - 2][2] = 100F / kooficient + slagaemoe;
                 ArrayCoordsPentagons[i - 2][3] = 9F / kooficient + slagaemoe;
 
-                g.DrawLine(Pens.DarkGray, 195F / kooficient + slagaemoe, 77F / kooficient + slagaemoe, 158F / kooficient + slagaemoe, 191F / kooficient + slagaemoe);
+                g.DrawLine(Pens.Black, 195F / kooficient + slagaemoe, 77F / kooficient + slagaemoe, 158F / kooficient + slagaemoe, 191F / kooficient + slagaemoe);
                 ArrayCoordsPentagons[i - 2][4] = 195F / kooficient + slagaemoe;
                 ArrayCoordsPentagons[i - 2][5] = 77F / kooficient + slagaemoe;
 
-                g.DrawLine(Pens.DarkGray, 158F / kooficient + slagaemoe, 191F / kooficient + slagaemoe, 42F / kooficient + slagaemoe, 191F / kooficient + slagaemoe);
+                g.DrawLine(Pens.Black, 158F / kooficient + slagaemoe, 191F / kooficient + slagaemoe, 42F / kooficient + slagaemoe, 191F / kooficient + slagaemoe);
                 ArrayCoordsPentagons[i - 2][6] = 158F / kooficient + slagaemoe;
                 ArrayCoordsPentagons[i - 2][7] = 191F / kooficient + slagaemoe;
 
-                g.DrawLine(Pens.DarkGray, 42F / kooficient + slagaemoe, 191F / kooficient + slagaemoe, 5F / kooficient + slagaemoe, 77F / kooficient + slagaemoe);
+                g.DrawLine(Pens.Black, 42F / kooficient + slagaemoe, 191F / kooficient + slagaemoe, 5F / kooficient + slagaemoe, 77F / kooficient + slagaemoe);
                 ArrayCoordsPentagons[i - 2][8] = 42F / kooficient + slagaemoe;
                 ArrayCoordsPentagons[i - 2][9] = 191F / kooficient + slagaemoe;
 
@@ -192,41 +143,27 @@ namespace CourseProject0_1
                 slagaemoe -= 10F;
             }
             GlobalVariables.ArrayCoordsPentagons = ArrayCoordsPentagons;
-            /*
+            
             // Прорисовка отрезков сторон 10 пятиугольника 
             g.DrawLine(Pens.DarkGray, 5, 77, 100, 9);
             g.DrawLine(Pens.DarkGray, 100, 9, 195, 77);
             g.DrawLine(Pens.DarkGray, 195, 77, 158, 191);
             g.DrawLine(Pens.DarkGray, 158, 191, 42, 191);
             g.DrawLine(Pens.DarkGray, 42, 191, 5, 77);
+
+            // Прорисовка отрезков сторон 1 пятиугольника
+            g.DrawLine(Pens.DarkGray, 90.5F, 97.7F, 100, 90.5F);
+            g.DrawLine(Pens.DarkGray, 100, 90.5F, 109.5F, 97.7F);
+            g.DrawLine(Pens.DarkGray, 109.5F, 97.7F, 105.8F, 109.1F);
+            g.DrawLine(Pens.DarkGray, 105.8F, 109.1F, 94.2F, 109.1F);
+            g.DrawLine(Pens.DarkGray, 94.2F, 109.1F, 90.5F, 97.7F);
             
-            // Прорисовка отрезков сторон 2 пятиугольника 
-            g.DrawLine(Pens.DarkGray, 5 / 3.33F + 70, 77 / 3.33F + 70, 100 / 3.5F + 70, 9 / 3.5F + 70);
-            g.DrawLine(Pens.DarkGray, 100 / 3.5F + 70, 9 / 3.5F + 70, 195 / 3.5F + 70, 77 / 3.5F + 70);
-            g.DrawLine(Pens.DarkGray, 195 / 3.5F + 70, 77 / 3.5F + 70, 158 / 3.5F + 70, 191 / 3.5F + 70);
-            g.DrawLine(Pens.DarkGray, 158 / 3.5F + 70, 191 / 3.5F + 70, 42 / 3.5F + 70, 191 / 3.5F + 70);
-            g.DrawLine(Pens.DarkGray, 42 / 3.5F + 70, 191 / 3.5F + 70, 5 / 3.5F + 70, 77 / 3.5F + 70);
-
-            // Прорисовка отрезков сторон 2 пятиугольника 
-            g.DrawLine(Pens.DarkGray, 5 /5 + 80, 77 / 5 + 80, 100 / 5 + 80, 9 / 5 + 80);
-            g.DrawLine(Pens.DarkGray, 100 / 5 + 80, 9 / 5 + 80, 195 / 5 + 80, 77 / 5 + 80);
-            g.DrawLine(Pens.DarkGray, 195 / 5 + 80, 77 / 5 + 80, 158 / 5 + 80, 191 / 5 + 80);
-            g.DrawLine(Pens.DarkGray, 158 / 5 + 80, 191 / 5 + 80, 42 / 5 + 80, 191 / 5 + 80);
-            g.DrawLine(Pens.DarkGray, 42 / 5 + 80, 191 / 5 + 80, 5 / 5 + 80, 77 / 5 + 80);
-
-            // Прорисовка отрезков сторон 1 пятиугольника 
-            g.DrawLine(Pens.DarkGray, 5 / 10 + 90, 77 / 10 + 90, 100 / 10 + 90, 9 / 10 + 90);
-            g.DrawLine(Pens.DarkGray, 100 / 10 + 90, 9 / 10 + 90, 195 / 10 + 90, 77 / 10 + 90);
-            g.DrawLine(Pens.DarkGray, 195 / 10 + 90, 77 / 10 + 90, 158 / 10 + 90, 191 / 10 + 90);
-            g.DrawLine(Pens.DarkGray, 158 / 10 + 90, 191 / 10 + 90, 42 / 10 + 90, 191 / 10 + 90);
-            g.DrawLine(Pens.DarkGray, 42 / 10 + 90, 191 / 10 + 90, 5 / 10 + 90, 77 / 10 + 90);
-            */
-
-            g.DrawLine(Pens.DarkGray, 100, 100, 5, 77);
-            g.DrawLine(Pens.DarkGray, 100, 100, 100, 9);
-            g.DrawLine(Pens.DarkGray, 100, 100, 195, 77);
-            g.DrawLine(Pens.DarkGray, 100, 100, 158, 191);
-            g.DrawLine(Pens.DarkGray, 100, 100, 42, 191);
+            // Прорисовка отрезков
+            g.DrawLine(Pens.Black, 90.5F, 97.7F, 5, 77);
+            g.DrawLine(Pens.Black, 100, 90.5F, 100, 9);
+            g.DrawLine(Pens.Black, 109.5F, 97.7F, 195, 77);
+            g.DrawLine(Pens.Black, 105.8F, 109.1F, 158, 191);
+            g.DrawLine(Pens.Black, 94.2F, 109.1F, 42, 191);
         }
     }
 }

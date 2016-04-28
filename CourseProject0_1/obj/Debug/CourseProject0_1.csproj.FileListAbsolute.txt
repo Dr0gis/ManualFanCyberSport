@@ -28,3 +28,6 @@ H:\CourseProject0_1\CourseProject0_1\obj\Debug\CourseProject0_1.csproj.GenerateR
 H:\CourseProject0_1\CourseProject0_1\obj\Debug\CourseProject0_1.FormDota2.resources
 H:\CourseProject0_1\CourseProject0_1\obj\Debug\CourseProject0_1.FormCSGO.resources
 C:\Users\Dr0gis\OneDrive\Документы\Visual Studio 2015\Projects\CourseProject0_1\CourseProject0_1\obj\Debug\CourseProject0_1.FormListPlayer.resources
+C:\Users\Dr0gis\OneDrive\Документы\Visual Studio 2015\Projects\CourseProject0_1 23.04.2016 21_01\CourseProject0_1\bin\Debug\CourseProject0_1.exe.config
+C:\Users\Dr0gis\OneDrive\Документы\Visual Studio 2015\Projects\CourseProject0_1 23.04.2016 21_01\CourseProject0_1\obj\Debug\CourseProject0_1.exe
+C:\Users\Dr0gis\OneDrive\Документы\Visual Studio 2015\Projects\CourseProject0_1 23.04.2016 21_01\CourseProject0_1\obj\Debug\CourseProject0_1.pdb
