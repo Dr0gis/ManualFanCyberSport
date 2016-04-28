@@ -7,11 +7,15 @@ using System.IO;
 
 namespace CourseProject0_1
 {
+    class GlobalVariables
+    {
+        public static List<List<Player>> ListPlayerInDiscypline;
+    }
     class MethodsReadFile
     {
         public static string ReadFile()
         {
-            return File.ReadAllText(@"C:\Users\ІгорСушинський\OneDrive\Документы\Visual Studio 2015\Projects\CourseProject0_1\ListPlayer.txt");
+            return File.ReadAllText(@"C:\Users\Dr0gis\OneDrive\Документы\Visual Studio 2015\Projects\CourseProject0_1\ListPlayer.txt");
         }
         public static string[] SplitOnDiscypline(string textFile)
         {
@@ -25,78 +29,79 @@ namespace CourseProject0_1
         }
         public static Player CreateObjectPlayer(string TextPlayer)
         {
-            string temp = "";
-            string tempName = "";
-            string tempNickname = "";
-            string tempSurname = "";
-            string tempTeam = "";
-            string tempCountry = "";
-            string tempCity = "";
-            string tempNationality = "";
-            string tempDateBirth = "";
-            string tempRole = "";
-            string[] tempSignature = new string[3];
-            string[] tempHistoryTeams;
-            string tempNumberGames = "";
-            double ProcentWinGames = 0;
-            string MMR = "";
+            string[] SplitOnPrompt = TextPlayer.Split(';');
+            string[] NameField = new string[] 
+            {
+                "Name",
+                "Nickname",
+                "Surname",
+                "Team",
+                "Country",
+                "City",
+                "Nationality",
+                "DateBirth",
+                "Role",
+                "Signature",
+                "HistoryTeams",
+                "NumberGames",
+                "ProcentWinGames",
+                "MMR",
+                "Hexagon",
+            };
+            object[] ValueFild = new object[NameField.Length];
+            string tempString;
+            string[] tempStringArray;
+            int[] tempIntArray;
+            int templastIndex;
+
             List <List<Player>> ListPlayerInDiscypline = new List<List<Player>>();
             List<Player> ListPlayer = new List<Player>();
 
-            for (int i = 0; i < TextPlayer.Length; i++)
+            for (int i = 0; i < SplitOnPrompt.Length - 1; i++)
             {
-                if (TextPlayer[i] == 'N' && TextPlayer[i + 1] == 'a' && TextPlayer[i + 2] == 'm' && TextPlayer[i + 3] == 'e' && TextPlayer[i - 1] == '\t')
+                switch (NameField[i])
                 {
-                    for (int j = 7; true; j++)
-                    {
-                        if (TextPlayer[i + j] == ';')
+                    case "Signature":
+                        tempString = SplitOnPrompt[i].Substring(SplitOnPrompt[i].IndexOf(NameField[i]) + NameField[i].Length + 3);
+                        tempStringArray = tempString.Split(new string[] { ", " }, StringSplitOptions.RemoveEmptyEntries);
+                        tempStringArray[0] = tempStringArray[0].Substring(1);
+                        templastIndex = tempStringArray.Length - 1;
+                        tempStringArray[templastIndex] = tempStringArray[templastIndex].Substring(0, tempStringArray[templastIndex].Length - 1);
+                        ValueFild[i] = tempStringArray;
+                        break;
+                    case "HistoryTeams":
+                        tempString = SplitOnPrompt[i].Substring(SplitOnPrompt[i].IndexOf(NameField[i]) + NameField[i].Length + 3);
+                        tempStringArray = tempString.Split(new string[] { ", " }, StringSplitOptions.RemoveEmptyEntries);
+                        tempStringArray[0] = tempStringArray[0].Substring(1);
+                        templastIndex = tempStringArray.Length - 1;
+                        tempStringArray[templastIndex] = tempStringArray[templastIndex].Substring(0, tempStringArray[templastIndex].Length - 1);
+                        ValueFild[i] = tempStringArray;
+                        break;
+                    case "Hexagon":
+                        tempString = SplitOnPrompt[i].Substring(SplitOnPrompt[i].IndexOf(NameField[i]) + NameField[i].Length + 3);
+                        tempStringArray = tempString.Split(new string[] { ", " }, StringSplitOptions.RemoveEmptyEntries);
+                        tempStringArray[0] = tempStringArray[0].Substring(1);
+                        templastIndex = tempStringArray.Length - 1;
+                        tempStringArray[templastIndex] = tempStringArray[templastIndex].Substring(0, tempStringArray[templastIndex].Length - 1);
+                        tempIntArray = new int[tempStringArray.Length];
+                        int j = 0;
+                        foreach (string element in tempStringArray)
                         {
-                            break;
+                            tempIntArray[j] = Convert.ToInt32(element);
+                            j++;
                         }
-                        tempName += TextPlayer[i + j];
-                    }
-                }
-                if (TextPlayer[i] == 'N' && TextPlayer[i + 1] == 'i' && TextPlayer[i + 2] == 'c' && TextPlayer[i + 3] == 'k' && TextPlayer[i - 1] == '\t')
-                {
-                    for (int j = 11; true; j++)
-                    {
-                        if (TextPlayer[i + j] == ';')
-                        {
-                            break;
-                        }
-                        tempNickname += TextPlayer[i + j];
-                    }
-                }
-                if (TextPlayer[i] == 'S' && TextPlayer[i + 1] == 'u' && TextPlayer[i + 2] == 'r' && TextPlayer[i + 3] == 'n' && TextPlayer[i - 1] == '\t')
-                {
-                    for (int j = 10; true; j++)
-                    {
-                        if (TextPlayer[i + j] == ';')
-                        {
-                            break;
-                        }
-                        tempSurname += TextPlayer[i + j];
-                    }
-                }
-                if (TextPlayer[i] == 'T' && TextPlayer[i + 1] == 'e' && TextPlayer[i + 2] == 'a' && TextPlayer[i + 3] == 'm' && TextPlayer[i - 1] == '\t')
-                {
-                    for (int j = 7; true; j++)
-                    {
-                        if (TextPlayer[i + j] == ';')
-                        {
-                            break;
-                        }
-                        tempTeam += TextPlayer[i + j];
-                    }
+                        ValueFild[i] = tempIntArray;
+                        break;
+                    default:
+                        ValueFild[i] = SplitOnPrompt[i].Substring(SplitOnPrompt[i].IndexOf(NameField[i]) + NameField[i].Length + 3);
+                        break;
                 }
             }
-            Player tempPlayer = new Dota2Player(tempName, tempNickname, tempSurname, tempTeam);
+            Player tempPlayer = new Dota2Player(ValueFild);
             return tempPlayer;
         }
         public static List<List<Player>> CreateListPlayer()
         {
-            //List<string[]> ListPlayer = new List<string[]>();
-
             string TextFile = ReadFile();
             string[] ArrayDiscypline = SplitOnDiscypline(TextFile);
             string[][] ArrayArraysPlayerInDiscypline = new string[ArrayDiscypline.Length][];
@@ -125,51 +130,105 @@ namespace CourseProject0_1
 
     abstract class Player
     {
-        public string Name;
-        public string Nickname;
-        public string Surname;
-        public string Team;
-        public string Country;
-        public string City;
-        public string Nationality;
-        public string DateBirth;
-        public string Role;
-        public string[] Signature;
-        public string[] HistoryTeams;
-        public int NumberGames;
-        public double ProcentWinGames;
-        public string MMR;
+        private string Name;
+        private string Nickname;
+        private string Surname;
+        private string Team;
+        private string Country;
+        private string City;
+        private string Nationality;
+        private string DateBirth;
+        private string Role;
+        private string[] Signature;
+        private string[] HistoryTeams;
+        private int NumberGames;
+        private double ProcentWinGames;
+        private string MMR;
+        private int[] Hexagon;
 
+        public Player(object[] ArrayFilds)
+        {
+            Name = (string)ArrayFilds[0];
+            Nickname = (string)ArrayFilds[1];
+            Surname = (string)ArrayFilds[2];
+            Team = (string)ArrayFilds[3];
+            Country = (string)ArrayFilds[4];
+            City = (string)ArrayFilds[5];
+            Nationality = (string)ArrayFilds[6];
+            DateBirth = (string)ArrayFilds[7];
+            Role = (string)ArrayFilds[8];
+            Signature = (string[])ArrayFilds[9];
+            HistoryTeams = (string[])ArrayFilds[10];
+            NumberGames = Convert.ToInt32((string)ArrayFilds[11]);
+            ProcentWinGames = Convert.ToDouble((string)ArrayFilds[12]);
+            MMR = (string)ArrayFilds[13];
+            Hexagon = (int[])ArrayFilds[14];
+        }
+        public Player(string name, string nickname, string surname, string team)
+        {
+            Name = name;
+            Nickname = nickname;
+            Surname = surname;
+            Team = team;
+        }
         public string MajorInfo()
+        {
+            string rez = "";
+            rez += Name + ' ';
+            rez += Nickname + ' ';
+            rez += Surname;
+            return rez;
+        }
+        public string AllInfo()
         {
             string rez = "";
             rez += Name + ' ';
             rez += Nickname + ' ';
             rez += Surname + ' ';
             rez += Team + ' ';
+            rez += Country + ' ';
+            rez += City + ' ';
+            rez += Nationality + ' ';
+            rez += DateBirth + ' ';
+            rez += Role + ' ';
+            foreach (string element in Signature)
+            {
+                rez += element + ' ';
+            }
+            foreach (string element in HistoryTeams)
+            {
+                rez += element + ' ';
+            }
+            rez += ProcentWinGames;
+            rez += ' ';
+            rez += MMR + ' ';
+            rez += ' ';
+            foreach (int element in Hexagon)
+            {
+                rez += element;
+                rez += ' ';
+            }
             return rez;
         }
     }
 
     class Dota2Player : Player
     {
-        public Dota2Player(string name, string nickname, string surname, string team)
+        public Dota2Player(object[] ArrayFilds) : base(ArrayFilds)
         {
-            Name = name;
-            Nickname = nickname;
-            Surname = surname;
-            Team = team;
+        }
+        public Dota2Player(string name, string nickname, string surname, string team) : base(name, nickname, surname, team)
+        {
         }
     }
 
     class CSGOPlayer : Player
     {
-        public CSGOPlayer(string name, string nickname, string surname, string team)
+        public CSGOPlayer(object[] ArrayFilds) : base(ArrayFilds)
         {
-            Name = name;
-            Nickname = nickname;
-            Surname = surname;
-            Team = team;
+        }
+        public CSGOPlayer(string name, string nickname, string surname, string team) : base(name, nickname, surname, team)
+        {
         }
     }
 

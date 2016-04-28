@@ -57,12 +57,13 @@
             this.ListDota2Player.Size = new System.Drawing.Size(190, 459);
             this.ListDota2Player.Sorted = true;
             this.ListDota2Player.TabIndex = 1;
+            this.ListDota2Player.SelectedIndexChanged += new System.EventHandler(this.SelectPlayerInDoat2List);
             // 
             // textBoxExample
             // 
-            this.textBoxExample.Location = new System.Drawing.Point(236, 233);
+            this.textBoxExample.Location = new System.Drawing.Point(211, 233);
             this.textBoxExample.Name = "textBoxExample";
-            this.textBoxExample.Size = new System.Drawing.Size(296, 274);
+            this.textBoxExample.Size = new System.Drawing.Size(341, 274);
             this.textBoxExample.TabIndex = 4;
             this.textBoxExample.Text = "";
             // 
@@ -73,6 +74,7 @@
             this.ListCSGOPlayer.Name = "ListCSGOPlayer";
             this.ListCSGOPlayer.Size = new System.Drawing.Size(190, 459);
             this.ListCSGOPlayer.TabIndex = 5;
+            this.ListCSGOPlayer.SelectedIndexChanged += new System.EventHandler(this.SelectPlayerInCSGOList);
             // 
             // labelDota2
             // 

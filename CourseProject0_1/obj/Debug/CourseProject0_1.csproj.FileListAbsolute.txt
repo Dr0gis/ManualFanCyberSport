@@ -16,6 +16,3 @@ C:\Users\ІгорСушинський\OneDrive\Документы\Visual Studio 
 C:\Users\ІгорСушинський\OneDrive\Документы\Visual Studio 2015\Projects\CourseProject0_1\CourseProject0_1\obj\Debug\CourseProject0_1.csproj.GenerateResource.Cache
 C:\Users\ІгорСушинський\OneDrive\Документы\Visual Studio 2015\Projects\CourseProject0_1\CourseProject0_1\bin\Debug\CourseProject0_1.exe
 C:\Users\ІгорСушинський\OneDrive\Документы\Visual Studio 2015\Projects\CourseProject0_1\CourseProject0_1\bin\Debug\CourseProject0_1.pdb
-C:\Users\Dr0gis\OneDrive\Документы\Visual Studio 2015\Projects\CourseProject0_1 21.04.2016 10_49\CourseProject0_1\bin\Debug\CourseProject0_1.exe.config
-C:\Users\Dr0gis\OneDrive\Документы\Visual Studio 2015\Projects\CourseProject0_1 21.04.2016 10_49\CourseProject0_1\obj\Debug\CourseProject0_1.exe
-C:\Users\Dr0gis\OneDrive\Документы\Visual Studio 2015\Projects\CourseProject0_1 21.04.2016 10_49\CourseProject0_1\obj\Debug\CourseProject0_1.pdb

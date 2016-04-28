@@ -19,8 +19,8 @@ namespace CourseProject0_1
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            List<List<Player>> ListPlayerInDiscypline = MethodsReadFile.CreateListPlayer();
-            foreach (List<Player> discypline in ListPlayerInDiscypline)
+            GlobalVariables.ListPlayerInDiscypline = MethodsReadFile.CreateListPlayer();
+            foreach (List<Player> discypline in GlobalVariables.ListPlayerInDiscypline)
             {
                 foreach (Player player in discypline)
                 {
@@ -28,14 +28,46 @@ namespace CourseProject0_1
                     textBoxExample.Text += '\n';
                 }
             }
-            foreach (Player player in ListPlayerInDiscypline[0])
+            foreach (Player player in GlobalVariables.ListPlayerInDiscypline[0])
             {
                 ListDota2Player.Items.Add(player.MajorInfo());
             }
-            foreach (Player player in ListPlayerInDiscypline[1])
+            foreach (Player player in GlobalVariables.ListPlayerInDiscypline[1])
             {
                 ListCSGOPlayer.Items.Add(player.MajorInfo());
             }
+        }
+        private void SelectPlayerInDoat2List(object sender, EventArgs e)
+        {
+            string SelectedPlayerMajorInfo = (string)ListDota2Player.SelectedItem;
+            string SelectedPlayerAllInfo = "";
+            foreach (List<Player> ListPlayer in GlobalVariables.ListPlayerInDiscypline)
+            {
+                foreach(Player Player in ListPlayer)
+                {
+                    if (Player.MajorInfo() == SelectedPlayerMajorInfo)
+                    {
+                        SelectedPlayerAllInfo = Player.AllInfo();
+                    }
+                }
+            }
+            textBoxExample.Text = SelectedPlayerAllInfo;
+        }
+        private void SelectPlayerInCSGOList(object sender, EventArgs e)
+        {
+            string SelectedPlayerMajorInfo = (string)ListCSGOPlayer.SelectedItem;
+            string SelectedPlayerAllInfo = "";
+            foreach (List<Player> ListPlayer in GlobalVariables.ListPlayerInDiscypline)
+            {
+                foreach (Player Player in ListPlayer)
+                {
+                    if (Player.MajorInfo() == SelectedPlayerMajorInfo)
+                    {
+                        SelectedPlayerAllInfo = Player.AllInfo();
+                    }
+                }
+            }
+            textBoxExample.Text = SelectedPlayerAllInfo;
         }
     }
 }

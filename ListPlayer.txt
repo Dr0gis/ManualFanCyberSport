@@ -11,8 +11,9 @@
 		Signature = [Chen, NithStalker, Shadow Demon];
 		HistoryTeams = [Natus Vinsere, DTS Gaming, Darer, Team Kharkiv, Eclypsia, Relax, HellRaisers, Natasha isher Parnya, ScaryFacez, Natus Vincere, Natus Vincere, Natus Vincere];
 		NumberGames = 241;
-		ProcentWinGames = 46.47;
+		ProcentWinGames = 46,47;
 		MMR = 6532;
+		Hexagon = [10, 10, 10, 10, 10, 10];
 	*
 		Name = Gleb;
 		Nickname = Funnik;
@@ -26,8 +27,9 @@
 		Signature = [Batrider, Dark Seer, Clinkz];
 		HistoryTeams = [sFs, Fota, The Retry, Hard Team, eSahara, DTS, Darer, Team Empire, Natus Vincere, Natus Vincere, Team Empire, Team Spirit];
 		NumberGames = 1313;
-		ProcentWinGames = 60.40;
+		ProcentWinGames = 60,40;
 		MMR = 6658;
+		Hexagon = [10, 10, 10, 10, 10, 10];
 @
 CSGO:
 		Name = Egor;
@@ -42,8 +44,9 @@ CSGO:
 		Signature = [AWP, Deagle, AK-47];
 		HistoryTeams = [Natus Vincere, Astana Dragons, HellRaisers, dAT Team, Flipsid3];
 		NumberGames = 763;
-		ProcentWinGames = 51.39;
+		ProcentWinGames = 51,39;
 		MMR = GlobalElite;
+		Hexagon = [10, 10, 10, 10, 10, 10];
 	*
 		Name = Jarosław;
 		Nickname = pashaBiceps;
@@ -57,5 +60,6 @@ CSGO:
 		Signature = [AWP, Deagle, AK-47];
 		HistoryTeams = [ESC Gaming, Universal Soldiers, AGAiN, Virtus.pro];
 		NumberGames = 559;
-		ProcentWinGames = 60.11;
+		ProcentWinGames = 60,11;
 		MMR = GlobalElite;
+		Hexagon = [10, 10, 10, 10, 10, 10];
