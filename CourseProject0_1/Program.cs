@@ -10,13 +10,12 @@ namespace CourseProject0_1
     class GlobalVariables
     {
         public static List<List<Player>> ListPlayerInDiscypline;
+        public static MainForm MainFormObject;
     }
     class MethodsReadFile
     {
         public static string ReadFile()
         {
-            //return File.ReadAllText(@"C:\Users\Dr0gis\OneDrive\Документы\Visual Studio 2015\Projects\CourseProject0_1\ListPlayer.txt");
-            //return File.ReadAllText(@"C:\Users\ІгорСушинський\OneDrive\Документы\Visual Studio 2015\Projects\CourseProject0_1\ListPlayer.txt");
             return File.ReadAllText(Environment.CurrentDirectory + @"\textfiles\ListPlayer.txt");
         }
         public static string[] SplitOnDiscypline(string textFile)
@@ -32,7 +31,7 @@ namespace CourseProject0_1
         public static Player CreateObjectPlayer(string TextPlayer)
         {
             string[] SplitOnPrompt = TextPlayer.Split(';');
-            string[] NameField = new string[] 
+            string[] NameField = new string[]
             {
                 "Name",
                 "Nickname",
@@ -49,7 +48,7 @@ namespace CourseProject0_1
                 "ProcentWinGames",
                 "MMR",
                 "Hexagon",
-                "Image",
+                "PhotoProfile",
             };
             object[] ValueFild = new object[NameField.Length];
             string tempString;
@@ -57,7 +56,7 @@ namespace CourseProject0_1
             int[] tempIntArray;
             int templastIndex;
 
-            List <List<Player>> ListPlayerInDiscypline = new List<List<Player>>();
+            List<List<Player>> ListPlayerInDiscypline = new List<List<Player>>();
             List<Player> ListPlayer = new List<Player>();
 
             for (int i = 0; i < SplitOnPrompt.Length - 1; i++)
@@ -133,22 +132,23 @@ namespace CourseProject0_1
 
     abstract class Player
     {
-        private string Name;
-        private string Nickname;
-        private string Surname;
-        private string Team;
-        private string Country;
-        private string City;
-        private string Nationality;
-        private string DateBirth;
-        private string Role;
-        private string[] Signature;
-        private string[] HistoryTeams;
-        private int NumberGames;
-        private double ProcentWinGames;
-        private string MMR;
-        private int[] Hexagon;
-        private string Image;
+        private string name;
+        private string nickname;
+        private string surname;
+        private string team;
+        private string country;
+        private string city;
+        private string nationality;
+        private DateTime dateBirth;
+        private int age;
+        private string role;
+        private string[] signature;
+        private string[] historyTeams;
+        private int numberGames;
+        private double procentWinGames;
+        private string mmr;
+        private int[] hexagon;
+        private string photoProfile;
 
         public Player(object[] ArrayFilds)
         {
@@ -159,7 +159,16 @@ namespace CourseProject0_1
             Country = (string)ArrayFilds[4];
             City = (string)ArrayFilds[5];
             Nationality = (string)ArrayFilds[6];
-            DateBirth = (string)ArrayFilds[7];
+            string[] tempStringDateBirth = ((string)ArrayFilds[7]).Split('.');
+            int tempYear = Convert.ToInt32(tempStringDateBirth[2]);
+            int tempMonth = Convert.ToInt32(tempStringDateBirth[1]);
+            int tempDay = Convert.ToInt32(tempStringDateBirth[0]);
+            DateBirth = new DateTime(tempYear, tempMonth, tempDay);
+            Age = DateTime.Today.Year - DateBirth.Year;
+            if (DateBirth > DateTime.Today.AddYears(-Age))
+            {
+                Age--;
+            }
             Role = (string)ArrayFilds[8];
             Signature = (string[])ArrayFilds[9];
             HistoryTeams = (string[])ArrayFilds[10];
@@ -167,7 +176,7 @@ namespace CourseProject0_1
             ProcentWinGames = Convert.ToDouble((string)ArrayFilds[12]);
             MMR = (string)ArrayFilds[13];
             Hexagon = (int[])ArrayFilds[14];
-            Image = (string)ArrayFilds[15];
+            PhotoProfile = (string)ArrayFilds[15];
         }
         public Player(string name, string nickname, string surname, string team)
         {
@@ -176,6 +185,195 @@ namespace CourseProject0_1
             Surname = surname;
             Team = team;
         }
+
+        public string Name
+        {
+            get
+            {
+                return name;
+            }
+            private set
+            {
+                name = value;
+            }
+        }
+        public string Nickname
+        {
+            get
+            {
+                return nickname;
+            }
+            private set
+            {
+                nickname = value;
+            }
+        }
+        public string Surname
+        {
+            get
+            {
+                return surname;
+            }
+            private set
+            {
+                surname = value;
+            }
+        }
+        public string Team
+        {
+            get
+            {
+                return team;
+            }
+            private set
+            {
+                team = value;
+            }
+        }
+        public string Country
+        {
+            get
+            {
+                return country;
+            }
+            private set
+            {
+                country = value;
+            }
+        }
+        public string City
+        {
+            get
+            {
+                return city;
+            }
+            private set
+            {
+                city = value;
+            }
+        }
+        public string Nationality
+        {
+            get
+            {
+                return nationality;
+            }
+            private set
+            {
+                nationality = value;
+            }
+        }
+        public DateTime DateBirth
+        {
+            get
+            {
+                return dateBirth;
+            }
+            private set
+            {
+                dateBirth = value;
+            }
+        }
+        public int Age
+        {
+            get
+            {
+                return age;
+            }
+            private set
+            {
+                age = value;
+            }
+        }
+        public string Role
+        {
+            get
+            {
+                return role;
+            }
+            private set
+            {
+                role = value;
+            }
+        }
+        public string[] Signature
+        {
+            get
+            {
+                return signature;
+            }
+            private set
+            {
+                signature = value;
+            }
+        }
+        public string[] HistoryTeams
+        {
+            get
+            {
+                return historyTeams;
+            }
+            private set
+            {
+                historyTeams = value;
+            }
+        }
+        public int NumberGames
+        {
+            get
+            {
+                return numberGames;
+            }
+            private set
+            {
+                numberGames = value;
+            }
+        }
+        public double ProcentWinGames
+        {
+            get
+            {
+                return procentWinGames;
+            }
+            private set
+            {
+                procentWinGames = value;
+            }
+        }
+        public string MMR
+        {
+            get
+            {
+                return mmr;
+            }
+            private set
+            {
+                mmr = value;
+            }
+        }
+        public int[] Hexagon
+        {
+            get
+            {
+                return hexagon;
+            }
+            private set
+            {
+                hexagon = value;
+            }
+        }
+        public string PhotoProfile
+        {
+            get
+            {
+                return photoProfile;
+            }
+            private set
+            {
+                photoProfile = value;
+            }
+        }
+
         public string MajorInfo()
         {
             string rez = "";
@@ -194,7 +392,7 @@ namespace CourseProject0_1
             rez += Country + ' ';
             rez += City + ' ';
             rez += Nationality + ' ';
-            rez += DateBirth + ' ';
+            rez += DateBirth.ToString() + ' ';
             rez += Role + ' ';
             foreach (string element in Signature)
             {
@@ -213,7 +411,7 @@ namespace CourseProject0_1
                 rez += element;
                 rez += ' ';
             }
-            rez += Image;
+            rez += PhotoProfile;
             return rez;
         }
     }
@@ -252,9 +450,11 @@ namespace CourseProject0_1
         [STAThread]
         static void Main()
         {
+            GlobalVariables.ListPlayerInDiscypline = MethodsReadFile.CreateListPlayer();
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new MainForm());
+            GlobalVariables.MainFormObject = new MainForm();
+            Application.Run(GlobalVariables.MainFormObject);
         }
     }
 }
