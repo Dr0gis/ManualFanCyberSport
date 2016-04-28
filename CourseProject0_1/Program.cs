@@ -265,15 +265,15 @@ namespace CourseProject0_1
             }
             return NewLineFie;
         }
-        public static void EditFile(Dota2Player Player)
+        public static void EditFile(Dota2Player PlayerOld, Dota2Player PlayerNew)
         {
-            RemovePlayerInFile(Player);
-            WriteFile(Player);
+            RemovePlayerInFile(PlayerOld);
+            WriteFile(PlayerNew);
         }
-        public static void EditFile(CSGOPlayer Player)
+        public static void EditFile(CSGOPlayer PlayerOld, CSGOPlayer PlayerNew)
         {
-            RemovePlayerInFile(Player);
-            WriteFile(Player);
+            RemovePlayerInFile(PlayerOld);
+            WriteFile(PlayerNew);
         }
     }
 

@@ -16,6 +16,7 @@ namespace CourseProject0_1
         {
             InitializeComponent();
         }
+
         private void ListPlayer_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (ListPlayer.SelectedIndex == -1)
@@ -481,6 +482,42 @@ namespace CourseProject0_1
             ListPlayer.SelectedIndex = 0;
             List2Player.SelectedIndex = 0;
             List2Player_SelectedIndexChanged(null, null);
+        }
+
+        private void ButtonEditPlayer_Click(object sender, EventArgs e)
+        {
+            TextBoxEditName.Visible = true;
+            TextBoxEditSurname.Visible = true;
+            TextBoxEditNickname.Visible = true;
+            TextBoxEditTeam.Visible = true;
+            TextBoxEditCity.Visible = true;
+            TextBoxEditCountry.Visible = true;
+            TextBoxEditCity.Visible = true;
+            TextBoxEditAge.Visible = true;
+            TextBoxEditRole.Visible = true;
+            TextBoxEditNumberGames.Visible = true;
+            TextBoxEditProcentWin.Visible = true;
+            TextBoxEditMMR.Visible = true;
+
+            ButtonEditPlayerSend.Visible = true;
+        }
+
+        private void ButtonEditPlayerSend_Click(object sender, EventArgs e)
+        {
+            TextBoxEditName.Visible = false;
+            TextBoxEditSurname.Visible = false;
+            TextBoxEditNickname.Visible = false;
+            TextBoxEditTeam.Visible = false;
+            TextBoxEditCity.Visible = false;
+            TextBoxEditCountry.Visible = false;
+            TextBoxEditCity.Visible = false;
+            TextBoxEditAge.Visible = false;
+            TextBoxEditRole.Visible = false;
+            TextBoxEditNumberGames.Visible = false;
+            TextBoxEditProcentWin.Visible = false;
+            TextBoxEditMMR.Visible = false;
+
+            ButtonEditPlayerSend.Visible = false;
         }
     }
 }

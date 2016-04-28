@@ -86,6 +86,21 @@
             this.LabelPentagonAngle3Value = new System.Windows.Forms.Label();
             this.LabelPentagonAngle4Value = new System.Windows.Forms.Label();
             this.LabelPentagonAngle5Value = new System.Windows.Forms.Label();
+            this.ButtonEditPlayer = new System.Windows.Forms.Button();
+            this.ButtonEdit2Player = new System.Windows.Forms.Button();
+            this.TextBoxEditTeam = new System.Windows.Forms.TextBox();
+            this.TextBoxEditCountry = new System.Windows.Forms.TextBox();
+            this.TextBoxEditCity = new System.Windows.Forms.TextBox();
+            this.TextBoxEditAge = new System.Windows.Forms.TextBox();
+            this.TextBoxEditRole = new System.Windows.Forms.TextBox();
+            this.TextBoxEditNumberGames = new System.Windows.Forms.TextBox();
+            this.TextBoxEditProcentWin = new System.Windows.Forms.TextBox();
+            this.TextBoxEditMMR = new System.Windows.Forms.TextBox();
+            this.ButtonEditPlayerSend = new System.Windows.Forms.Button();
+            this.TextBoxEditName = new System.Windows.Forms.TextBox();
+            this.TextBoxEditNickname = new System.Windows.Forms.TextBox();
+            this.TextBoxEditSurname = new System.Windows.Forms.TextBox();
+            this.ButtonEdit2PlayerSend = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.PictureBoxLogoGame)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.PictureSelectedPlayer)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.PictureBoxPentagon)).BeginInit();
@@ -115,7 +130,7 @@
             this.ListPlayer.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(49)))), ((int)(((byte)(49)))));
             this.ListPlayer.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.ListPlayer.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.ListPlayer.Font = new System.Drawing.Font("Univers", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.ListPlayer.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.ListPlayer.ForeColor = System.Drawing.Color.White;
             this.ListPlayer.FormattingEnabled = true;
             this.ListPlayer.HorizontalScrollbar = true;
@@ -141,11 +156,11 @@
             // 
             this.labelListPlayer.AutoSize = true;
             this.labelListPlayer.BackColor = System.Drawing.Color.Transparent;
-            this.labelListPlayer.Font = new System.Drawing.Font("Univers", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.labelListPlayer.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.labelListPlayer.ForeColor = System.Drawing.SystemColors.ControlLight;
             this.labelListPlayer.Location = new System.Drawing.Point(65, 21);
             this.labelListPlayer.Name = "labelListPlayer";
-            this.labelListPlayer.Size = new System.Drawing.Size(128, 20);
+            this.labelListPlayer.Size = new System.Drawing.Size(127, 20);
             this.labelListPlayer.TabIndex = 12;
             this.labelListPlayer.Text = "Список игроков";
             // 
@@ -163,11 +178,11 @@
             // 
             this.LabelNameSelectedPlayer.AutoSize = true;
             this.LabelNameSelectedPlayer.BackColor = System.Drawing.Color.Transparent;
-            this.LabelNameSelectedPlayer.Font = new System.Drawing.Font("Univers", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.LabelNameSelectedPlayer.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.LabelNameSelectedPlayer.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.LabelNameSelectedPlayer.Location = new System.Drawing.Point(399, 18);
             this.LabelNameSelectedPlayer.Name = "LabelNameSelectedPlayer";
-            this.LabelNameSelectedPlayer.Size = new System.Drawing.Size(41, 20);
+            this.LabelNameSelectedPlayer.Size = new System.Drawing.Size(40, 20);
             this.LabelNameSelectedPlayer.TabIndex = 14;
             this.LabelNameSelectedPlayer.Text = "Имя";
             // 
@@ -175,7 +190,7 @@
             // 
             this.LabelNickameSelectedPlayer.AutoSize = true;
             this.LabelNickameSelectedPlayer.BackColor = System.Drawing.Color.Transparent;
-            this.LabelNickameSelectedPlayer.Font = new System.Drawing.Font("Univers", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.LabelNickameSelectedPlayer.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.LabelNickameSelectedPlayer.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.LabelNickameSelectedPlayer.Location = new System.Drawing.Point(399, 56);
             this.LabelNickameSelectedPlayer.Name = "LabelNickameSelectedPlayer";
@@ -187,11 +202,11 @@
             // 
             this.LabelSurnameSelectedPlayer.AutoSize = true;
             this.LabelSurnameSelectedPlayer.BackColor = System.Drawing.Color.Transparent;
-            this.LabelSurnameSelectedPlayer.Font = new System.Drawing.Font("Univers", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.LabelSurnameSelectedPlayer.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.LabelSurnameSelectedPlayer.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.LabelSurnameSelectedPlayer.Location = new System.Drawing.Point(399, 92);
             this.LabelSurnameSelectedPlayer.Name = "LabelSurnameSelectedPlayer";
-            this.LabelSurnameSelectedPlayer.Size = new System.Drawing.Size(78, 20);
+            this.LabelSurnameSelectedPlayer.Size = new System.Drawing.Size(81, 20);
             this.LabelSurnameSelectedPlayer.TabIndex = 16;
             this.LabelSurnameSelectedPlayer.Text = "Фамилия";
             // 
@@ -199,11 +214,11 @@
             // 
             this.TextBoxSearch.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(49)))), ((int)(((byte)(49)))));
             this.TextBoxSearch.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.TextBoxSearch.Font = new System.Drawing.Font("Univers", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.TextBoxSearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.TextBoxSearch.ForeColor = System.Drawing.Color.White;
             this.TextBoxSearch.Location = new System.Drawing.Point(18, 671);
             this.TextBoxSearch.Name = "TextBoxSearch";
-            this.TextBoxSearch.Size = new System.Drawing.Size(228, 27);
+            this.TextBoxSearch.Size = new System.Drawing.Size(228, 26);
             this.TextBoxSearch.TabIndex = 17;
             this.TextBoxSearch.TextChanged += new System.EventHandler(this.TextBoxSearch_TextChanged);
             // 
@@ -211,11 +226,11 @@
             // 
             this.LabelTeam.AutoSize = true;
             this.LabelTeam.BackColor = System.Drawing.Color.Transparent;
-            this.LabelTeam.Font = new System.Drawing.Font("Univers", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.LabelTeam.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.LabelTeam.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.LabelTeam.Location = new System.Drawing.Point(275, 135);
             this.LabelTeam.Name = "LabelTeam";
-            this.LabelTeam.Size = new System.Drawing.Size(80, 20);
+            this.LabelTeam.Size = new System.Drawing.Size(81, 20);
             this.LabelTeam.TabIndex = 18;
             this.LabelTeam.Text = "Команда:";
             // 
@@ -223,11 +238,11 @@
             // 
             this.LabelCountry.AutoSize = true;
             this.LabelCountry.BackColor = System.Drawing.Color.Transparent;
-            this.LabelCountry.Font = new System.Drawing.Font("Univers", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.LabelCountry.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.LabelCountry.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.LabelCountry.Location = new System.Drawing.Point(275, 175);
             this.LabelCountry.Name = "LabelCountry";
-            this.LabelCountry.Size = new System.Drawing.Size(68, 20);
+            this.LabelCountry.Size = new System.Drawing.Size(69, 20);
             this.LabelCountry.TabIndex = 19;
             this.LabelCountry.Text = "Страна:";
             // 
@@ -235,11 +250,11 @@
             // 
             this.LabelCity.AutoSize = true;
             this.LabelCity.BackColor = System.Drawing.Color.Transparent;
-            this.LabelCity.Font = new System.Drawing.Font("Univers", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.LabelCity.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.LabelCity.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.LabelCity.Location = new System.Drawing.Point(275, 220);
             this.LabelCity.Name = "LabelCity";
-            this.LabelCity.Size = new System.Drawing.Size(57, 20);
+            this.LabelCity.Size = new System.Drawing.Size(60, 20);
             this.LabelCity.TabIndex = 20;
             this.LabelCity.Text = "Город:";
             // 
@@ -247,11 +262,11 @@
             // 
             this.LabelAge.AutoSize = true;
             this.LabelAge.BackColor = System.Drawing.Color.Transparent;
-            this.LabelAge.Font = new System.Drawing.Font("Univers", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.LabelAge.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.LabelAge.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.LabelAge.Location = new System.Drawing.Point(275, 263);
             this.LabelAge.Name = "LabelAge";
-            this.LabelAge.Size = new System.Drawing.Size(74, 20);
+            this.LabelAge.Size = new System.Drawing.Size(76, 20);
             this.LabelAge.TabIndex = 21;
             this.LabelAge.Text = "Возраст:";
             // 
@@ -259,11 +274,11 @@
             // 
             this.LabelRole.AutoSize = true;
             this.LabelRole.BackColor = System.Drawing.Color.Transparent;
-            this.LabelRole.Font = new System.Drawing.Font("Univers", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.LabelRole.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.LabelRole.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.LabelRole.Location = new System.Drawing.Point(275, 308);
             this.LabelRole.Name = "LabelRole";
-            this.LabelRole.Size = new System.Drawing.Size(49, 20);
+            this.LabelRole.Size = new System.Drawing.Size(51, 20);
             this.LabelRole.TabIndex = 22;
             this.LabelRole.Text = "Роль:";
             // 
@@ -271,7 +286,7 @@
             // 
             this.LabelSignature.AutoSize = true;
             this.LabelSignature.BackColor = System.Drawing.Color.Transparent;
-            this.LabelSignature.Font = new System.Drawing.Font("Univers", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.LabelSignature.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.LabelSignature.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.LabelSignature.Location = new System.Drawing.Point(275, 355);
             this.LabelSignature.Name = "LabelSignature";
@@ -283,11 +298,11 @@
             // 
             this.LabelNumberGames.AutoSize = true;
             this.LabelNumberGames.BackColor = System.Drawing.Color.Transparent;
-            this.LabelNumberGames.Font = new System.Drawing.Font("Univers", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.LabelNumberGames.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.LabelNumberGames.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.LabelNumberGames.Location = new System.Drawing.Point(278, 435);
             this.LabelNumberGames.Name = "LabelNumberGames";
-            this.LabelNumberGames.Size = new System.Drawing.Size(131, 20);
+            this.LabelNumberGames.Size = new System.Drawing.Size(133, 20);
             this.LabelNumberGames.TabIndex = 24;
             this.LabelNumberGames.Text = "Количество игр:";
             // 
@@ -295,11 +310,11 @@
             // 
             this.LabelProcentWin.AutoSize = true;
             this.LabelProcentWin.BackColor = System.Drawing.Color.Transparent;
-            this.LabelProcentWin.Font = new System.Drawing.Font("Univers", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.LabelProcentWin.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.LabelProcentWin.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.LabelProcentWin.Location = new System.Drawing.Point(278, 476);
             this.LabelProcentWin.Name = "LabelProcentWin";
-            this.LabelProcentWin.Size = new System.Drawing.Size(127, 20);
+            this.LabelProcentWin.Size = new System.Drawing.Size(130, 20);
             this.LabelProcentWin.TabIndex = 25;
             this.LabelProcentWin.Text = "Процент побед:";
             // 
@@ -307,11 +322,11 @@
             // 
             this.LabelMMR.AutoSize = true;
             this.LabelMMR.BackColor = System.Drawing.Color.Transparent;
-            this.LabelMMR.Font = new System.Drawing.Font("Univers", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.LabelMMR.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.LabelMMR.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.LabelMMR.Location = new System.Drawing.Point(278, 521);
             this.LabelMMR.Name = "LabelMMR";
-            this.LabelMMR.Size = new System.Drawing.Size(52, 20);
+            this.LabelMMR.Size = new System.Drawing.Size(51, 20);
             this.LabelMMR.TabIndex = 26;
             this.LabelMMR.Text = "MMR:";
             // 
@@ -339,11 +354,11 @@
             // 
             this.labelListPlayer2.AutoSize = true;
             this.labelListPlayer2.BackColor = System.Drawing.Color.Transparent;
-            this.labelListPlayer2.Font = new System.Drawing.Font("Univers", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.labelListPlayer2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.labelListPlayer2.ForeColor = System.Drawing.SystemColors.ControlLight;
             this.labelListPlayer2.Location = new System.Drawing.Point(1119, 21);
             this.labelListPlayer2.Name = "labelListPlayer2";
-            this.labelListPlayer2.Size = new System.Drawing.Size(128, 20);
+            this.labelListPlayer2.Size = new System.Drawing.Size(127, 20);
             this.labelListPlayer2.TabIndex = 31;
             this.labelListPlayer2.Text = "Список игроков";
             // 
@@ -351,11 +366,11 @@
             // 
             this.LabelSurnameSelectedPlayer2.AutoSize = true;
             this.LabelSurnameSelectedPlayer2.BackColor = System.Drawing.Color.Transparent;
-            this.LabelSurnameSelectedPlayer2.Font = new System.Drawing.Font("Univers", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.LabelSurnameSelectedPlayer2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.LabelSurnameSelectedPlayer2.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.LabelSurnameSelectedPlayer2.Location = new System.Drawing.Point(912, 95);
             this.LabelSurnameSelectedPlayer2.Name = "LabelSurnameSelectedPlayer2";
-            this.LabelSurnameSelectedPlayer2.Size = new System.Drawing.Size(78, 20);
+            this.LabelSurnameSelectedPlayer2.Size = new System.Drawing.Size(81, 20);
             this.LabelSurnameSelectedPlayer2.TabIndex = 34;
             this.LabelSurnameSelectedPlayer2.Text = "Фамилия";
             // 
@@ -363,7 +378,7 @@
             // 
             this.LabelNickameSelectedPlayer2.AutoSize = true;
             this.LabelNickameSelectedPlayer2.BackColor = System.Drawing.Color.Transparent;
-            this.LabelNickameSelectedPlayer2.Font = new System.Drawing.Font("Univers", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.LabelNickameSelectedPlayer2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.LabelNickameSelectedPlayer2.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.LabelNickameSelectedPlayer2.Location = new System.Drawing.Point(913, 59);
             this.LabelNickameSelectedPlayer2.Name = "LabelNickameSelectedPlayer2";
@@ -375,11 +390,11 @@
             // 
             this.LabelNameSelectedPlayer2.AutoSize = true;
             this.LabelNameSelectedPlayer2.BackColor = System.Drawing.Color.Transparent;
-            this.LabelNameSelectedPlayer2.Font = new System.Drawing.Font("Univers", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.LabelNameSelectedPlayer2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.LabelNameSelectedPlayer2.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.LabelNameSelectedPlayer2.Location = new System.Drawing.Point(912, 21);
             this.LabelNameSelectedPlayer2.Name = "LabelNameSelectedPlayer2";
-            this.LabelNameSelectedPlayer2.Size = new System.Drawing.Size(41, 20);
+            this.LabelNameSelectedPlayer2.Size = new System.Drawing.Size(40, 20);
             this.LabelNameSelectedPlayer2.TabIndex = 32;
             this.LabelNameSelectedPlayer2.Text = "Имя";
             // 
@@ -387,11 +402,11 @@
             // 
             this.TextBoxSearch2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(49)))), ((int)(((byte)(49)))));
             this.TextBoxSearch2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.TextBoxSearch2.Font = new System.Drawing.Font("Univers", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.TextBoxSearch2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.TextBoxSearch2.ForeColor = System.Drawing.Color.White;
             this.TextBoxSearch2.Location = new System.Drawing.Point(1074, 671);
             this.TextBoxSearch2.Name = "TextBoxSearch2";
-            this.TextBoxSearch2.Size = new System.Drawing.Size(228, 27);
+            this.TextBoxSearch2.Size = new System.Drawing.Size(228, 26);
             this.TextBoxSearch2.TabIndex = 45;
             this.TextBoxSearch2.TextChanged += new System.EventHandler(this.TextBoxSearch2_TextChanged);
             // 
@@ -400,7 +415,7 @@
             this.List2Player.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(49)))), ((int)(((byte)(49)))));
             this.List2Player.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.List2Player.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.List2Player.Font = new System.Drawing.Font("Univers", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.List2Player.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.List2Player.ForeColor = System.Drawing.Color.White;
             this.List2Player.FormattingEnabled = true;
             this.List2Player.HorizontalScrollbar = true;
@@ -416,7 +431,7 @@
             // 
             this.LabelSignatureAdd.AutoSize = true;
             this.LabelSignatureAdd.BackColor = System.Drawing.Color.Transparent;
-            this.LabelSignatureAdd.Font = new System.Drawing.Font("Univers", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.LabelSignatureAdd.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.LabelSignatureAdd.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.LabelSignatureAdd.Location = new System.Drawing.Point(278, 398);
             this.LabelSignatureAdd.Name = "LabelSignatureAdd";
@@ -427,7 +442,7 @@
             // 
             this.LabelSignatureAdd2.AutoSize = true;
             this.LabelSignatureAdd2.BackColor = System.Drawing.Color.Transparent;
-            this.LabelSignatureAdd2.Font = new System.Drawing.Font("Univers", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.LabelSignatureAdd2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.LabelSignatureAdd2.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.LabelSignatureAdd2.Location = new System.Drawing.Point(789, 398);
             this.LabelSignatureAdd2.Name = "LabelSignatureAdd2";
@@ -438,11 +453,11 @@
             // 
             this.LabelMMR2.AutoSize = true;
             this.LabelMMR2.BackColor = System.Drawing.Color.Transparent;
-            this.LabelMMR2.Font = new System.Drawing.Font("Univers", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.LabelMMR2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.LabelMMR2.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.LabelMMR2.Location = new System.Drawing.Point(786, 521);
             this.LabelMMR2.Name = "LabelMMR2";
-            this.LabelMMR2.Size = new System.Drawing.Size(52, 20);
+            this.LabelMMR2.Size = new System.Drawing.Size(51, 20);
             this.LabelMMR2.TabIndex = 58;
             this.LabelMMR2.Text = "MMR:";
             // 
@@ -450,11 +465,11 @@
             // 
             this.LabelProcentWin2.AutoSize = true;
             this.LabelProcentWin2.BackColor = System.Drawing.Color.Transparent;
-            this.LabelProcentWin2.Font = new System.Drawing.Font("Univers", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.LabelProcentWin2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.LabelProcentWin2.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.LabelProcentWin2.Location = new System.Drawing.Point(786, 476);
             this.LabelProcentWin2.Name = "LabelProcentWin2";
-            this.LabelProcentWin2.Size = new System.Drawing.Size(127, 20);
+            this.LabelProcentWin2.Size = new System.Drawing.Size(130, 20);
             this.LabelProcentWin2.TabIndex = 57;
             this.LabelProcentWin2.Text = "Процент побед:";
             // 
@@ -462,11 +477,11 @@
             // 
             this.LabelNumberGames2.AutoSize = true;
             this.LabelNumberGames2.BackColor = System.Drawing.Color.Transparent;
-            this.LabelNumberGames2.Font = new System.Drawing.Font("Univers", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.LabelNumberGames2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.LabelNumberGames2.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.LabelNumberGames2.Location = new System.Drawing.Point(786, 435);
             this.LabelNumberGames2.Name = "LabelNumberGames2";
-            this.LabelNumberGames2.Size = new System.Drawing.Size(131, 20);
+            this.LabelNumberGames2.Size = new System.Drawing.Size(133, 20);
             this.LabelNumberGames2.TabIndex = 56;
             this.LabelNumberGames2.Text = "Количество игр:";
             // 
@@ -474,7 +489,7 @@
             // 
             this.LabelSignature2.AutoSize = true;
             this.LabelSignature2.BackColor = System.Drawing.Color.Transparent;
-            this.LabelSignature2.Font = new System.Drawing.Font("Univers", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.LabelSignature2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.LabelSignature2.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.LabelSignature2.Location = new System.Drawing.Point(786, 355);
             this.LabelSignature2.Name = "LabelSignature2";
@@ -486,11 +501,11 @@
             // 
             this.LabelRole2.AutoSize = true;
             this.LabelRole2.BackColor = System.Drawing.Color.Transparent;
-            this.LabelRole2.Font = new System.Drawing.Font("Univers", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.LabelRole2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.LabelRole2.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.LabelRole2.Location = new System.Drawing.Point(786, 308);
             this.LabelRole2.Name = "LabelRole2";
-            this.LabelRole2.Size = new System.Drawing.Size(49, 20);
+            this.LabelRole2.Size = new System.Drawing.Size(51, 20);
             this.LabelRole2.TabIndex = 54;
             this.LabelRole2.Text = "Роль:";
             // 
@@ -498,11 +513,11 @@
             // 
             this.LabelAge2.AutoSize = true;
             this.LabelAge2.BackColor = System.Drawing.Color.Transparent;
-            this.LabelAge2.Font = new System.Drawing.Font("Univers", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.LabelAge2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.LabelAge2.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.LabelAge2.Location = new System.Drawing.Point(786, 263);
             this.LabelAge2.Name = "LabelAge2";
-            this.LabelAge2.Size = new System.Drawing.Size(74, 20);
+            this.LabelAge2.Size = new System.Drawing.Size(76, 20);
             this.LabelAge2.TabIndex = 53;
             this.LabelAge2.Text = "Возраст:";
             // 
@@ -510,11 +525,11 @@
             // 
             this.LabelCity2.AutoSize = true;
             this.LabelCity2.BackColor = System.Drawing.Color.Transparent;
-            this.LabelCity2.Font = new System.Drawing.Font("Univers", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.LabelCity2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.LabelCity2.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.LabelCity2.Location = new System.Drawing.Point(786, 220);
             this.LabelCity2.Name = "LabelCity2";
-            this.LabelCity2.Size = new System.Drawing.Size(57, 20);
+            this.LabelCity2.Size = new System.Drawing.Size(60, 20);
             this.LabelCity2.TabIndex = 52;
             this.LabelCity2.Text = "Город:";
             // 
@@ -522,11 +537,11 @@
             // 
             this.LabelCountry2.AutoSize = true;
             this.LabelCountry2.BackColor = System.Drawing.Color.Transparent;
-            this.LabelCountry2.Font = new System.Drawing.Font("Univers", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.LabelCountry2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.LabelCountry2.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.LabelCountry2.Location = new System.Drawing.Point(786, 175);
             this.LabelCountry2.Name = "LabelCountry2";
-            this.LabelCountry2.Size = new System.Drawing.Size(68, 20);
+            this.LabelCountry2.Size = new System.Drawing.Size(69, 20);
             this.LabelCountry2.TabIndex = 51;
             this.LabelCountry2.Text = "Страна:";
             // 
@@ -534,11 +549,11 @@
             // 
             this.LabelTeam2.AutoSize = true;
             this.LabelTeam2.BackColor = System.Drawing.Color.Transparent;
-            this.LabelTeam2.Font = new System.Drawing.Font("Univers", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.LabelTeam2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.LabelTeam2.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.LabelTeam2.Location = new System.Drawing.Point(786, 135);
             this.LabelTeam2.Name = "LabelTeam2";
-            this.LabelTeam2.Size = new System.Drawing.Size(80, 20);
+            this.LabelTeam2.Size = new System.Drawing.Size(81, 20);
             this.LabelTeam2.TabIndex = 50;
             this.LabelTeam2.Text = "Команда:";
             // 
@@ -546,7 +561,7 @@
             // 
             this.LabelPentagon.AutoSize = true;
             this.LabelPentagon.BackColor = System.Drawing.Color.Transparent;
-            this.LabelPentagon.Font = new System.Drawing.Font("Univers", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.LabelPentagon.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.LabelPentagon.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.LabelPentagon.Location = new System.Drawing.Point(596, 355);
             this.LabelPentagon.Name = "LabelPentagon";
@@ -557,7 +572,7 @@
             // 
             this.LabelPentagon2.AutoSize = true;
             this.LabelPentagon2.BackColor = System.Drawing.Color.Transparent;
-            this.LabelPentagon2.Font = new System.Drawing.Font("Univers", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.LabelPentagon2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.LabelPentagon2.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.LabelPentagon2.Location = new System.Drawing.Point(596, 384);
             this.LabelPentagon2.Name = "LabelPentagon2";
@@ -568,11 +583,11 @@
             // 
             this.LabelSearch.AutoSize = true;
             this.LabelSearch.BackColor = System.Drawing.Color.Transparent;
-            this.LabelSearch.Font = new System.Drawing.Font("Univers", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.LabelSearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.LabelSearch.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.LabelSearch.Location = new System.Drawing.Point(21, 645);
             this.LabelSearch.Name = "LabelSearch";
-            this.LabelSearch.Size = new System.Drawing.Size(61, 20);
+            this.LabelSearch.Size = new System.Drawing.Size(59, 20);
             this.LabelSearch.TabIndex = 65;
             this.LabelSearch.Text = "Поиск:";
             // 
@@ -580,11 +595,11 @@
             // 
             this.LabelSearch2.AutoSize = true;
             this.LabelSearch2.BackColor = System.Drawing.Color.Transparent;
-            this.LabelSearch2.Font = new System.Drawing.Font("Univers", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.LabelSearch2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.LabelSearch2.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.LabelSearch2.Location = new System.Drawing.Point(1075, 645);
             this.LabelSearch2.Name = "LabelSearch2";
-            this.LabelSearch2.Size = new System.Drawing.Size(61, 20);
+            this.LabelSearch2.Size = new System.Drawing.Size(59, 20);
             this.LabelSearch2.TabIndex = 66;
             this.LabelSearch2.Text = "Поиск:";
             // 
@@ -707,7 +722,7 @@
             // 
             this.LabelPentagonAngle1Value.AutoSize = true;
             this.LabelPentagonAngle1Value.BackColor = System.Drawing.Color.Transparent;
-            this.LabelPentagonAngle1Value.Font = new System.Drawing.Font("Univers", 12F);
+            this.LabelPentagonAngle1Value.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.LabelPentagonAngle1Value.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.LabelPentagonAngle1Value.Location = new System.Drawing.Point(595, 435);
             this.LabelPentagonAngle1Value.Name = "LabelPentagonAngle1Value";
@@ -719,11 +734,11 @@
             // 
             this.LabelPentagonAngle2Value.AutoSize = true;
             this.LabelPentagonAngle2Value.BackColor = System.Drawing.Color.Transparent;
-            this.LabelPentagonAngle2Value.Font = new System.Drawing.Font("Univers", 12F);
+            this.LabelPentagonAngle2Value.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.LabelPentagonAngle2Value.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.LabelPentagonAngle2Value.Location = new System.Drawing.Point(595, 459);
             this.LabelPentagonAngle2Value.Name = "LabelPentagonAngle2Value";
-            this.LabelPentagonAngle2Value.Size = new System.Drawing.Size(109, 20);
+            this.LabelPentagonAngle2Value.Size = new System.Drawing.Size(107, 20);
             this.LabelPentagonAngle2Value.TabIndex = 79;
             this.LabelPentagonAngle2Value.Text = "2 - Сражения";
             // 
@@ -731,11 +746,11 @@
             // 
             this.LabelPentagonAngle3Value.AutoSize = true;
             this.LabelPentagonAngle3Value.BackColor = System.Drawing.Color.Transparent;
-            this.LabelPentagonAngle3Value.Font = new System.Drawing.Font("Univers", 12F);
+            this.LabelPentagonAngle3Value.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.LabelPentagonAngle3Value.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.LabelPentagonAngle3Value.Location = new System.Drawing.Point(594, 485);
             this.LabelPentagonAngle3Value.Name = "LabelPentagonAngle3Value";
-            this.LabelPentagonAngle3Value.Size = new System.Drawing.Size(146, 20);
+            this.LabelPentagonAngle3Value.Size = new System.Drawing.Size(148, 20);
             this.LabelPentagonAngle3Value.TabIndex = 80;
             this.LabelPentagonAngle3Value.Text = "3 - Добыча золота";
             // 
@@ -743,11 +758,11 @@
             // 
             this.LabelPentagonAngle4Value.AutoSize = true;
             this.LabelPentagonAngle4Value.BackColor = System.Drawing.Color.Transparent;
-            this.LabelPentagonAngle4Value.Font = new System.Drawing.Font("Univers", 12F);
+            this.LabelPentagonAngle4Value.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.LabelPentagonAngle4Value.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.LabelPentagonAngle4Value.Location = new System.Drawing.Point(595, 511);
             this.LabelPentagonAngle4Value.Name = "LabelPentagonAngle4Value";
-            this.LabelPentagonAngle4Value.Size = new System.Drawing.Size(117, 20);
+            this.LabelPentagonAngle4Value.Size = new System.Drawing.Size(120, 20);
             this.LabelPentagonAngle4Value.TabIndex = 81;
             this.LabelPentagonAngle4Value.Text = "4 - Поддержка";
             // 
@@ -755,13 +770,194 @@
             // 
             this.LabelPentagonAngle5Value.AutoSize = true;
             this.LabelPentagonAngle5Value.BackColor = System.Drawing.Color.Transparent;
-            this.LabelPentagonAngle5Value.Font = new System.Drawing.Font("Univers", 12F);
+            this.LabelPentagonAngle5Value.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.LabelPentagonAngle5Value.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.LabelPentagonAngle5Value.Location = new System.Drawing.Point(595, 537);
             this.LabelPentagonAngle5Value.Name = "LabelPentagonAngle5Value";
-            this.LabelPentagonAngle5Value.Size = new System.Drawing.Size(81, 20);
+            this.LabelPentagonAngle5Value.Size = new System.Drawing.Size(80, 20);
             this.LabelPentagonAngle5Value.TabIndex = 82;
             this.LabelPentagonAngle5Value.Text = "5 - Осада";
+            // 
+            // ButtonEditPlayer
+            // 
+            this.ButtonEditPlayer.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(49)))), ((int)(((byte)(49)))));
+            this.ButtonEditPlayer.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.ButtonEditPlayer.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.ButtonEditPlayer.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.ButtonEditPlayer.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.ButtonEditPlayer.Location = new System.Drawing.Point(279, 601);
+            this.ButtonEditPlayer.Name = "ButtonEditPlayer";
+            this.ButtonEditPlayer.Size = new System.Drawing.Size(132, 38);
+            this.ButtonEditPlayer.TabIndex = 83;
+            this.ButtonEditPlayer.Text = "Редактировать";
+            this.ButtonEditPlayer.UseVisualStyleBackColor = false;
+            this.ButtonEditPlayer.Click += new System.EventHandler(this.ButtonEditPlayer_Click);
+            // 
+            // ButtonEdit2Player
+            // 
+            this.ButtonEdit2Player.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(49)))), ((int)(((byte)(49)))));
+            this.ButtonEdit2Player.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.ButtonEdit2Player.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.ButtonEdit2Player.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.ButtonEdit2Player.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.ButtonEdit2Player.Location = new System.Drawing.Point(791, 600);
+            this.ButtonEdit2Player.Name = "ButtonEdit2Player";
+            this.ButtonEdit2Player.Size = new System.Drawing.Size(132, 38);
+            this.ButtonEdit2Player.TabIndex = 84;
+            this.ButtonEdit2Player.Text = "Редактировать";
+            this.ButtonEdit2Player.UseVisualStyleBackColor = false;
+            // 
+            // TextBoxEditTeam
+            // 
+            this.TextBoxEditTeam.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(49)))), ((int)(((byte)(49)))));
+            this.TextBoxEditTeam.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.TextBoxEditTeam.ForeColor = System.Drawing.Color.White;
+            this.TextBoxEditTeam.Location = new System.Drawing.Point(355, 136);
+            this.TextBoxEditTeam.Name = "TextBoxEditTeam";
+            this.TextBoxEditTeam.Size = new System.Drawing.Size(158, 20);
+            this.TextBoxEditTeam.TabIndex = 85;
+            this.TextBoxEditTeam.Visible = false;
+            // 
+            // TextBoxEditCountry
+            // 
+            this.TextBoxEditCountry.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(49)))), ((int)(((byte)(49)))));
+            this.TextBoxEditCountry.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.TextBoxEditCountry.ForeColor = System.Drawing.Color.White;
+            this.TextBoxEditCountry.Location = new System.Drawing.Point(342, 176);
+            this.TextBoxEditCountry.Name = "TextBoxEditCountry";
+            this.TextBoxEditCountry.Size = new System.Drawing.Size(158, 20);
+            this.TextBoxEditCountry.TabIndex = 86;
+            this.TextBoxEditCountry.Visible = false;
+            // 
+            // TextBoxEditCity
+            // 
+            this.TextBoxEditCity.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(49)))), ((int)(((byte)(49)))));
+            this.TextBoxEditCity.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.TextBoxEditCity.ForeColor = System.Drawing.Color.White;
+            this.TextBoxEditCity.Location = new System.Drawing.Point(334, 221);
+            this.TextBoxEditCity.Name = "TextBoxEditCity";
+            this.TextBoxEditCity.Size = new System.Drawing.Size(158, 20);
+            this.TextBoxEditCity.TabIndex = 87;
+            this.TextBoxEditCity.Visible = false;
+            // 
+            // TextBoxEditAge
+            // 
+            this.TextBoxEditAge.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(49)))), ((int)(((byte)(49)))));
+            this.TextBoxEditAge.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.TextBoxEditAge.ForeColor = System.Drawing.Color.White;
+            this.TextBoxEditAge.Location = new System.Drawing.Point(350, 264);
+            this.TextBoxEditAge.Name = "TextBoxEditAge";
+            this.TextBoxEditAge.Size = new System.Drawing.Size(158, 20);
+            this.TextBoxEditAge.TabIndex = 88;
+            this.TextBoxEditAge.Visible = false;
+            // 
+            // TextBoxEditRole
+            // 
+            this.TextBoxEditRole.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(49)))), ((int)(((byte)(49)))));
+            this.TextBoxEditRole.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.TextBoxEditRole.ForeColor = System.Drawing.Color.White;
+            this.TextBoxEditRole.Location = new System.Drawing.Point(326, 309);
+            this.TextBoxEditRole.Name = "TextBoxEditRole";
+            this.TextBoxEditRole.Size = new System.Drawing.Size(158, 20);
+            this.TextBoxEditRole.TabIndex = 89;
+            this.TextBoxEditRole.Visible = false;
+            // 
+            // TextBoxEditNumberGames
+            // 
+            this.TextBoxEditNumberGames.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(49)))), ((int)(((byte)(49)))));
+            this.TextBoxEditNumberGames.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.TextBoxEditNumberGames.ForeColor = System.Drawing.Color.White;
+            this.TextBoxEditNumberGames.Location = new System.Drawing.Point(411, 436);
+            this.TextBoxEditNumberGames.Name = "TextBoxEditNumberGames";
+            this.TextBoxEditNumberGames.Size = new System.Drawing.Size(158, 20);
+            this.TextBoxEditNumberGames.TabIndex = 90;
+            this.TextBoxEditNumberGames.Visible = false;
+            // 
+            // TextBoxEditProcentWin
+            // 
+            this.TextBoxEditProcentWin.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(49)))), ((int)(((byte)(49)))));
+            this.TextBoxEditProcentWin.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.TextBoxEditProcentWin.ForeColor = System.Drawing.Color.White;
+            this.TextBoxEditProcentWin.Location = new System.Drawing.Point(407, 478);
+            this.TextBoxEditProcentWin.Name = "TextBoxEditProcentWin";
+            this.TextBoxEditProcentWin.Size = new System.Drawing.Size(158, 20);
+            this.TextBoxEditProcentWin.TabIndex = 91;
+            this.TextBoxEditProcentWin.Visible = false;
+            // 
+            // TextBoxEditMMR
+            // 
+            this.TextBoxEditMMR.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(49)))), ((int)(((byte)(49)))));
+            this.TextBoxEditMMR.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.TextBoxEditMMR.ForeColor = System.Drawing.Color.White;
+            this.TextBoxEditMMR.Location = new System.Drawing.Point(328, 522);
+            this.TextBoxEditMMR.Name = "TextBoxEditMMR";
+            this.TextBoxEditMMR.Size = new System.Drawing.Size(158, 20);
+            this.TextBoxEditMMR.TabIndex = 92;
+            this.TextBoxEditMMR.Visible = false;
+            // 
+            // ButtonEditPlayerSend
+            // 
+            this.ButtonEditPlayerSend.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(49)))), ((int)(((byte)(49)))));
+            this.ButtonEditPlayerSend.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.ButtonEditPlayerSend.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.ButtonEditPlayerSend.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.ButtonEditPlayerSend.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.ButtonEditPlayerSend.Location = new System.Drawing.Point(424, 601);
+            this.ButtonEditPlayerSend.Name = "ButtonEditPlayerSend";
+            this.ButtonEditPlayerSend.Size = new System.Drawing.Size(132, 38);
+            this.ButtonEditPlayerSend.TabIndex = 93;
+            this.ButtonEditPlayerSend.Text = "Отправить";
+            this.ButtonEditPlayerSend.UseVisualStyleBackColor = false;
+            this.ButtonEditPlayerSend.Visible = false;
+            this.ButtonEditPlayerSend.Click += new System.EventHandler(this.ButtonEditPlayerSend_Click);
+            // 
+            // TextBoxEditName
+            // 
+            this.TextBoxEditName.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(49)))), ((int)(((byte)(49)))));
+            this.TextBoxEditName.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.TextBoxEditName.ForeColor = System.Drawing.Color.White;
+            this.TextBoxEditName.Location = new System.Drawing.Point(403, 18);
+            this.TextBoxEditName.Name = "TextBoxEditName";
+            this.TextBoxEditName.Size = new System.Drawing.Size(158, 20);
+            this.TextBoxEditName.TabIndex = 94;
+            this.TextBoxEditName.Visible = false;
+            // 
+            // TextBoxEditNickname
+            // 
+            this.TextBoxEditNickname.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(49)))), ((int)(((byte)(49)))));
+            this.TextBoxEditNickname.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.TextBoxEditNickname.ForeColor = System.Drawing.Color.White;
+            this.TextBoxEditNickname.Location = new System.Drawing.Point(403, 55);
+            this.TextBoxEditNickname.Name = "TextBoxEditNickname";
+            this.TextBoxEditNickname.Size = new System.Drawing.Size(158, 20);
+            this.TextBoxEditNickname.TabIndex = 95;
+            this.TextBoxEditNickname.Visible = false;
+            // 
+            // TextBoxEditSurname
+            // 
+            this.TextBoxEditSurname.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(49)))), ((int)(((byte)(49)))));
+            this.TextBoxEditSurname.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.TextBoxEditSurname.ForeColor = System.Drawing.Color.White;
+            this.TextBoxEditSurname.Location = new System.Drawing.Point(403, 92);
+            this.TextBoxEditSurname.Name = "TextBoxEditSurname";
+            this.TextBoxEditSurname.Size = new System.Drawing.Size(158, 20);
+            this.TextBoxEditSurname.TabIndex = 96;
+            this.TextBoxEditSurname.Visible = false;
+            // 
+            // ButtonEdit2PlayerSend
+            // 
+            this.ButtonEdit2PlayerSend.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(49)))), ((int)(((byte)(49)))));
+            this.ButtonEdit2PlayerSend.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.ButtonEdit2PlayerSend.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.ButtonEdit2PlayerSend.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.ButtonEdit2PlayerSend.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.ButtonEdit2PlayerSend.Location = new System.Drawing.Point(936, 600);
+            this.ButtonEdit2PlayerSend.Name = "ButtonEdit2PlayerSend";
+            this.ButtonEdit2PlayerSend.Size = new System.Drawing.Size(132, 38);
+            this.ButtonEdit2PlayerSend.TabIndex = 97;
+            this.ButtonEdit2PlayerSend.Text = "Отправить";
+            this.ButtonEdit2PlayerSend.UseVisualStyleBackColor = false;
+            this.ButtonEdit2PlayerSend.Visible = false;
             // 
             // FormListPlayer
             // 
@@ -769,6 +965,21 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.ClientSize = new System.Drawing.Size(1322, 721);
+            this.Controls.Add(this.ButtonEdit2PlayerSend);
+            this.Controls.Add(this.TextBoxEditSurname);
+            this.Controls.Add(this.TextBoxEditNickname);
+            this.Controls.Add(this.TextBoxEditName);
+            this.Controls.Add(this.ButtonEditPlayerSend);
+            this.Controls.Add(this.TextBoxEditMMR);
+            this.Controls.Add(this.TextBoxEditProcentWin);
+            this.Controls.Add(this.TextBoxEditNumberGames);
+            this.Controls.Add(this.TextBoxEditRole);
+            this.Controls.Add(this.TextBoxEditAge);
+            this.Controls.Add(this.TextBoxEditCity);
+            this.Controls.Add(this.TextBoxEditCountry);
+            this.Controls.Add(this.TextBoxEditTeam);
+            this.Controls.Add(this.ButtonEdit2Player);
+            this.Controls.Add(this.ButtonEditPlayer);
             this.Controls.Add(this.LabelPentagonAngle5Value);
             this.Controls.Add(this.LabelPentagonAngle4Value);
             this.Controls.Add(this.LabelPentagonAngle3Value);
@@ -906,5 +1117,20 @@
         private System.Windows.Forms.Label LabelPentagonAngle3Value;
         private System.Windows.Forms.Label LabelPentagonAngle4Value;
         private System.Windows.Forms.Label LabelPentagonAngle5Value;
+        private System.Windows.Forms.Button ButtonEditPlayer;
+        private System.Windows.Forms.Button ButtonEdit2Player;
+        public System.Windows.Forms.TextBox TextBoxEditTeam;
+        public System.Windows.Forms.TextBox TextBoxEditCountry;
+        public System.Windows.Forms.TextBox TextBoxEditCity;
+        public System.Windows.Forms.TextBox TextBoxEditAge;
+        public System.Windows.Forms.TextBox TextBoxEditRole;
+        public System.Windows.Forms.TextBox TextBoxEditNumberGames;
+        public System.Windows.Forms.TextBox TextBoxEditProcentWin;
+        public System.Windows.Forms.TextBox TextBoxEditMMR;
+        private System.Windows.Forms.Button ButtonEditPlayerSend;
+        public System.Windows.Forms.TextBox TextBoxEditName;
+        public System.Windows.Forms.TextBox TextBoxEditNickname;
+        public System.Windows.Forms.TextBox TextBoxEditSurname;
+        private System.Windows.Forms.Button ButtonEdit2PlayerSend;
     }
 }
