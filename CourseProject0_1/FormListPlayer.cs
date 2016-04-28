@@ -18,6 +18,10 @@ namespace CourseProject0_1
         }
         private void SelectPlayerInDoat2List(object sender, EventArgs e)
         {
+            if (ListDota2Player.SelectedIndex == -1)
+            {
+                ListDota2Player.SelectedIndex = 0;
+            }
             string SelectedPlayerMajorInfo = (string)ListDota2Player.SelectedItem;
             string SelectedPlayerName = "";
             string SelectedPlayerNickname = "";
@@ -231,6 +235,10 @@ namespace CourseProject0_1
 
         private void ListDota2Player2_SelectedIndexChanged(object sender, EventArgs e)
         {
+            if (ListDota2Player2.SelectedIndex == -1)
+            {
+                ListDota2Player2.SelectedIndex = 0;
+            }
             string SelectedPlayer2MajorInfo = (string)ListDota2Player2.SelectedItem;
             string SelectedPlayer2Name = "";
             string SelectedPlayer2Nickname = "";

@@ -34,6 +34,8 @@
             this.labelDota2 = new System.Windows.Forms.Label();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
+            this.ListDota2TopPlayer = new System.Windows.Forms.ListBox();
+            this.ListCSGOTopPlayer = new System.Windows.Forms.ListBox();
             ((System.ComponentModel.ISupportInitialize)(this.PictureBoxPlayers)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
@@ -43,7 +45,7 @@
             // 
             this.PictureBoxPlayers.BackColor = System.Drawing.Color.Transparent;
             this.PictureBoxPlayers.Image = global::CourseProject0_1.Properties.Resources._54d10b;
-            this.PictureBoxPlayers.Location = new System.Drawing.Point(526, 12);
+            this.PictureBoxPlayers.Location = new System.Drawing.Point(513, 12);
             this.PictureBoxPlayers.Name = "PictureBoxPlayers";
             this.PictureBoxPlayers.Size = new System.Drawing.Size(325, 282);
             this.PictureBoxPlayers.TabIndex = 0;
@@ -56,7 +58,7 @@
             this.labelCSGO.Cursor = System.Windows.Forms.Cursors.Hand;
             this.labelCSGO.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.labelCSGO.ForeColor = System.Drawing.SystemColors.ControlLight;
-            this.labelCSGO.Location = new System.Drawing.Point(1092, 596);
+            this.labelCSGO.Location = new System.Drawing.Point(1041, 295);
             this.labelCSGO.Name = "labelCSGO";
             this.labelCSGO.Size = new System.Drawing.Size(83, 26);
             this.labelCSGO.TabIndex = 7;
@@ -70,7 +72,7 @@
             this.labelDota2.Cursor = System.Windows.Forms.Cursors.Hand;
             this.labelDota2.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.labelDota2.ForeColor = System.Drawing.SystemColors.ControlLight;
-            this.labelDota2.Location = new System.Drawing.Point(195, 584);
+            this.labelDota2.Location = new System.Drawing.Point(217, 283);
             this.labelDota2.Name = "labelDota2";
             this.labelDota2.Size = new System.Drawing.Size(76, 26);
             this.labelDota2.TabIndex = 6;
@@ -82,7 +84,7 @@
             this.pictureBox2.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox2.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pictureBox2.Image = global::CourseProject0_1.Properties.Resources.dota2logo100;
-            this.pictureBox2.Location = new System.Drawing.Point(182, 480);
+            this.pictureBox2.Location = new System.Drawing.Point(204, 179);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(102, 101);
             this.pictureBox2.TabIndex = 8;
@@ -94,12 +96,40 @@
             this.pictureBox3.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox3.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pictureBox3.Image = global::CourseProject0_1.Properties.Resources.csgologo100;
-            this.pictureBox3.Location = new System.Drawing.Point(1018, 480);
+            this.pictureBox3.Location = new System.Drawing.Point(967, 179);
             this.pictureBox3.Name = "pictureBox3";
             this.pictureBox3.Size = new System.Drawing.Size(235, 113);
             this.pictureBox3.TabIndex = 9;
             this.pictureBox3.TabStop = false;
             this.pictureBox3.Click += new System.EventHandler(this.labelCSGO_Click);
+            // 
+            // ListDota2TopPlayer
+            // 
+            this.ListDota2TopPlayer.BackColor = System.Drawing.Color.White;
+            this.ListDota2TopPlayer.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.ListDota2TopPlayer.Font = new System.Drawing.Font("Univers", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.ListDota2TopPlayer.ForeColor = System.Drawing.SystemColors.InfoText;
+            this.ListDota2TopPlayer.FormattingEnabled = true;
+            this.ListDota2TopPlayer.HorizontalScrollbar = true;
+            this.ListDota2TopPlayer.ItemHeight = 20;
+            this.ListDota2TopPlayer.Location = new System.Drawing.Point(45, 336);
+            this.ListDota2TopPlayer.Name = "ListDota2TopPlayer";
+            this.ListDota2TopPlayer.Size = new System.Drawing.Size(422, 204);
+            this.ListDota2TopPlayer.TabIndex = 10;
+            // 
+            // ListCSGOTopPlayer
+            // 
+            this.ListCSGOTopPlayer.BackColor = System.Drawing.Color.White;
+            this.ListCSGOTopPlayer.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.ListCSGOTopPlayer.Font = new System.Drawing.Font("Univers", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.ListCSGOTopPlayer.ForeColor = System.Drawing.SystemColors.InfoText;
+            this.ListCSGOTopPlayer.FormattingEnabled = true;
+            this.ListCSGOTopPlayer.HorizontalScrollbar = true;
+            this.ListCSGOTopPlayer.ItemHeight = 20;
+            this.ListCSGOTopPlayer.Location = new System.Drawing.Point(861, 336);
+            this.ListCSGOTopPlayer.Name = "ListCSGOTopPlayer";
+            this.ListCSGOTopPlayer.Size = new System.Drawing.Size(422, 204);
+            this.ListCSGOTopPlayer.TabIndex = 11;
             // 
             // MainForm
             // 
@@ -107,7 +137,9 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Gray;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
-            this.ClientSize = new System.Drawing.Size(1350, 729);
+            this.ClientSize = new System.Drawing.Size(1322, 721);
+            this.Controls.Add(this.ListCSGOTopPlayer);
+            this.Controls.Add(this.ListDota2TopPlayer);
             this.Controls.Add(this.pictureBox3);
             this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.labelCSGO);
@@ -132,6 +164,8 @@
         private System.Windows.Forms.Label labelDota2;
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.PictureBox pictureBox3;
+        public System.Windows.Forms.ListBox ListDota2TopPlayer;
+        public System.Windows.Forms.ListBox ListCSGOTopPlayer;
     }
 }
 

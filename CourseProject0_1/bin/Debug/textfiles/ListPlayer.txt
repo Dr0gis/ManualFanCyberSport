@@ -91,7 +91,7 @@
 		Signature = [Batrider, Dark Seer, Clinkz]
 		NumberGames = 1313
 		ProcentWinGames = 60,40
-		MMR = 6658
+		MMR = 7134
 		Pentagon = [6, 7, 7, 3, 6]
 		PhotoProfile = Funnik.png
 	*
@@ -110,6 +110,70 @@
 		MMR = 8624
 		Pentagon = [5, 5, 9, 2, 7]
 		PhotoProfile = Illidan.png
+	*
+		Name = Artur
+		Nickname = Goblak
+		Surname = Kostenko
+		Team = Team Spirit
+		Country = Ukraine
+		City = Kiev
+		Nationality = Ukraine
+		DateBirth = 04.12.1988
+		Role = Support
+		Signature = [Chen, Treant Protector, Bane]
+		NumberGames = 1289
+		ProcentWinGames = 55,55
+		MMR = 6324
+		Pentagon = [6, 5, 2, 8, 6]
+		PhotoProfile = Goblak.png
+	*
+		Name = Andrey
+		Nickname = ALWAYSWANNAFLY
+		Surname = Bondarenko
+		Team = Team Spirit
+		Country = Ukraine
+		City = Kiev
+		Nationality = Ukraine
+		DateBirth = 06.03.1991
+		Role = Support
+		Signature = [Ancient Apparition, Bane, Dazzle]
+		NumberGames = 1247
+		ProcentWinGames = 60,71
+		MMR = 6877
+		Pentagon = [7, 6, 3, 7, 5]
+		PhotoProfile = ALWAYSWANNAFLY.png
+	*
+		Name = Bogdan
+		Nickname = Iceberg
+		Surname = Vasilenko
+		Team = Team Spirit
+		Country = Ukraine
+		City = Kiev
+		Nationality = Ukraine
+		DateBirth = 13.04.1997
+		Role = Solo Middle
+		Signature = [Invoker, Zeus, Queen of Pain]
+		NumberGames = 231
+		ProcentWinGames = 54,98
+		MMR = 7164
+		Pentagon = [4, 7, 6, 2, 6]
+		PhotoProfile = Iceberg.png
+	*
+		Name = Andrey
+		Nickname = Afoninje
+		Surname = Afonin
+		Team = Polarity
+		Country = Russia
+		City = Sankt-Peterburg
+		Nationality = Russia
+		DateBirth = 27.09.1996
+		Role = Solo Middle
+		Signature = [Shadow Fiend, Puck, Zeus]
+		NumberGames = 375
+		ProcentWinGames = 52,53
+		MMR = 7879
+		Pentagon = [5, 8, 7, 2, 7]
+		PhotoProfile = Afoninje.png
 @
 CSGO:
 		Name = Egor

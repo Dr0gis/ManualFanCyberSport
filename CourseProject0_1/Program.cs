@@ -587,6 +587,15 @@ namespace CourseProject0_1
             rez += PhotoProfile;
             return rez;
         }
+        public string MMRInfo()
+        {
+            string rez = "";
+            rez += MMR + ' ';
+            rez += Name + ' ';
+            rez += Nickname + ' ';
+            rez += Surname;
+            return rez;
+        }
     }
 
     class Dota2Player : Player

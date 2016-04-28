@@ -19,7 +19,20 @@ namespace CourseProject0_1
 
         private void MainFormLoad(object sender, EventArgs e)
         {
+            List<Player> ListTopPlayersDota2 = GlobalVariables.ListPlayerInDiscypline[0];
+            List<Player> ListTopPlayersCSGO = GlobalVariables.ListPlayerInDiscypline[1];
 
+            ListTopPlayersDota2.Sort(delegate (Player a, Player b) { return b.MMR.CompareTo(a.MMR); });
+            for (int i = 0; i < (ListTopPlayersDota2.Count() < 10 ? ListTopPlayersDota2.Count() : 10); i++)
+            {
+                ListDota2TopPlayer.Items.Add(ListTopPlayersDota2[i].MMRInfo());
+            }
+
+            ListTopPlayersCSGO.Sort(delegate (Player a, Player b) { return b.MMR.CompareTo(a.MMR); });
+            for (int i = 0; i < (ListTopPlayersCSGO.Count() < 10 ? ListTopPlayersCSGO.Count() : 10); i++)
+            {
+                ListCSGOTopPlayer.Items.Add(ListTopPlayersCSGO[i].MMRInfo());
+            }
         }
 
         private void labelDota2_Click(object sender, EventArgs e)
@@ -43,6 +56,8 @@ namespace CourseProject0_1
                 FormDota2.ListDota2Player.Items.Add(player.MajorInfo());
                 FormDota2.ListDota2Player2.Items.Add(player.MajorInfo());
             }
+            //FormDota2.ListDota2Player.SelectedIndex = 0;
+            //FormDota2.ListDota2Player2.SelectedIndex = 0;
         }
 
         private void labelCSGO_Click(object sender, EventArgs e)
@@ -66,6 +81,8 @@ namespace CourseProject0_1
                 FormCSGO.ListDota2Player.Items.Add(player.MajorInfo());
                 FormCSGO.ListDota2Player2.Items.Add(player.MajorInfo());
             }
+            //FormCSGO.ListDota2Player.SelectedIndex = 0;
+            //FormCSGO.ListDota2Player2.SelectedIndex = 0;
         }
     }
 }
