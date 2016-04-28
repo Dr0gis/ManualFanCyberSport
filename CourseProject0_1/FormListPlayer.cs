@@ -34,6 +34,9 @@ namespace CourseProject0_1
             string SelectedPlayerMMR = "";
             int[] SelectedPlayerPentagon = new int[5];
 
+            string SelectedPlayer2MajorInfo = (string)ListDota2Player2.SelectedItem;
+            int[] SelectedPlayer2Pentagon = new int[5];
+
             string SelectedPlayerPhotoProfile = "";
             foreach (List<Player> ListPlayer in GlobalVariables.ListPlayerInDiscypline)
             {
@@ -60,6 +63,10 @@ namespace CourseProject0_1
 
                         SelectedPlayerPhotoProfile = Player.PhotoProfile;
                     }
+                    if (Player.MajorInfo() == SelectedPlayer2MajorInfo)
+                    {
+                        SelectedPlayer2Pentagon = Player.Pentagon;
+                    }
                 }
             }
             //textBoxExample.Text = SelectedPlayerAllInfo;
@@ -76,6 +83,15 @@ namespace CourseProject0_1
             LabelNumberGames.Text = "Количество игр: " + SelectedPlayerNumberGames;
             LabelProcentWin.Text = "Процент побед: " + SelectedPlayerProcentWin;
             LabelMMR.Text = "MMR: " + SelectedPlayerMMR;
+
+            LabelPentagon.ForeColor = Color.Red;
+            LabelPentagon2.ForeColor = Color.Aqua;
+            LabelPentagon.Text = string.Join(", ", SelectedPlayerPentagon);
+            if (string.Join(" ,", SelectedPlayer2Pentagon) == string.Join(" ,", SelectedPlayerPentagon))
+            {
+                LabelPentagon2.ForeColor = Color.DarkGray;
+                LabelPentagon.ForeColor = Color.DarkGray;
+            }
             /*textBoxExample.Text = string.Join("; ", GlobalVariables.ArrayCoordsPentagons[0]);
             textBoxExample.Text += "\n";
             textBoxExample.Text += string.Join("; ", GlobalVariables.ArrayCoordsPentagons[1]);
@@ -97,9 +113,22 @@ namespace CourseProject0_1
             textBoxExample.Text += string.Join("; ", GlobalVariables.ArrayCoordsPentagons[9]);*/
 
             // Прорисовка отрезков сторон пятиугольника игрока
-            PictureBoxPentagon.Refresh();
-            GlobalVariables.DrawindPentagonPlayer(PictureBoxPentagon, SelectedPlayerPentagon);
-
+            if (GlobalVariables.CheckOnRefreshPicturePentagonRight == 0 && GlobalVariables.CheckOnRefreshPicturePentagonLeft == 1)
+            {
+                PictureBoxPentagon.Refresh();
+            }
+            if (GlobalVariables.CheckOnRefreshPicturePentagonRight == 1 && GlobalVariables.CheckOnRefreshPicturePentagonLeft == 1)
+            {
+                PictureBoxPentagon.Refresh();
+                GlobalVariables.DrawingPentagonPlayer(PictureBoxPentagon, SelectedPlayer2Pentagon, Pens.Aqua);
+                GlobalVariables.CheckOnRefreshPicturePentagonRight = 1;
+            }
+            GlobalVariables.DrawingPentagonPlayer(PictureBoxPentagon, SelectedPlayerPentagon, Pens.Red);
+            GlobalVariables.CheckOnRefreshPicturePentagonLeft = 1;
+            if (string.Join(" ,", SelectedPlayer2Pentagon) == string.Join(" ,", SelectedPlayerPentagon))
+            {
+                GlobalVariables.DrawingPentagonPlayer(PictureBoxPentagon, SelectedPlayerPentagon, Pens.DarkGray);
+            }
 
             Bitmap tempImage = new Bitmap(Environment.CurrentDirectory + @"\image\" + SelectedPlayerPhotoProfile, true);
             PictureSelectedPlayer.Image = tempImage;
@@ -112,6 +141,8 @@ namespace CourseProject0_1
 
         private void PictureBoxPentagon_Paint(object sender, PaintEventArgs e)
         {
+            GlobalVariables.CheckOnRefreshPicturePentagonLeft = 0;
+            GlobalVariables.CheckOnRefreshPicturePentagonRight = 0;
             float[][] ArrayCoordsPentagons = new float[10][];
             Graphics g = e.Graphics;
             float kooficient = 10F;
@@ -164,6 +195,102 @@ namespace CourseProject0_1
             g.DrawLine(Pens.Black, 109.5F, 97.7F, 195, 77);
             g.DrawLine(Pens.Black, 105.8F, 109.1F, 158, 191);
             g.DrawLine(Pens.Black, 94.2F, 109.1F, 42, 191);
+        }
+
+        private void ListDota2Player2_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            string SelectedPlayer2MajorInfo = (string)ListDota2Player2.SelectedItem;
+            string SelectedPlayer2Name = "";
+            string SelectedPlayer2Nickname = "";
+            string SelectedPlayer2Surname = "";
+            string SelectedPlayer2Team = "";
+            string SelectedPlayer2Country = "";
+            string SelectedPlayer2City = "";
+            string SelectedPlayer2Age = "";
+            string SelectedPlayer2Role = "";
+            string SelectedPlayer2Signature = "";
+            string SelectedPlayer2NumberGames = "";
+            string SelectedPlayer2ProcentWin = "";
+            string SelectedPlayer2MMR = "";
+            int[] SelectedPlayer2Pentagon = new int[5];
+
+            string SelectedPlayerMajorInfo = (string)ListDota2Player.SelectedItem;
+            int[] SelectedPlayerPentagon = new int[5];
+
+            string SelectedPlayerPhotoProfile = "";
+            foreach (List<Player> ListPlayer in GlobalVariables.ListPlayerInDiscypline)
+            {
+                foreach (Player Player in ListPlayer)
+                {
+                    if (Player.MajorInfo() == SelectedPlayer2MajorInfo)
+                    {
+                        SelectedPlayer2Name = Player.Name;
+                        SelectedPlayer2Nickname = Player.Nickname;
+                        SelectedPlayer2Surname = Player.Surname;
+
+                        SelectedPlayer2Team = Player.Team;
+                        SelectedPlayer2Team = Player.Team;
+                        SelectedPlayer2Country = Player.Country;
+                        SelectedPlayer2City = Player.City;
+                        SelectedPlayer2Age = Player.Age.ToString();
+                        SelectedPlayer2Role = Player.Role;
+                        SelectedPlayer2Signature = String.Join(", ", Player.Signature);
+                        SelectedPlayer2NumberGames = Player.NumberGames.ToString();
+                        SelectedPlayer2ProcentWin = Player.ProcentWinGames.ToString();
+                        SelectedPlayer2MMR = Player.MMR;
+                        SelectedPlayer2Pentagon = Player.Pentagon;
+
+                        SelectedPlayerPhotoProfile = Player.PhotoProfile;
+                    }
+                    if (Player.MajorInfo() == SelectedPlayerMajorInfo)
+                    {
+                        SelectedPlayerPentagon = Player.Pentagon;
+                    }
+                }
+            }
+            LabelNameSelectedPlayer2.Text = SelectedPlayer2Name;
+            LabelNickameSelectedPlayer2.Text = SelectedPlayer2Nickname;
+            LabelSurnameSelectedPlayer2.Text = SelectedPlayer2Surname;
+
+            LabelTeam2.Text = "Команда: " + SelectedPlayer2Team;
+            LabelCountry2.Text = "Страна: " + SelectedPlayer2Country;
+            LabelCity2.Text = "Город: " + SelectedPlayer2City;
+            LabelAge2.Text = "Возраст: " + SelectedPlayer2Age;
+            LabelRole2.Text = "Роль: " + SelectedPlayer2Role;
+            LabelSignature2.Text = "Герои: " + SelectedPlayer2Signature;
+            LabelNumberGames2.Text = "Количество игр: " + SelectedPlayer2NumberGames;
+            LabelProcentWin2.Text = "Процент побед: " + SelectedPlayer2ProcentWin;
+            LabelMMR2.Text = "MMR: " + SelectedPlayer2MMR;
+
+            LabelPentagon2.ForeColor = Color.Aqua;
+            LabelPentagon.ForeColor = Color.Red;
+            LabelPentagon2.Text = string.Join(" ,", SelectedPlayer2Pentagon);
+            if (string.Join(" ,", SelectedPlayer2Pentagon) == string.Join(" ,", SelectedPlayerPentagon))
+            {
+                LabelPentagon2.ForeColor = Color.DarkGray;
+                LabelPentagon.ForeColor = Color.DarkGray;
+            }
+
+            // Прорисовка отрезков сторон пятиугольника игрока
+            if (GlobalVariables.CheckOnRefreshPicturePentagonLeft == 0 && GlobalVariables.CheckOnRefreshPicturePentagonRight == 1)
+            {
+                PictureBoxPentagon.Refresh();
+            }
+            if (GlobalVariables.CheckOnRefreshPicturePentagonLeft == 1 && GlobalVariables.CheckOnRefreshPicturePentagonRight == 1)
+            {
+                PictureBoxPentagon.Refresh();
+                GlobalVariables.DrawingPentagonPlayer(PictureBoxPentagon, SelectedPlayerPentagon, Pens.Red);
+                GlobalVariables.CheckOnRefreshPicturePentagonLeft = 1;
+            }
+            GlobalVariables.DrawingPentagonPlayer(PictureBoxPentagon, SelectedPlayer2Pentagon, Pens.Aqua);
+            GlobalVariables.CheckOnRefreshPicturePentagonRight = 1;
+            if (string.Join(" ,", SelectedPlayer2Pentagon) == string.Join(" ,", SelectedPlayerPentagon))
+            {
+                GlobalVariables.DrawingPentagonPlayer(PictureBoxPentagon, SelectedPlayer2Pentagon, Pens.DarkGray);
+            }
+
+            Bitmap tempImage = new Bitmap(Environment.CurrentDirectory + @"\image\" + SelectedPlayerPhotoProfile, true);
+            PictureSelectedPlayer2.Image = tempImage;
         }
     }
 }

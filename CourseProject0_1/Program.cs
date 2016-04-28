@@ -13,13 +13,15 @@ namespace CourseProject0_1
         public static List<List<Player>> ListPlayerInDiscypline;
         public static MainForm MainFormObject;
         public static float[][] ArrayCoordsPentagons;
+        public static int CheckOnRefreshPicturePentagonLeft;
+        public static int CheckOnRefreshPicturePentagonRight;
 
-        public static void DrawindPentagonPlayer(PictureBox PictureBoxPentagon, int[] SelectedPlayerPentagon)
+        public static void DrawingPentagonPlayer(PictureBox PictureBoxPentagon, int[] SelectedPlayerPentagon, Pen Colour)
         {
             Graphics g = PictureBoxPentagon.CreateGraphics();
             g.DrawLine
             (
-                Pens.Red,
+                Colour,
                 ArrayCoordsPentagons[SelectedPlayerPentagon[0] - 1][0],
                 ArrayCoordsPentagons[SelectedPlayerPentagon[0] - 1][1],
                 ArrayCoordsPentagons[SelectedPlayerPentagon[1] - 1][2],
@@ -27,7 +29,7 @@ namespace CourseProject0_1
             );
             g.DrawLine
             (
-                Pens.Red,
+                Colour,
                 ArrayCoordsPentagons[SelectedPlayerPentagon[1] - 1][2],
                 ArrayCoordsPentagons[SelectedPlayerPentagon[1] - 1][3],
                 ArrayCoordsPentagons[SelectedPlayerPentagon[2] - 1][4],
@@ -35,7 +37,7 @@ namespace CourseProject0_1
             );
             g.DrawLine
             (
-                Pens.Red,
+                Colour,
                 ArrayCoordsPentagons[SelectedPlayerPentagon[2] - 1][4],
                 ArrayCoordsPentagons[SelectedPlayerPentagon[2] - 1][5],
                 ArrayCoordsPentagons[SelectedPlayerPentagon[3] - 1][6],
@@ -43,7 +45,7 @@ namespace CourseProject0_1
             );
             g.DrawLine
             (
-                Pens.Red,
+                Colour,
                 ArrayCoordsPentagons[SelectedPlayerPentagon[3] - 1][6],
                 ArrayCoordsPentagons[SelectedPlayerPentagon[3] - 1][7],
                 ArrayCoordsPentagons[SelectedPlayerPentagon[4] - 1][8],
@@ -51,7 +53,7 @@ namespace CourseProject0_1
             );
             g.DrawLine
             (
-                Pens.Red,
+                Colour,
                 ArrayCoordsPentagons[SelectedPlayerPentagon[4] - 1][8],
                 ArrayCoordsPentagons[SelectedPlayerPentagon[4] - 1][9],
                 ArrayCoordsPentagons[SelectedPlayerPentagon[0] - 1][0],
@@ -498,6 +500,8 @@ namespace CourseProject0_1
         static void Main()
         {
             GlobalVariables.ListPlayerInDiscypline = MethodsReadFile.CreateListPlayer();
+            GlobalVariables.CheckOnRefreshPicturePentagonLeft = 0;
+            GlobalVariables.CheckOnRefreshPicturePentagonLeft = 0;
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             GlobalVariables.MainFormObject = new MainForm();
