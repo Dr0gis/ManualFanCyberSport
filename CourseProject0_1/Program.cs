@@ -15,7 +15,9 @@ namespace CourseProject0_1
     {
         public static string ReadFile()
         {
-            return File.ReadAllText(@"C:\Users\Dr0gis\OneDrive\Документы\Visual Studio 2015\Projects\CourseProject0_1\ListPlayer.txt");
+            //return File.ReadAllText(@"C:\Users\Dr0gis\OneDrive\Документы\Visual Studio 2015\Projects\CourseProject0_1\ListPlayer.txt");
+            //return File.ReadAllText(@"C:\Users\ІгорСушинський\OneDrive\Документы\Visual Studio 2015\Projects\CourseProject0_1\ListPlayer.txt");
+            return File.ReadAllText(Environment.CurrentDirectory + @"\textfiles\ListPlayer.txt");
         }
         public static string[] SplitOnDiscypline(string textFile)
         {
@@ -47,6 +49,7 @@ namespace CourseProject0_1
                 "ProcentWinGames",
                 "MMR",
                 "Hexagon",
+                "Image",
             };
             object[] ValueFild = new object[NameField.Length];
             string tempString;
@@ -145,6 +148,7 @@ namespace CourseProject0_1
         private double ProcentWinGames;
         private string MMR;
         private int[] Hexagon;
+        private string Image;
 
         public Player(object[] ArrayFilds)
         {
@@ -163,6 +167,7 @@ namespace CourseProject0_1
             ProcentWinGames = Convert.ToDouble((string)ArrayFilds[12]);
             MMR = (string)ArrayFilds[13];
             Hexagon = (int[])ArrayFilds[14];
+            Image = (string)ArrayFilds[15];
         }
         public Player(string name, string nickname, string surname, string team)
         {
@@ -208,6 +213,7 @@ namespace CourseProject0_1
                 rez += element;
                 rez += ' ';
             }
+            rez += Image;
             return rez;
         }
     }

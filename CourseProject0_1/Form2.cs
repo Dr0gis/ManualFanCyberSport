@@ -10,14 +10,13 @@ using System.Windows.Forms;
 
 namespace CourseProject0_1
 {
-    public partial class MainForm : Form
+    public partial class Form2 : Form
     {
-        public MainForm()
+        public Form2()
         {
             InitializeComponent();
         }
-
-        private void Form1_Load(object sender, EventArgs e)
+        private void FormDota2Load(object sender, EventArgs e)
         {
             GlobalVariables.ListPlayerInDiscypline = MethodsReadFile.CreateListPlayer();
             foreach (List<Player> discypline in GlobalVariables.ListPlayerInDiscypline)
@@ -37,9 +36,9 @@ namespace CourseProject0_1
                 ListCSGOPlayer.Items.Add(player.MajorInfo());
             }
         }
-        /*private void SelectPlayerInCSGOList(object sender, EventArgs e)
+        private void SelectPlayerInDoat2List(object sender, EventArgs e)
         {
-            string SelectedPlayerMajorInfo = (string)ListCSGOPlayer.SelectedItem;
+            string SelectedPlayerMajorInfo = (string)ListDota2Player.SelectedItem;
             string SelectedPlayerAllInfo = "";
             foreach (List<Player> ListPlayer in GlobalVariables.ListPlayerInDiscypline)
             {
@@ -52,6 +51,6 @@ namespace CourseProject0_1
                 }
             }
             textBoxExample.Text = SelectedPlayerAllInfo;
-        }*/
+        }
     }
 }
