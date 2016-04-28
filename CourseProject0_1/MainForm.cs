@@ -24,6 +24,7 @@ namespace CourseProject0_1
 
         private void labelDota2_Click(object sender, EventArgs e)
         {
+            GlobalVariables.SelectedDiscypline = "Dota2";
             FormListPlayer FormDota2 = new FormListPlayer();
             FormDota2.Show();
             this.Hide();
@@ -40,15 +41,13 @@ namespace CourseProject0_1
             foreach (Player player in GlobalVariables.ListPlayerInDiscypline[0])
             {
                 FormDota2.ListDota2Player.Items.Add(player.MajorInfo());
-            }
-            foreach (Player player in GlobalVariables.ListPlayerInDiscypline[0])
-            {
                 FormDota2.ListDota2Player2.Items.Add(player.MajorInfo());
             }
         }
 
         private void labelCSGO_Click(object sender, EventArgs e)
         {
+            GlobalVariables.SelectedDiscypline = "CSGO";
             FormListPlayer FormCSGO = new FormListPlayer();
             FormCSGO.Show();
             this.Hide();
@@ -65,9 +64,6 @@ namespace CourseProject0_1
             foreach (Player player in GlobalVariables.ListPlayerInDiscypline[1])
             {
                 FormCSGO.ListDota2Player.Items.Add(player.MajorInfo());
-            }
-            foreach (Player player in GlobalVariables.ListPlayerInDiscypline[1])
-            {
                 FormCSGO.ListDota2Player2.Items.Add(player.MajorInfo());
             }
         }

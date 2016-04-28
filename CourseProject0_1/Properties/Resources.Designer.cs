@@ -73,6 +73,16 @@ namespace CourseProject0_1.Properties {
         /// <summary>
         ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Abaddon_icon {
+            get {
+                object obj = ResourceManager.GetObject("Abaddon_icon", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap csgologo100 {
             get {
                 object obj = ResourceManager.GetObject("csgologo100", resourceCulture);

@@ -28,7 +28,8 @@ namespace CourseProject0_1
             string SelectedPlayerCity = "";
             string SelectedPlayerAge = "";
             string SelectedPlayerRole = "";
-            string SelectedPlayerSignature = "";
+            //string SelectedPlayerSignature = "";
+            string[] SelectedPlayerSignatureArray = new string[3];
             string SelectedPlayerNumberGames = "";
             string SelectedPlayerProcentWin = "";
             string SelectedPlayerMMR = "";
@@ -55,7 +56,8 @@ namespace CourseProject0_1
                         SelectedPlayerCity = Player.City;
                         SelectedPlayerAge = Player.Age.ToString();
                         SelectedPlayerRole = Player.Role;
-                        SelectedPlayerSignature = String.Join(", ", Player.Signature);
+                        //SelectedPlayerSignature = String.Join(", ", Player.Signature);
+                        SelectedPlayerSignatureArray = Player.Signature;
                         SelectedPlayerNumberGames = Player.NumberGames.ToString();
                         SelectedPlayerProcentWin = Player.ProcentWinGames.ToString();
                         SelectedPlayerMMR = Player.MMR;
@@ -69,7 +71,6 @@ namespace CourseProject0_1
                     }
                 }
             }
-            //textBoxExample.Text = SelectedPlayerAllInfo;
             LabelNameSelectedPlayer.Text = SelectedPlayerName;
             LabelNickameSelectedPlayer.Text = SelectedPlayerNickname;
             LabelSurnameSelectedPlayer.Text = SelectedPlayerSurname;
@@ -79,7 +80,46 @@ namespace CourseProject0_1
             LabelCity.Text = "Город: " + SelectedPlayerCity;
             LabelAge.Text = "Возраст: " + SelectedPlayerAge;
             LabelRole.Text = "Роль: " + SelectedPlayerRole;
-            LabelSignature.Text = "Герои: " + SelectedPlayerSignature;
+            //LabelSignature.Text = "Герои: " + SelectedPlayerSignature;
+            try
+            {
+                PictureBoxSignature1.Image = new Bitmap(Environment.CurrentDirectory + ((GlobalVariables.SelectedDiscypline == "Dota2") ? @"\image\heroes\" : @"\image\weapons\") + SelectedPlayerSignatureArray[0] + "_icon.png", true);
+            }
+            catch (ArgumentException ex)
+            {
+                DialogResult result = GlobalVariables.MessageErrorDataPicture();
+                if (result == DialogResult.OK)
+                {
+                    this.Close();
+                    return;
+                }
+            }
+            try
+            {
+                PictureBoxSignature2.Image = new Bitmap(Environment.CurrentDirectory + ((GlobalVariables.SelectedDiscypline == "Dota2") ? @"\image\heroes\" : @"\image\weapons\") + SelectedPlayerSignatureArray[1] + "_icon.png", true);
+            }
+            catch (ArgumentException ex)
+            {
+                DialogResult result = GlobalVariables.MessageErrorDataPicture();
+                if (result == DialogResult.OK)
+                {
+                    this.Close();
+                    return;
+                }
+            }
+            try
+            {
+                PictureBoxSignature3.Image = new Bitmap(Environment.CurrentDirectory + ((GlobalVariables.SelectedDiscypline == "Dota2") ? @"\image\heroes\" : @"\image\weapons\") + SelectedPlayerSignatureArray[2] + "_icon.png", true);
+            }
+            catch (ArgumentException ex)
+            {
+                DialogResult result = GlobalVariables.MessageErrorDataPicture();
+                if (result == DialogResult.OK)
+                {
+                    this.Close();
+                    return;
+                }
+            }
             LabelNumberGames.Text = "Количество игр: " + SelectedPlayerNumberGames;
             LabelProcentWin.Text = "Процент побед: " + SelectedPlayerProcentWin;
             LabelMMR.Text = "MMR: " + SelectedPlayerMMR;
@@ -92,25 +132,6 @@ namespace CourseProject0_1
                 LabelPentagon2.ForeColor = Color.DarkGray;
                 LabelPentagon.ForeColor = Color.DarkGray;
             }
-            /*textBoxExample.Text = string.Join("; ", GlobalVariables.ArrayCoordsPentagons[0]);
-            textBoxExample.Text += "\n";
-            textBoxExample.Text += string.Join("; ", GlobalVariables.ArrayCoordsPentagons[1]);
-            textBoxExample.Text += "\n";
-            textBoxExample.Text += string.Join("; ", GlobalVariables.ArrayCoordsPentagons[2]);
-            textBoxExample.Text += "\n";
-            textBoxExample.Text += string.Join("; ", GlobalVariables.ArrayCoordsPentagons[3]);
-            textBoxExample.Text += "\n";
-            textBoxExample.Text += string.Join("; ", GlobalVariables.ArrayCoordsPentagons[4]);
-            textBoxExample.Text += "\n";
-            textBoxExample.Text += string.Join("; ", GlobalVariables.ArrayCoordsPentagons[5]);
-            textBoxExample.Text += "\n";
-            textBoxExample.Text += string.Join("; ", GlobalVariables.ArrayCoordsPentagons[6]);
-            textBoxExample.Text += "\n";
-            textBoxExample.Text += string.Join("; ", GlobalVariables.ArrayCoordsPentagons[7]);
-            textBoxExample.Text += "\n";
-            textBoxExample.Text += string.Join("; ", GlobalVariables.ArrayCoordsPentagons[8]);
-            textBoxExample.Text += "\n";
-            textBoxExample.Text += string.Join("; ", GlobalVariables.ArrayCoordsPentagons[9]);*/
 
             // Прорисовка отрезков сторон пятиугольника игрока
             if (GlobalVariables.CheckOnRefreshPicturePentagonRight == 0 && GlobalVariables.CheckOnRefreshPicturePentagonLeft == 1)
@@ -129,9 +150,20 @@ namespace CourseProject0_1
             {
                 GlobalVariables.DrawingPentagonPlayer(PictureBoxPentagon, SelectedPlayerPentagon, Pens.DarkGray);
             }
-
-            Bitmap tempImage = new Bitmap(Environment.CurrentDirectory + @"\image\" + SelectedPlayerPhotoProfile, true);
-            PictureSelectedPlayer.Image = tempImage;
+            try
+            {
+                Bitmap tempImage = new Bitmap(Environment.CurrentDirectory + @"\image\photoProfiles\" + SelectedPlayerPhotoProfile, true);
+                PictureSelectedPlayer.Image = tempImage;
+            }
+            catch (ArgumentException ex)
+            {
+                DialogResult result = GlobalVariables.MessageErrorDataPicture();
+                if (result == DialogResult.OK)
+                {
+                    this.Close();
+                    return;
+                }
+            }
         }
 
         private void Form2Dota2_FormClosed(object sender, FormClosedEventArgs e)
@@ -174,7 +206,7 @@ namespace CourseProject0_1
                 slagaemoe -= 10F;
             }
             GlobalVariables.ArrayCoordsPentagons = ArrayCoordsPentagons;
-            
+
             // Прорисовка отрезков сторон 10 пятиугольника 
             g.DrawLine(Pens.DarkGray, 5, 77, 100, 9);
             g.DrawLine(Pens.DarkGray, 100, 9, 195, 77);
@@ -188,7 +220,7 @@ namespace CourseProject0_1
             g.DrawLine(Pens.DarkGray, 109.5F, 97.7F, 105.8F, 109.1F);
             g.DrawLine(Pens.DarkGray, 105.8F, 109.1F, 94.2F, 109.1F);
             g.DrawLine(Pens.DarkGray, 94.2F, 109.1F, 90.5F, 97.7F);
-            
+
             // Прорисовка отрезков
             g.DrawLine(Pens.Black, 90.5F, 97.7F, 5, 77);
             g.DrawLine(Pens.Black, 100, 90.5F, 100, 9);
@@ -208,7 +240,8 @@ namespace CourseProject0_1
             string SelectedPlayer2City = "";
             string SelectedPlayer2Age = "";
             string SelectedPlayer2Role = "";
-            string SelectedPlayer2Signature = "";
+            //string SelectedPlayer2Signature = "";
+            string[] SelectedPlayer2SignatureArray = new string[3];
             string SelectedPlayer2NumberGames = "";
             string SelectedPlayer2ProcentWin = "";
             string SelectedPlayer2MMR = "";
@@ -234,7 +267,8 @@ namespace CourseProject0_1
                         SelectedPlayer2City = Player.City;
                         SelectedPlayer2Age = Player.Age.ToString();
                         SelectedPlayer2Role = Player.Role;
-                        SelectedPlayer2Signature = String.Join(", ", Player.Signature);
+                        //SelectedPlayer2Signature = String.Join(", ", Player.Signature);
+                        SelectedPlayer2SignatureArray = Player.Signature;
                         SelectedPlayer2NumberGames = Player.NumberGames.ToString();
                         SelectedPlayer2ProcentWin = Player.ProcentWinGames.ToString();
                         SelectedPlayer2MMR = Player.MMR;
@@ -257,7 +291,46 @@ namespace CourseProject0_1
             LabelCity2.Text = "Город: " + SelectedPlayer2City;
             LabelAge2.Text = "Возраст: " + SelectedPlayer2Age;
             LabelRole2.Text = "Роль: " + SelectedPlayer2Role;
-            LabelSignature2.Text = "Герои: " + SelectedPlayer2Signature;
+            //LabelSignature2.Text = "Герои: " + SelectedPlayer2Signature;
+            try
+            {
+                PictureBox2Signature1.Image = new Bitmap(Environment.CurrentDirectory + ((GlobalVariables.SelectedDiscypline == "Dota2") ? @"\image\heroes\" : @"\image\weapons\") + SelectedPlayer2SignatureArray[0] + "_icon.png", true);
+            }
+            catch (ArgumentException ex)
+            {
+                DialogResult result = GlobalVariables.MessageErrorDataPicture();
+                if (result == DialogResult.OK)
+                {
+                    this.Close();
+                    return;
+                }
+            }
+            try
+            {
+                PictureBox2Signature2.Image = new Bitmap(Environment.CurrentDirectory + ((GlobalVariables.SelectedDiscypline == "Dota2") ? @"\image\heroes\" : @"\image\weapons\") + SelectedPlayer2SignatureArray[1] + "_icon.png", true);
+            }
+            catch (ArgumentException ex)
+            {
+                DialogResult result = GlobalVariables.MessageErrorDataPicture();
+                if (result == DialogResult.OK)
+                {
+                    this.Close();
+                    return;
+                }
+            }
+            try
+            {
+                PictureBox2Signature3.Image = new Bitmap(Environment.CurrentDirectory + ((GlobalVariables.SelectedDiscypline == "Dota2") ? @"\image\heroes\" : @"\image\weapons\") + SelectedPlayer2SignatureArray[2] + "_icon.png", true);
+            }
+            catch (ArgumentException ex)
+            {
+                DialogResult result = GlobalVariables.MessageErrorDataPicture();
+                if (result == DialogResult.OK)
+                {
+                    this.Close();
+                    return;
+                }
+            }
             LabelNumberGames2.Text = "Количество игр: " + SelectedPlayer2NumberGames;
             LabelProcentWin2.Text = "Процент побед: " + SelectedPlayer2ProcentWin;
             LabelMMR2.Text = "MMR: " + SelectedPlayer2MMR;
@@ -289,8 +362,98 @@ namespace CourseProject0_1
                 GlobalVariables.DrawingPentagonPlayer(PictureBoxPentagon, SelectedPlayer2Pentagon, Pens.DarkGray);
             }
 
-            Bitmap tempImage = new Bitmap(Environment.CurrentDirectory + @"\image\" + SelectedPlayerPhotoProfile, true);
-            PictureSelectedPlayer2.Image = tempImage;
+            try
+            {
+                Bitmap tempImage = new Bitmap(Environment.CurrentDirectory + @"\image\photoProfiles\" + SelectedPlayerPhotoProfile, true);
+                PictureSelectedPlayer2.Image = tempImage;
+            }
+            catch (ArgumentException ex)
+            {
+                DialogResult result = GlobalVariables.MessageErrorDataPicture();
+                if (result == DialogResult.OK)
+                {
+                    this.Close();
+                    return;
+                }
+            }
+        }
+
+        private void TextBoxSearch_TextChanged(object sender, EventArgs e)
+        {
+            string TextSearch = TextBoxSearch.Text;
+            List<Player> ListSearchedPlayer = new List<Player>();
+            object SelectedPlayerMajorInfo = ListDota2Player.SelectedItem;
+            bool ChekOnincludeInSearchList = false;
+
+            foreach (Player Player in GlobalVariables.ListPlayerInDiscypline[(GlobalVariables.SelectedDiscypline == "Dota2")?0:1])
+            {
+                if (Player.AllInfo().IndexOf(TextSearch) != -1)
+                {
+                    ListSearchedPlayer.Add(Player);
+                }
+            }
+
+            ListDota2Player.Items.Clear();
+
+            if (ListSearchedPlayer.Count == 0)
+            {
+                return;
+            }
+            foreach (Player Player in ListSearchedPlayer)
+            {
+                ListDota2Player.Items.Add(Player.MajorInfo());
+                if (Player.MajorInfo() == (string)SelectedPlayerMajorInfo)
+                {
+                    ChekOnincludeInSearchList = true;
+                }
+            }
+            if (ChekOnincludeInSearchList && SelectedPlayerMajorInfo != null)
+            {
+                ListDota2Player.SelectedItem = SelectedPlayerMajorInfo;
+            }
+            if (SelectedPlayerMajorInfo == null || !ChekOnincludeInSearchList)
+            {
+                ListDota2Player.SelectedIndex = 0;
+            }
+        }
+
+        private void TextBoxSearch2_TextChanged(object sender, EventArgs e)
+        {
+            string TextSearch = TextBoxSearch2.Text;
+            List<Player> ListSearchedPlayer = new List<Player>();
+            object SelectedPlayerMajorInfo = ListDota2Player2.SelectedItem;
+            bool ChekOnincludeInSearchList = false;
+
+            foreach (Player Player in GlobalVariables.ListPlayerInDiscypline[(GlobalVariables.SelectedDiscypline == "Dota2") ? 0 : 1])
+            {
+                if (Player.AllInfo().IndexOf(TextSearch) != -1)
+                {
+                    ListSearchedPlayer.Add(Player);
+                }
+            }
+
+            ListDota2Player2.Items.Clear();
+
+            if (ListSearchedPlayer.Count == 0)
+            {
+                return;
+            }
+            foreach (Player Player in ListSearchedPlayer)
+            {
+                ListDota2Player2.Items.Add(Player.MajorInfo());
+                if (Player.MajorInfo() == (string)SelectedPlayerMajorInfo)
+                {
+                    ChekOnincludeInSearchList = true;
+                }
+            }
+            if (ChekOnincludeInSearchList && SelectedPlayerMajorInfo != null)
+            {
+                ListDota2Player2.SelectedItem = SelectedPlayerMajorInfo;
+            }
+            if (SelectedPlayerMajorInfo == null || !ChekOnincludeInSearchList)
+            {
+                ListDota2Player2.SelectedIndex = 0;
+            }
         }
     }
 }

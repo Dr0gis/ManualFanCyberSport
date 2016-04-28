@@ -15,7 +15,21 @@ namespace CourseProject0_1
         public static float[][] ArrayCoordsPentagons;
         public static int CheckOnRefreshPicturePentagonLeft;
         public static int CheckOnRefreshPicturePentagonRight;
+        public static string SelectedDiscypline;
 
+        public static object MessageErrorData()
+        {
+            DialogResult result = MessageBox.Show("Исходные данные ошибочные", "Ошибка в текстовом файле", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            if (result == DialogResult.OK)
+            {
+                return null;
+            }
+            return null;
+        }
+        public static DialogResult MessageErrorDataPicture()
+        {
+            return MessageBox.Show("Указаный графический файл не найден", "Ошибка, файл не найден", MessageBoxButtons.OK, MessageBoxIcon.Error);
+        }
         public static void DrawingPentagonPlayer(PictureBox PictureBoxPentagon, int[] SelectedPlayerPentagon, Pen Colour)
         {
             Graphics g = PictureBoxPentagon.CreateGraphics();
@@ -63,21 +77,135 @@ namespace CourseProject0_1
     }
     class MethodsReadFile
     {
-        public static string ReadFile()
+        public static string[] ReadFile()
+        {
+            return File.ReadAllLines(Environment.CurrentDirectory + @"\textfiles\ListPlayer.txt");
+        }
+        public static Player CreateObjectPlayer(string[] LinesFile, int IndexStart, int IndexEnd)
+        {
+            string[] NameField = new string[]
+            {
+                "Name",
+                "Nickname",
+                "Surname",
+                "Team",
+                "Country",
+                "City",
+                "Nationality",
+                "DateBirth",
+                "Role",
+                "Signature",
+                "NumberGames",
+                "ProcentWinGames",
+                "MMR",
+                "Pentagon",
+                "PhotoProfile",
+            };
+            object[] ValueFild = new object[NameField.Length];
+            string tempString;
+            string[] tempStringArray;
+            int[] tempIntArray;
+            int templastIndex;
+            int tempIndexNameField = 0;
+
+            for (int i = IndexStart; i < IndexEnd; i++)
+            {
+                switch (NameField[tempIndexNameField])
+                {
+                    case "Signature":
+                        tempString = LinesFile[i].Substring(LinesFile[i].IndexOf(NameField[tempIndexNameField]) + NameField[tempIndexNameField].Length + 3);
+                        if (tempString == "" || tempString[0] != '[' || tempString[tempString.Length - 1] != ']')
+                        {
+                            return (Player)GlobalVariables.MessageErrorData();
+                        }
+                        tempStringArray = tempString.Split(new string[] { ", " }, StringSplitOptions.RemoveEmptyEntries);
+                        try
+                        {
+                            tempStringArray[0] = tempStringArray[0].Substring(1);
+                        }
+                        catch (IndexOutOfRangeException e)
+                        {
+                            return (Player)GlobalVariables.MessageErrorData();
+                        }
+                        templastIndex = tempStringArray.Length - 1;
+                        tempStringArray[templastIndex] = tempStringArray[templastIndex].Substring(0, tempStringArray[templastIndex].Length - 1);
+                        ValueFild[tempIndexNameField] = tempStringArray;
+                        break;
+                    case "Pentagon":
+                        tempString = LinesFile[i].Substring(LinesFile[i].IndexOf(NameField[tempIndexNameField]) + NameField[tempIndexNameField].Length + 3);
+                        tempStringArray = tempString.Split(new string[] { ", " }, StringSplitOptions.RemoveEmptyEntries);
+                        tempStringArray[0] = tempStringArray[0].Substring(1);
+                        templastIndex = tempStringArray.Length - 1;
+                        tempStringArray[templastIndex] = tempStringArray[templastIndex].Substring(0, tempStringArray[templastIndex].Length - 1);
+                        tempIntArray = new int[tempStringArray.Length];
+                        int j = 0;
+                        foreach (string element in tempStringArray)
+                        {
+                            tempIntArray[j] = Convert.ToInt32(element);
+                            j++;
+                        }
+                        ValueFild[tempIndexNameField] = tempIntArray;
+                        break;
+                    default:
+                        ValueFild[tempIndexNameField] = LinesFile[i].Substring(LinesFile[i].IndexOf(NameField[tempIndexNameField]) + NameField[tempIndexNameField].Length + 3);
+                        break;
+                }
+                tempIndexNameField++;
+            }
+            Player tempPlayer = new Dota2Player(ValueFild);
+            return tempPlayer;
+        }
+        public static List<List<Player>> CreateListPlayer()
+        {
+            List<List<Player>> ListDiscyplineListPlayer = new List<List<Player>>();
+            List<Player> TempListPlayer = new List<Player>();
+            string[] LinesFile = ReadFile();
+            int IndexStart = 1;
+            int IndexEnd;
+            int i = 0;
+            foreach (string Line in LinesFile)
+            {
+                if (Line.IndexOf('*') == 1)
+                {
+                    IndexEnd = i;
+                    TempListPlayer.Add(CreateObjectPlayer(LinesFile, IndexStart, IndexEnd));
+                    IndexStart = IndexEnd + 1;
+                }
+                if (Line.IndexOf('@') == 0)
+                {
+                    IndexEnd = i;
+                    TempListPlayer.Add(CreateObjectPlayer(LinesFile, IndexStart, IndexEnd));
+                    ListDiscyplineListPlayer.Add(TempListPlayer);
+                    IndexStart = IndexEnd + 2;
+                    TempListPlayer = new List<Player>();
+                }
+                if (i == LinesFile.Length - 1)
+                {
+                    IndexEnd = i + 1;
+                    TempListPlayer.Add(CreateObjectPlayer(LinesFile, IndexStart, IndexEnd));
+                    ListDiscyplineListPlayer.Add(TempListPlayer);
+                }
+                i++;
+            }
+
+            return ListDiscyplineListPlayer;
+        }
+        /*
+        public static string ReadFile1()
         {
             return File.ReadAllText(Environment.CurrentDirectory + @"\textfiles\ListPlayer.txt");
         }
-        public static string[] SplitOnDiscypline(string textFile)
+        public static string[] SplitOnDiscypline1(string textFile)
         {
             string[] ArrayDiscypline = textFile.Split('@');
             return ArrayDiscypline;
         }
-        public static string[] SplitOnPlayer(string textDiscypline)
+        public static string[] SplitOnPlayer1(string textDiscypline)
         {
             string[] ArrayPlayer = textDiscypline.Split('*');
             return ArrayPlayer;
         }
-        public static Player CreateObjectPlayer(string TextPlayer)
+        public static Player CreateObjectPlayer1(string TextPlayer)
         {
             string[] SplitOnPrompt = TextPlayer.Split(';');
             string[] NameField = new string[]
@@ -92,13 +220,13 @@ namespace CourseProject0_1
                 "DateBirth",
                 "Role",
                 "Signature",
-                "HistoryTeams",
                 "NumberGames",
                 "ProcentWinGames",
                 "MMR",
                 "Pentagon",
                 "PhotoProfile",
             };
+            //GlobalVariables.NameFieldInClassPlayer = NameField;
             object[] ValueFild = new object[NameField.Length];
             string tempString;
             string[] tempStringArray;
@@ -114,16 +242,19 @@ namespace CourseProject0_1
                 {
                     case "Signature":
                         tempString = SplitOnPrompt[i].Substring(SplitOnPrompt[i].IndexOf(NameField[i]) + NameField[i].Length + 3);
+                        if (tempString == "" || tempString[0] != '[' || tempString[tempString.Length - 1] != ']')
+                        {
+                            return (Player)GlobalVariables.MessageErrorData();
+                        }
                         tempStringArray = tempString.Split(new string[] { ", " }, StringSplitOptions.RemoveEmptyEntries);
-                        tempStringArray[0] = tempStringArray[0].Substring(1);
-                        templastIndex = tempStringArray.Length - 1;
-                        tempStringArray[templastIndex] = tempStringArray[templastIndex].Substring(0, tempStringArray[templastIndex].Length - 1);
-                        ValueFild[i] = tempStringArray;
-                        break;
-                    case "HistoryTeams":
-                        tempString = SplitOnPrompt[i].Substring(SplitOnPrompt[i].IndexOf(NameField[i]) + NameField[i].Length + 3);
-                        tempStringArray = tempString.Split(new string[] { ", " }, StringSplitOptions.RemoveEmptyEntries);
-                        tempStringArray[0] = tempStringArray[0].Substring(1);
+                        try
+                        {
+                            tempStringArray[0] = tempStringArray[0].Substring(1);
+                        }
+                        catch (IndexOutOfRangeException e)
+                        {
+                            return (Player)GlobalVariables.MessageErrorData();
+                        }
                         templastIndex = tempStringArray.Length - 1;
                         tempStringArray[templastIndex] = tempStringArray[templastIndex].Substring(0, tempStringArray[templastIndex].Length - 1);
                         ValueFild[i] = tempStringArray;
@@ -151,15 +282,15 @@ namespace CourseProject0_1
             Player tempPlayer = new Dota2Player(ValueFild);
             return tempPlayer;
         }
-        public static List<List<Player>> CreateListPlayer()
+        public static List<List<Player>> CreateListPlayer1()
         {
-            string TextFile = ReadFile();
-            string[] ArrayDiscypline = SplitOnDiscypline(TextFile);
+            string TextFile = ReadFile1();
+            string[] ArrayDiscypline = SplitOnDiscypline1(TextFile);
             string[][] ArrayArraysPlayerInDiscypline = new string[ArrayDiscypline.Length][];
             int i = 0;
             foreach (string discypline in ArrayDiscypline)
             {
-                ArrayArraysPlayerInDiscypline[i] = SplitOnPlayer(discypline);
+                ArrayArraysPlayerInDiscypline[i] = SplitOnPlayer1(discypline);
                 i++;
             }
 
@@ -170,13 +301,19 @@ namespace CourseProject0_1
             {
                 foreach (string Player in disciplin)
                 {
-                    ListPlayer.Add(CreateObjectPlayer(Player));
+                    Player tempPlayer = CreateObjectPlayer1(Player);
+                    if (tempPlayer == null)
+                    {
+                        return null;
+                    }
+                    ListPlayer.Add(tempPlayer);
                 }
                 ListDiscyplineListPlayer.Add(ListPlayer);
                 ListPlayer = new List<Player>();
             }
             return ListDiscyplineListPlayer;
         }
+        */
     }
 
     abstract class Player
@@ -192,7 +329,6 @@ namespace CourseProject0_1
         private int age;
         private string role;
         private string[] signature;
-        private string[] historyTeams;
         private int numberGames;
         private double procentWinGames;
         private string mmr;
@@ -220,12 +356,11 @@ namespace CourseProject0_1
             }
             Role = (string)ArrayFilds[8];
             Signature = (string[])ArrayFilds[9];
-            HistoryTeams = (string[])ArrayFilds[10];
-            NumberGames = Convert.ToInt32((string)ArrayFilds[11]);
-            ProcentWinGames = Convert.ToDouble((string)ArrayFilds[12]);
-            MMR = (string)ArrayFilds[13];
-            Pentagon = (int[])ArrayFilds[14];
-            PhotoProfile = (string)ArrayFilds[15];
+            NumberGames = Convert.ToInt32((string)ArrayFilds[10]);
+            ProcentWinGames = Convert.ToDouble((string)ArrayFilds[11]);
+            MMR = (string)ArrayFilds[12];
+            Pentagon = (int[])ArrayFilds[13];
+            PhotoProfile = (string)ArrayFilds[14];
         }
         public Player(string name, string nickname, string surname, string team)
         {
@@ -356,17 +491,6 @@ namespace CourseProject0_1
                 signature = value;
             }
         }
-        public string[] HistoryTeams
-        {
-            get
-            {
-                return historyTeams;
-            }
-            private set
-            {
-                historyTeams = value;
-            }
-        }
         public int NumberGames
         {
             get
@@ -442,15 +566,15 @@ namespace CourseProject0_1
             rez += City + ' ';
             rez += Nationality + ' ';
             rez += DateBirth.ToString() + ' ';
+            rez += Age;
+            rez += ' ';
             rez += Role + ' ';
             foreach (string element in Signature)
             {
                 rez += element + ' ';
             }
-            foreach (string element in HistoryTeams)
-            {
-                rez += element + ' ';
-            }
+            rez += NumberGames;
+            rez += ' ';
             rez += ProcentWinGames;
             rez += ' ';
             rez += MMR + ' ';
@@ -504,8 +628,13 @@ namespace CourseProject0_1
             GlobalVariables.CheckOnRefreshPicturePentagonLeft = 0;
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            GlobalVariables.MainFormObject = new MainForm();
-            Application.Run(GlobalVariables.MainFormObject);
+            if (GlobalVariables.ListPlayerInDiscypline != null)
+            {
+                GlobalVariables.MainFormObject = new MainForm();
+                Application.Run(GlobalVariables.MainFormObject);
+            }
+            //GlobalVariables.MainFormObject = new MainForm();
+            //Application.Run(GlobalVariables.MainFormObject);
         }
     }
 }

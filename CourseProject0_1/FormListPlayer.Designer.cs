@@ -49,19 +49,13 @@
             this.LabelMMR = new System.Windows.Forms.Label();
             this.PictureBoxPentagon = new System.Windows.Forms.PictureBox();
             this.PictureSelectedPlayer2 = new System.Windows.Forms.PictureBox();
-            this.label1 = new System.Windows.Forms.Label();
+            this.labelListPlayer2 = new System.Windows.Forms.Label();
             this.LabelSurnameSelectedPlayer2 = new System.Windows.Forms.Label();
             this.LabelNickameSelectedPlayer2 = new System.Windows.Forms.Label();
             this.LabelNameSelectedPlayer2 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.TextBoxSearch2 = new System.Windows.Forms.TextBox();
             this.ListDota2Player2 = new System.Windows.Forms.ListBox();
             this.LabelSignatureAdd = new System.Windows.Forms.Label();
-            this.LabelHistoryTeams = new System.Windows.Forms.Label();
-            this.LabelHistoryTeamsAdd1 = new System.Windows.Forms.Label();
-            this.LabelHistoryTeamsAdd2 = new System.Windows.Forms.Label();
-            this.LabelHistoryTeams2Add2 = new System.Windows.Forms.Label();
-            this.LabelHistoryTeams2Add1 = new System.Windows.Forms.Label();
-            this.LabelHistoryTeams2 = new System.Windows.Forms.Label();
             this.LabelSignatureAdd2 = new System.Windows.Forms.Label();
             this.LabelMMR2 = new System.Windows.Forms.Label();
             this.LabelProcentWin2 = new System.Windows.Forms.Label();
@@ -74,10 +68,34 @@
             this.LabelTeam2 = new System.Windows.Forms.Label();
             this.LabelPentagon = new System.Windows.Forms.Label();
             this.LabelPentagon2 = new System.Windows.Forms.Label();
+            this.LabelSearch = new System.Windows.Forms.Label();
+            this.LabelSearch2 = new System.Windows.Forms.Label();
+            this.PictureBoxSignature1 = new System.Windows.Forms.PictureBox();
+            this.PictureBoxSignature2 = new System.Windows.Forms.PictureBox();
+            this.PictureBoxSignature3 = new System.Windows.Forms.PictureBox();
+            this.PictureBox2Signature3 = new System.Windows.Forms.PictureBox();
+            this.PictureBox2Signature2 = new System.Windows.Forms.PictureBox();
+            this.PictureBox2Signature1 = new System.Windows.Forms.PictureBox();
+            this.LabelPentagonAngle1 = new System.Windows.Forms.Label();
+            this.LabelPentagonAngle2 = new System.Windows.Forms.Label();
+            this.LabelPentagonAngle3 = new System.Windows.Forms.Label();
+            this.LabelPentagonAngle4 = new System.Windows.Forms.Label();
+            this.LabelPentagonAngle5 = new System.Windows.Forms.Label();
+            this.LabelPentagonAngle1Value = new System.Windows.Forms.Label();
+            this.LabelPentagonAngle2Value = new System.Windows.Forms.Label();
+            this.LabelPentagonAngle3Value = new System.Windows.Forms.Label();
+            this.LabelPentagonAngle4Value = new System.Windows.Forms.Label();
+            this.LabelPentagonAngle5Value = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.PictureBoxLogoGame)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.PictureSelectedPlayer)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.PictureBoxPentagon)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.PictureSelectedPlayer2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.PictureBoxSignature1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.PictureBoxSignature2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.PictureBoxSignature3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.PictureBox2Signature3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.PictureBox2Signature2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.PictureBox2Signature1)).BeginInit();
             this.SuspendLayout();
             // 
             // labelDota2
@@ -101,7 +119,7 @@
             this.ListDota2Player.FormattingEnabled = true;
             this.ListDota2Player.HorizontalScrollbar = true;
             this.ListDota2Player.ItemHeight = 20;
-            this.ListDota2Player.Location = new System.Drawing.Point(25, 65);
+            this.ListDota2Player.Location = new System.Drawing.Point(18, 56);
             this.ListDota2Player.Name = "ListDota2Player";
             this.ListDota2Player.Size = new System.Drawing.Size(228, 584);
             this.ListDota2Player.Sorted = true;
@@ -124,7 +142,7 @@
             this.labelListPlayer.BackColor = System.Drawing.Color.Transparent;
             this.labelListPlayer.Font = new System.Drawing.Font("Univers", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.labelListPlayer.ForeColor = System.Drawing.SystemColors.ControlLight;
-            this.labelListPlayer.Location = new System.Drawing.Point(49, 21);
+            this.labelListPlayer.Location = new System.Drawing.Point(65, 21);
             this.labelListPlayer.Name = "labelListPlayer";
             this.labelListPlayer.Size = new System.Drawing.Size(128, 20);
             this.labelListPlayer.TabIndex = 12;
@@ -179,10 +197,11 @@
             // TextBoxSearch
             // 
             this.TextBoxSearch.Font = new System.Drawing.Font("Univers", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.TextBoxSearch.Location = new System.Drawing.Point(25, 686);
+            this.TextBoxSearch.Location = new System.Drawing.Point(18, 671);
             this.TextBoxSearch.Name = "TextBoxSearch";
             this.TextBoxSearch.Size = new System.Drawing.Size(228, 27);
             this.TextBoxSearch.TabIndex = 17;
+            this.TextBoxSearch.TextChanged += new System.EventHandler(this.TextBoxSearch_TextChanged);
             // 
             // LabelTeam
             // 
@@ -262,7 +281,7 @@
             this.LabelNumberGames.BackColor = System.Drawing.Color.Transparent;
             this.LabelNumberGames.Font = new System.Drawing.Font("Univers", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.LabelNumberGames.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.LabelNumberGames.Location = new System.Drawing.Point(278, 579);
+            this.LabelNumberGames.Location = new System.Drawing.Point(278, 435);
             this.LabelNumberGames.Name = "LabelNumberGames";
             this.LabelNumberGames.Size = new System.Drawing.Size(131, 20);
             this.LabelNumberGames.TabIndex = 24;
@@ -274,7 +293,7 @@
             this.LabelProcentWin.BackColor = System.Drawing.Color.Transparent;
             this.LabelProcentWin.Font = new System.Drawing.Font("Univers", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.LabelProcentWin.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.LabelProcentWin.Location = new System.Drawing.Point(278, 620);
+            this.LabelProcentWin.Location = new System.Drawing.Point(278, 476);
             this.LabelProcentWin.Name = "LabelProcentWin";
             this.LabelProcentWin.Size = new System.Drawing.Size(127, 20);
             this.LabelProcentWin.TabIndex = 25;
@@ -286,7 +305,7 @@
             this.LabelMMR.BackColor = System.Drawing.Color.Transparent;
             this.LabelMMR.Font = new System.Drawing.Font("Univers", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.LabelMMR.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.LabelMMR.Location = new System.Drawing.Point(278, 665);
+            this.LabelMMR.Location = new System.Drawing.Point(278, 521);
             this.LabelMMR.Name = "LabelMMR";
             this.LabelMMR.Size = new System.Drawing.Size(52, 20);
             this.LabelMMR.TabIndex = 26;
@@ -312,17 +331,17 @@
             this.PictureSelectedPlayer2.TabIndex = 28;
             this.PictureSelectedPlayer2.TabStop = false;
             // 
-            // label1
+            // labelListPlayer2
             // 
-            this.label1.AutoSize = true;
-            this.label1.BackColor = System.Drawing.Color.Transparent;
-            this.label1.Font = new System.Drawing.Font("Univers", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label1.ForeColor = System.Drawing.SystemColors.ControlLight;
-            this.label1.Location = new System.Drawing.Point(1140, 21);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(128, 20);
-            this.label1.TabIndex = 31;
-            this.label1.Text = "Список игроков";
+            this.labelListPlayer2.AutoSize = true;
+            this.labelListPlayer2.BackColor = System.Drawing.Color.Transparent;
+            this.labelListPlayer2.Font = new System.Drawing.Font("Univers", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.labelListPlayer2.ForeColor = System.Drawing.SystemColors.ControlLight;
+            this.labelListPlayer2.Location = new System.Drawing.Point(1119, 21);
+            this.labelListPlayer2.Name = "labelListPlayer2";
+            this.labelListPlayer2.Size = new System.Drawing.Size(128, 20);
+            this.labelListPlayer2.TabIndex = 31;
+            this.labelListPlayer2.Text = "Список игроков";
             // 
             // LabelSurnameSelectedPlayer2
             // 
@@ -360,13 +379,14 @@
             this.LabelNameSelectedPlayer2.TabIndex = 32;
             this.LabelNameSelectedPlayer2.Text = "Имя";
             // 
-            // textBox1
+            // TextBoxSearch2
             // 
-            this.textBox1.Font = new System.Drawing.Font("Univers", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.textBox1.Location = new System.Drawing.Point(1110, 686);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(228, 27);
-            this.textBox1.TabIndex = 45;
+            this.TextBoxSearch2.Font = new System.Drawing.Font("Univers", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.TextBoxSearch2.Location = new System.Drawing.Point(1074, 671);
+            this.TextBoxSearch2.Name = "TextBoxSearch2";
+            this.TextBoxSearch2.Size = new System.Drawing.Size(228, 27);
+            this.TextBoxSearch2.TabIndex = 45;
+            this.TextBoxSearch2.TextChanged += new System.EventHandler(this.TextBoxSearch2_TextChanged);
             // 
             // ListDota2Player2
             // 
@@ -377,7 +397,7 @@
             this.ListDota2Player2.FormattingEnabled = true;
             this.ListDota2Player2.HorizontalScrollbar = true;
             this.ListDota2Player2.ItemHeight = 20;
-            this.ListDota2Player2.Location = new System.Drawing.Point(1110, 65);
+            this.ListDota2Player2.Location = new System.Drawing.Point(1074, 56);
             this.ListDota2Player2.Name = "ListDota2Player2";
             this.ListDota2Player2.Size = new System.Drawing.Size(228, 584);
             this.ListDota2Player2.Sorted = true;
@@ -394,74 +414,6 @@
             this.LabelSignatureAdd.Name = "LabelSignatureAdd";
             this.LabelSignatureAdd.Size = new System.Drawing.Size(0, 20);
             this.LabelSignatureAdd.TabIndex = 46;
-            // 
-            // LabelHistoryTeams
-            // 
-            this.LabelHistoryTeams.AutoSize = true;
-            this.LabelHistoryTeams.BackColor = System.Drawing.Color.Transparent;
-            this.LabelHistoryTeams.Font = new System.Drawing.Font("Univers", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.LabelHistoryTeams.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.LabelHistoryTeams.Location = new System.Drawing.Point(278, 439);
-            this.LabelHistoryTeams.Name = "LabelHistoryTeams";
-            this.LabelHistoryTeams.Size = new System.Drawing.Size(82, 20);
-            this.LabelHistoryTeams.TabIndex = 47;
-            this.LabelHistoryTeams.Text = "Команды:";
-            // 
-            // LabelHistoryTeamsAdd1
-            // 
-            this.LabelHistoryTeamsAdd1.AutoSize = true;
-            this.LabelHistoryTeamsAdd1.BackColor = System.Drawing.Color.Transparent;
-            this.LabelHistoryTeamsAdd1.Font = new System.Drawing.Font("Univers", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.LabelHistoryTeamsAdd1.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.LabelHistoryTeamsAdd1.Location = new System.Drawing.Point(278, 484);
-            this.LabelHistoryTeamsAdd1.Name = "LabelHistoryTeamsAdd1";
-            this.LabelHistoryTeamsAdd1.Size = new System.Drawing.Size(0, 20);
-            this.LabelHistoryTeamsAdd1.TabIndex = 48;
-            // 
-            // LabelHistoryTeamsAdd2
-            // 
-            this.LabelHistoryTeamsAdd2.AutoSize = true;
-            this.LabelHistoryTeamsAdd2.BackColor = System.Drawing.Color.Transparent;
-            this.LabelHistoryTeamsAdd2.Font = new System.Drawing.Font("Univers", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.LabelHistoryTeamsAdd2.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.LabelHistoryTeamsAdd2.Location = new System.Drawing.Point(278, 528);
-            this.LabelHistoryTeamsAdd2.Name = "LabelHistoryTeamsAdd2";
-            this.LabelHistoryTeamsAdd2.Size = new System.Drawing.Size(0, 20);
-            this.LabelHistoryTeamsAdd2.TabIndex = 49;
-            // 
-            // LabelHistoryTeams2Add2
-            // 
-            this.LabelHistoryTeams2Add2.AutoSize = true;
-            this.LabelHistoryTeams2Add2.BackColor = System.Drawing.Color.Transparent;
-            this.LabelHistoryTeams2Add2.Font = new System.Drawing.Font("Univers", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.LabelHistoryTeams2Add2.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.LabelHistoryTeams2Add2.Location = new System.Drawing.Point(789, 528);
-            this.LabelHistoryTeams2Add2.Name = "LabelHistoryTeams2Add2";
-            this.LabelHistoryTeams2Add2.Size = new System.Drawing.Size(0, 20);
-            this.LabelHistoryTeams2Add2.TabIndex = 62;
-            // 
-            // LabelHistoryTeams2Add1
-            // 
-            this.LabelHistoryTeams2Add1.AutoSize = true;
-            this.LabelHistoryTeams2Add1.BackColor = System.Drawing.Color.Transparent;
-            this.LabelHistoryTeams2Add1.Font = new System.Drawing.Font("Univers", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.LabelHistoryTeams2Add1.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.LabelHistoryTeams2Add1.Location = new System.Drawing.Point(789, 484);
-            this.LabelHistoryTeams2Add1.Name = "LabelHistoryTeams2Add1";
-            this.LabelHistoryTeams2Add1.Size = new System.Drawing.Size(0, 20);
-            this.LabelHistoryTeams2Add1.TabIndex = 61;
-            // 
-            // LabelHistoryTeams2
-            // 
-            this.LabelHistoryTeams2.AutoSize = true;
-            this.LabelHistoryTeams2.BackColor = System.Drawing.Color.Transparent;
-            this.LabelHistoryTeams2.Font = new System.Drawing.Font("Univers", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.LabelHistoryTeams2.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.LabelHistoryTeams2.Location = new System.Drawing.Point(789, 439);
-            this.LabelHistoryTeams2.Name = "LabelHistoryTeams2";
-            this.LabelHistoryTeams2.Size = new System.Drawing.Size(82, 20);
-            this.LabelHistoryTeams2.TabIndex = 60;
-            this.LabelHistoryTeams2.Text = "Команды:";
             // 
             // LabelSignatureAdd2
             // 
@@ -480,7 +432,7 @@
             this.LabelMMR2.BackColor = System.Drawing.Color.Transparent;
             this.LabelMMR2.Font = new System.Drawing.Font("Univers", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.LabelMMR2.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.LabelMMR2.Location = new System.Drawing.Point(789, 665);
+            this.LabelMMR2.Location = new System.Drawing.Point(786, 521);
             this.LabelMMR2.Name = "LabelMMR2";
             this.LabelMMR2.Size = new System.Drawing.Size(52, 20);
             this.LabelMMR2.TabIndex = 58;
@@ -492,7 +444,7 @@
             this.LabelProcentWin2.BackColor = System.Drawing.Color.Transparent;
             this.LabelProcentWin2.Font = new System.Drawing.Font("Univers", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.LabelProcentWin2.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.LabelProcentWin2.Location = new System.Drawing.Point(789, 620);
+            this.LabelProcentWin2.Location = new System.Drawing.Point(786, 476);
             this.LabelProcentWin2.Name = "LabelProcentWin2";
             this.LabelProcentWin2.Size = new System.Drawing.Size(127, 20);
             this.LabelProcentWin2.TabIndex = 57;
@@ -504,7 +456,7 @@
             this.LabelNumberGames2.BackColor = System.Drawing.Color.Transparent;
             this.LabelNumberGames2.Font = new System.Drawing.Font("Univers", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.LabelNumberGames2.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.LabelNumberGames2.Location = new System.Drawing.Point(789, 579);
+            this.LabelNumberGames2.Location = new System.Drawing.Point(786, 435);
             this.LabelNumberGames2.Name = "LabelNumberGames2";
             this.LabelNumberGames2.Size = new System.Drawing.Size(131, 20);
             this.LabelNumberGames2.TabIndex = 56;
@@ -588,7 +540,7 @@
             this.LabelPentagon.BackColor = System.Drawing.Color.Transparent;
             this.LabelPentagon.Font = new System.Drawing.Font("Univers", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.LabelPentagon.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.LabelPentagon.Location = new System.Drawing.Point(608, 355);
+            this.LabelPentagon.Location = new System.Drawing.Point(596, 355);
             this.LabelPentagon.Name = "LabelPentagon";
             this.LabelPentagon.Size = new System.Drawing.Size(0, 20);
             this.LabelPentagon.TabIndex = 63;
@@ -599,22 +551,236 @@
             this.LabelPentagon2.BackColor = System.Drawing.Color.Transparent;
             this.LabelPentagon2.Font = new System.Drawing.Font("Univers", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.LabelPentagon2.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.LabelPentagon2.Location = new System.Drawing.Point(608, 384);
+            this.LabelPentagon2.Location = new System.Drawing.Point(596, 384);
             this.LabelPentagon2.Name = "LabelPentagon2";
             this.LabelPentagon2.Size = new System.Drawing.Size(0, 20);
             this.LabelPentagon2.TabIndex = 64;
+            // 
+            // LabelSearch
+            // 
+            this.LabelSearch.AutoSize = true;
+            this.LabelSearch.BackColor = System.Drawing.Color.Transparent;
+            this.LabelSearch.Font = new System.Drawing.Font("Univers", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.LabelSearch.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.LabelSearch.Location = new System.Drawing.Point(21, 645);
+            this.LabelSearch.Name = "LabelSearch";
+            this.LabelSearch.Size = new System.Drawing.Size(61, 20);
+            this.LabelSearch.TabIndex = 65;
+            this.LabelSearch.Text = "Поиск:";
+            // 
+            // LabelSearch2
+            // 
+            this.LabelSearch2.AutoSize = true;
+            this.LabelSearch2.BackColor = System.Drawing.Color.Transparent;
+            this.LabelSearch2.Font = new System.Drawing.Font("Univers", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.LabelSearch2.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.LabelSearch2.Location = new System.Drawing.Point(1075, 645);
+            this.LabelSearch2.Name = "LabelSearch2";
+            this.LabelSearch2.Size = new System.Drawing.Size(61, 20);
+            this.LabelSearch2.TabIndex = 66;
+            this.LabelSearch2.Text = "Поиск:";
+            // 
+            // PictureBoxSignature1
+            // 
+            this.PictureBoxSignature1.BackColor = System.Drawing.Color.Transparent;
+            this.PictureBoxSignature1.Image = global::CourseProject0_1.Properties.Resources.Abaddon_icon;
+            this.PictureBoxSignature1.Location = new System.Drawing.Point(279, 384);
+            this.PictureBoxSignature1.Name = "PictureBoxSignature1";
+            this.PictureBoxSignature1.Size = new System.Drawing.Size(54, 34);
+            this.PictureBoxSignature1.TabIndex = 67;
+            this.PictureBoxSignature1.TabStop = false;
+            // 
+            // PictureBoxSignature2
+            // 
+            this.PictureBoxSignature2.BackColor = System.Drawing.Color.Transparent;
+            this.PictureBoxSignature2.Image = global::CourseProject0_1.Properties.Resources.Abaddon_icon;
+            this.PictureBoxSignature2.Location = new System.Drawing.Point(354, 384);
+            this.PictureBoxSignature2.Name = "PictureBoxSignature2";
+            this.PictureBoxSignature2.Size = new System.Drawing.Size(55, 34);
+            this.PictureBoxSignature2.TabIndex = 68;
+            this.PictureBoxSignature2.TabStop = false;
+            // 
+            // PictureBoxSignature3
+            // 
+            this.PictureBoxSignature3.BackColor = System.Drawing.Color.Transparent;
+            this.PictureBoxSignature3.Image = global::CourseProject0_1.Properties.Resources.Abaddon_icon;
+            this.PictureBoxSignature3.Location = new System.Drawing.Point(432, 384);
+            this.PictureBoxSignature3.Name = "PictureBoxSignature3";
+            this.PictureBoxSignature3.Size = new System.Drawing.Size(58, 34);
+            this.PictureBoxSignature3.TabIndex = 69;
+            this.PictureBoxSignature3.TabStop = false;
+            // 
+            // PictureBox2Signature3
+            // 
+            this.PictureBox2Signature3.BackColor = System.Drawing.Color.Transparent;
+            this.PictureBox2Signature3.Image = global::CourseProject0_1.Properties.Resources.Abaddon_icon;
+            this.PictureBox2Signature3.Location = new System.Drawing.Point(953, 384);
+            this.PictureBox2Signature3.Name = "PictureBox2Signature3";
+            this.PictureBox2Signature3.Size = new System.Drawing.Size(54, 34);
+            this.PictureBox2Signature3.TabIndex = 72;
+            this.PictureBox2Signature3.TabStop = false;
+            // 
+            // PictureBox2Signature2
+            // 
+            this.PictureBox2Signature2.BackColor = System.Drawing.Color.Transparent;
+            this.PictureBox2Signature2.Image = global::CourseProject0_1.Properties.Resources.Abaddon_icon;
+            this.PictureBox2Signature2.Location = new System.Drawing.Point(870, 384);
+            this.PictureBox2Signature2.Name = "PictureBox2Signature2";
+            this.PictureBox2Signature2.Size = new System.Drawing.Size(57, 34);
+            this.PictureBox2Signature2.TabIndex = 71;
+            this.PictureBox2Signature2.TabStop = false;
+            // 
+            // PictureBox2Signature1
+            // 
+            this.PictureBox2Signature1.BackColor = System.Drawing.Color.Transparent;
+            this.PictureBox2Signature1.Image = global::CourseProject0_1.Properties.Resources.Abaddon_icon;
+            this.PictureBox2Signature1.Location = new System.Drawing.Point(790, 384);
+            this.PictureBox2Signature1.Name = "PictureBox2Signature1";
+            this.PictureBox2Signature1.Size = new System.Drawing.Size(54, 34);
+            this.PictureBox2Signature1.TabIndex = 70;
+            this.PictureBox2Signature1.TabStop = false;
+            // 
+            // LabelPentagonAngle1
+            // 
+            this.LabelPentagonAngle1.AutoSize = true;
+            this.LabelPentagonAngle1.BackColor = System.Drawing.Color.Transparent;
+            this.LabelPentagonAngle1.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.LabelPentagonAngle1.Location = new System.Drawing.Point(545, 196);
+            this.LabelPentagonAngle1.Name = "LabelPentagonAngle1";
+            this.LabelPentagonAngle1.Size = new System.Drawing.Size(13, 13);
+            this.LabelPentagonAngle1.TabIndex = 73;
+            this.LabelPentagonAngle1.Text = "1";
+            // 
+            // LabelPentagonAngle2
+            // 
+            this.LabelPentagonAngle2.AutoSize = true;
+            this.LabelPentagonAngle2.BackColor = System.Drawing.Color.Transparent;
+            this.LabelPentagonAngle2.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.LabelPentagonAngle2.Location = new System.Drawing.Point(653, 126);
+            this.LabelPentagonAngle2.Name = "LabelPentagonAngle2";
+            this.LabelPentagonAngle2.Size = new System.Drawing.Size(13, 13);
+            this.LabelPentagonAngle2.TabIndex = 74;
+            this.LabelPentagonAngle2.Text = "2";
+            // 
+            // LabelPentagonAngle3
+            // 
+            this.LabelPentagonAngle3.AutoSize = true;
+            this.LabelPentagonAngle3.BackColor = System.Drawing.Color.Transparent;
+            this.LabelPentagonAngle3.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.LabelPentagonAngle3.Location = new System.Drawing.Point(757, 195);
+            this.LabelPentagonAngle3.Name = "LabelPentagonAngle3";
+            this.LabelPentagonAngle3.Size = new System.Drawing.Size(13, 13);
+            this.LabelPentagonAngle3.TabIndex = 75;
+            this.LabelPentagonAngle3.Text = "3";
+            // 
+            // LabelPentagonAngle4
+            // 
+            this.LabelPentagonAngle4.AutoSize = true;
+            this.LabelPentagonAngle4.BackColor = System.Drawing.Color.Transparent;
+            this.LabelPentagonAngle4.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.LabelPentagonAngle4.Location = new System.Drawing.Point(596, 329);
+            this.LabelPentagonAngle4.Name = "LabelPentagonAngle4";
+            this.LabelPentagonAngle4.Size = new System.Drawing.Size(13, 13);
+            this.LabelPentagonAngle4.TabIndex = 76;
+            this.LabelPentagonAngle4.Text = "4";
+            // 
+            // LabelPentagonAngle5
+            // 
+            this.LabelPentagonAngle5.AutoSize = true;
+            this.LabelPentagonAngle5.BackColor = System.Drawing.Color.Transparent;
+            this.LabelPentagonAngle5.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.LabelPentagonAngle5.Location = new System.Drawing.Point(710, 330);
+            this.LabelPentagonAngle5.Name = "LabelPentagonAngle5";
+            this.LabelPentagonAngle5.Size = new System.Drawing.Size(13, 13);
+            this.LabelPentagonAngle5.TabIndex = 77;
+            this.LabelPentagonAngle5.Text = "5";
+            // 
+            // LabelPentagonAngle1Value
+            // 
+            this.LabelPentagonAngle1Value.AutoSize = true;
+            this.LabelPentagonAngle1Value.BackColor = System.Drawing.Color.Transparent;
+            this.LabelPentagonAngle1Value.Font = new System.Drawing.Font("Univers", 12F);
+            this.LabelPentagonAngle1Value.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.LabelPentagonAngle1Value.Location = new System.Drawing.Point(595, 435);
+            this.LabelPentagonAngle1Value.Name = "LabelPentagonAngle1Value";
+            this.LabelPentagonAngle1Value.Size = new System.Drawing.Size(101, 20);
+            this.LabelPentagonAngle1Value.TabIndex = 78;
+            this.LabelPentagonAngle1Value.Text = "1 - Гибкость";
+            // 
+            // LabelPentagonAngle2Value
+            // 
+            this.LabelPentagonAngle2Value.AutoSize = true;
+            this.LabelPentagonAngle2Value.BackColor = System.Drawing.Color.Transparent;
+            this.LabelPentagonAngle2Value.Font = new System.Drawing.Font("Univers", 12F);
+            this.LabelPentagonAngle2Value.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.LabelPentagonAngle2Value.Location = new System.Drawing.Point(595, 459);
+            this.LabelPentagonAngle2Value.Name = "LabelPentagonAngle2Value";
+            this.LabelPentagonAngle2Value.Size = new System.Drawing.Size(109, 20);
+            this.LabelPentagonAngle2Value.TabIndex = 79;
+            this.LabelPentagonAngle2Value.Text = "2 - Сражения";
+            // 
+            // LabelPentagonAngle3Value
+            // 
+            this.LabelPentagonAngle3Value.AutoSize = true;
+            this.LabelPentagonAngle3Value.BackColor = System.Drawing.Color.Transparent;
+            this.LabelPentagonAngle3Value.Font = new System.Drawing.Font("Univers", 12F);
+            this.LabelPentagonAngle3Value.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.LabelPentagonAngle3Value.Location = new System.Drawing.Point(594, 485);
+            this.LabelPentagonAngle3Value.Name = "LabelPentagonAngle3Value";
+            this.LabelPentagonAngle3Value.Size = new System.Drawing.Size(146, 20);
+            this.LabelPentagonAngle3Value.TabIndex = 80;
+            this.LabelPentagonAngle3Value.Text = "3 - Добыча золота";
+            // 
+            // LabelPentagonAngle4Value
+            // 
+            this.LabelPentagonAngle4Value.AutoSize = true;
+            this.LabelPentagonAngle4Value.BackColor = System.Drawing.Color.Transparent;
+            this.LabelPentagonAngle4Value.Font = new System.Drawing.Font("Univers", 12F);
+            this.LabelPentagonAngle4Value.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.LabelPentagonAngle4Value.Location = new System.Drawing.Point(595, 511);
+            this.LabelPentagonAngle4Value.Name = "LabelPentagonAngle4Value";
+            this.LabelPentagonAngle4Value.Size = new System.Drawing.Size(117, 20);
+            this.LabelPentagonAngle4Value.TabIndex = 81;
+            this.LabelPentagonAngle4Value.Text = "4 - Поддержка";
+            // 
+            // LabelPentagonAngle5Value
+            // 
+            this.LabelPentagonAngle5Value.AutoSize = true;
+            this.LabelPentagonAngle5Value.BackColor = System.Drawing.Color.Transparent;
+            this.LabelPentagonAngle5Value.Font = new System.Drawing.Font("Univers", 12F);
+            this.LabelPentagonAngle5Value.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.LabelPentagonAngle5Value.Location = new System.Drawing.Point(595, 537);
+            this.LabelPentagonAngle5Value.Name = "LabelPentagonAngle5Value";
+            this.LabelPentagonAngle5Value.Size = new System.Drawing.Size(81, 20);
+            this.LabelPentagonAngle5Value.TabIndex = 82;
+            this.LabelPentagonAngle5Value.Text = "5 - Осада";
             // 
             // FormListPlayer
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
-            this.ClientSize = new System.Drawing.Size(1350, 729);
+            this.ClientSize = new System.Drawing.Size(1322, 721);
+            this.Controls.Add(this.LabelPentagonAngle5Value);
+            this.Controls.Add(this.LabelPentagonAngle4Value);
+            this.Controls.Add(this.LabelPentagonAngle3Value);
+            this.Controls.Add(this.LabelPentagonAngle2Value);
+            this.Controls.Add(this.LabelPentagonAngle1Value);
+            this.Controls.Add(this.LabelPentagonAngle5);
+            this.Controls.Add(this.LabelPentagonAngle4);
+            this.Controls.Add(this.LabelPentagonAngle3);
+            this.Controls.Add(this.LabelPentagonAngle2);
+            this.Controls.Add(this.LabelPentagonAngle1);
+            this.Controls.Add(this.PictureBox2Signature3);
+            this.Controls.Add(this.PictureBox2Signature2);
+            this.Controls.Add(this.PictureBox2Signature1);
+            this.Controls.Add(this.PictureBoxSignature3);
+            this.Controls.Add(this.PictureBoxSignature2);
+            this.Controls.Add(this.PictureBoxSignature1);
+            this.Controls.Add(this.LabelSearch2);
+            this.Controls.Add(this.LabelSearch);
             this.Controls.Add(this.LabelPentagon2);
             this.Controls.Add(this.LabelPentagon);
-            this.Controls.Add(this.LabelHistoryTeams2Add2);
-            this.Controls.Add(this.LabelHistoryTeams2Add1);
-            this.Controls.Add(this.LabelHistoryTeams2);
             this.Controls.Add(this.LabelSignatureAdd2);
             this.Controls.Add(this.LabelMMR2);
             this.Controls.Add(this.LabelProcentWin2);
@@ -625,16 +791,13 @@
             this.Controls.Add(this.LabelCity2);
             this.Controls.Add(this.LabelCountry2);
             this.Controls.Add(this.LabelTeam2);
-            this.Controls.Add(this.LabelHistoryTeamsAdd2);
-            this.Controls.Add(this.LabelHistoryTeamsAdd1);
-            this.Controls.Add(this.LabelHistoryTeams);
             this.Controls.Add(this.LabelSignatureAdd);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.TextBoxSearch2);
             this.Controls.Add(this.ListDota2Player2);
             this.Controls.Add(this.LabelSurnameSelectedPlayer2);
             this.Controls.Add(this.LabelNickameSelectedPlayer2);
             this.Controls.Add(this.LabelNameSelectedPlayer2);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.labelListPlayer2);
             this.Controls.Add(this.PictureSelectedPlayer2);
             this.Controls.Add(this.PictureBoxPentagon);
             this.Controls.Add(this.LabelMMR);
@@ -663,6 +826,12 @@
             ((System.ComponentModel.ISupportInitialize)(this.PictureSelectedPlayer)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.PictureBoxPentagon)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.PictureSelectedPlayer2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.PictureBoxSignature1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.PictureBoxSignature2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.PictureBoxSignature3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.PictureBox2Signature3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.PictureBox2Signature2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.PictureBox2Signature1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -690,19 +859,13 @@
         public System.Windows.Forms.Label LabelRole;
         public System.Windows.Forms.PictureBox PictureBoxPentagon;
         public System.Windows.Forms.PictureBox PictureSelectedPlayer2;
-        public System.Windows.Forms.Label label1;
+        public System.Windows.Forms.Label labelListPlayer2;
         public System.Windows.Forms.Label LabelSurnameSelectedPlayer2;
         public System.Windows.Forms.Label LabelNickameSelectedPlayer2;
         public System.Windows.Forms.Label LabelNameSelectedPlayer2;
-        public System.Windows.Forms.TextBox textBox1;
+        public System.Windows.Forms.TextBox TextBoxSearch2;
         public System.Windows.Forms.ListBox ListDota2Player2;
         public System.Windows.Forms.Label LabelSignatureAdd;
-        public System.Windows.Forms.Label LabelHistoryTeams;
-        public System.Windows.Forms.Label LabelHistoryTeamsAdd1;
-        public System.Windows.Forms.Label LabelHistoryTeamsAdd2;
-        public System.Windows.Forms.Label LabelHistoryTeams2Add2;
-        public System.Windows.Forms.Label LabelHistoryTeams2Add1;
-        public System.Windows.Forms.Label LabelHistoryTeams2;
         public System.Windows.Forms.Label LabelSignatureAdd2;
         public System.Windows.Forms.Label LabelMMR2;
         public System.Windows.Forms.Label LabelProcentWin2;
@@ -715,5 +878,23 @@
         public System.Windows.Forms.Label LabelTeam2;
         public System.Windows.Forms.Label LabelPentagon;
         public System.Windows.Forms.Label LabelPentagon2;
+        public System.Windows.Forms.Label LabelSearch;
+        public System.Windows.Forms.Label LabelSearch2;
+        public System.Windows.Forms.PictureBox PictureBoxSignature1;
+        public System.Windows.Forms.PictureBox PictureBoxSignature2;
+        public System.Windows.Forms.PictureBox PictureBoxSignature3;
+        public System.Windows.Forms.PictureBox PictureBox2Signature3;
+        public System.Windows.Forms.PictureBox PictureBox2Signature2;
+        public System.Windows.Forms.PictureBox PictureBox2Signature1;
+        private System.Windows.Forms.Label LabelPentagonAngle1;
+        private System.Windows.Forms.Label LabelPentagonAngle2;
+        private System.Windows.Forms.Label LabelPentagonAngle3;
+        private System.Windows.Forms.Label LabelPentagonAngle4;
+        private System.Windows.Forms.Label LabelPentagonAngle5;
+        private System.Windows.Forms.Label LabelPentagonAngle1Value;
+        private System.Windows.Forms.Label LabelPentagonAngle2Value;
+        private System.Windows.Forms.Label LabelPentagonAngle3Value;
+        private System.Windows.Forms.Label LabelPentagonAngle4Value;
+        private System.Windows.Forms.Label LabelPentagonAngle5Value;
     }
 }
