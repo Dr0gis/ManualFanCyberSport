@@ -127,19 +127,19 @@
   <data name="ProfileNonLogo100" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Image\ProfileNonLogo100.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="Abaddon_icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\bin\Debug\image\heroes\Abaddon_icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="dota2logo100" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Image\dota2logo100.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="54d10b" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Image\54d10b.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="dota2logo" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Image\dota2logo.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="dota2_100_100" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\bin\Debug\image\dota2_100_100.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="ProfileNonLogo" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Image\ProfileNonLogo.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Abaddon_icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\bin\Debug\image\heroes\Abaddon_icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="csgo_100_100" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\bin\Debug\image\csgo_100_100.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

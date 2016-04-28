@@ -30,7 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormListPlayer));
             this.labelDota2 = new System.Windows.Forms.Label();
-            this.ListDota2Player = new System.Windows.Forms.ListBox();
+            this.ListPlayer = new System.Windows.Forms.ListBox();
             this.PictureBoxLogoGame = new System.Windows.Forms.PictureBox();
             this.labelListPlayer = new System.Windows.Forms.Label();
             this.PictureSelectedPlayer = new System.Windows.Forms.PictureBox();
@@ -54,7 +54,7 @@
             this.LabelNickameSelectedPlayer2 = new System.Windows.Forms.Label();
             this.LabelNameSelectedPlayer2 = new System.Windows.Forms.Label();
             this.TextBoxSearch2 = new System.Windows.Forms.TextBox();
-            this.ListDota2Player2 = new System.Windows.Forms.ListBox();
+            this.List2Player = new System.Windows.Forms.ListBox();
             this.LabelSignatureAdd = new System.Windows.Forms.Label();
             this.LabelSignatureAdd2 = new System.Windows.Forms.Label();
             this.LabelMMR2 = new System.Windows.Forms.Label();
@@ -110,29 +110,30 @@
             this.labelDota2.TabIndex = 10;
             this.labelDota2.Text = "Dota 2";
             // 
-            // ListDota2Player
+            // ListPlayer
             // 
-            this.ListDota2Player.BackColor = System.Drawing.Color.White;
-            this.ListDota2Player.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.ListDota2Player.Font = new System.Drawing.Font("Univers", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.ListDota2Player.ForeColor = System.Drawing.SystemColors.InfoText;
-            this.ListDota2Player.FormattingEnabled = true;
-            this.ListDota2Player.HorizontalScrollbar = true;
-            this.ListDota2Player.ItemHeight = 20;
-            this.ListDota2Player.Location = new System.Drawing.Point(18, 56);
-            this.ListDota2Player.Name = "ListDota2Player";
-            this.ListDota2Player.Size = new System.Drawing.Size(228, 584);
-            this.ListDota2Player.Sorted = true;
-            this.ListDota2Player.TabIndex = 8;
-            this.ListDota2Player.SelectedIndexChanged += new System.EventHandler(this.SelectPlayerInDoat2List);
+            this.ListPlayer.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(49)))), ((int)(((byte)(49)))));
+            this.ListPlayer.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.ListPlayer.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.ListPlayer.Font = new System.Drawing.Font("Univers", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.ListPlayer.ForeColor = System.Drawing.Color.White;
+            this.ListPlayer.FormattingEnabled = true;
+            this.ListPlayer.HorizontalScrollbar = true;
+            this.ListPlayer.ItemHeight = 20;
+            this.ListPlayer.Location = new System.Drawing.Point(18, 56);
+            this.ListPlayer.Name = "ListPlayer";
+            this.ListPlayer.Size = new System.Drawing.Size(228, 582);
+            this.ListPlayer.Sorted = true;
+            this.ListPlayer.TabIndex = 8;
+            this.ListPlayer.SelectedIndexChanged += new System.EventHandler(this.ListPlayer_SelectedIndexChanged);
             // 
             // PictureBoxLogoGame
             // 
             this.PictureBoxLogoGame.BackColor = System.Drawing.Color.Transparent;
-            this.PictureBoxLogoGame.Image = global::CourseProject0_1.Properties.Resources.dota2logo100;
-            this.PictureBoxLogoGame.Location = new System.Drawing.Point(612, 21);
+            this.PictureBoxLogoGame.Image = global::CourseProject0_1.Properties.Resources.dota2_100_100;
+            this.PictureBoxLogoGame.Location = new System.Drawing.Point(619, 21);
             this.PictureBoxLogoGame.Name = "PictureBoxLogoGame";
-            this.PictureBoxLogoGame.Size = new System.Drawing.Size(105, 103);
+            this.PictureBoxLogoGame.Size = new System.Drawing.Size(100, 100);
             this.PictureBoxLogoGame.TabIndex = 7;
             this.PictureBoxLogoGame.TabStop = false;
             // 
@@ -196,7 +197,10 @@
             // 
             // TextBoxSearch
             // 
+            this.TextBoxSearch.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(49)))), ((int)(((byte)(49)))));
+            this.TextBoxSearch.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.TextBoxSearch.Font = new System.Drawing.Font("Univers", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.TextBoxSearch.ForeColor = System.Drawing.Color.White;
             this.TextBoxSearch.Location = new System.Drawing.Point(18, 671);
             this.TextBoxSearch.Name = "TextBoxSearch";
             this.TextBoxSearch.Size = new System.Drawing.Size(228, 27);
@@ -314,7 +318,7 @@
             // PictureBoxPentagon
             // 
             this.PictureBoxPentagon.BackColor = System.Drawing.Color.Transparent;
-            this.PictureBoxPentagon.Location = new System.Drawing.Point(558, 135);
+            this.PictureBoxPentagon.Location = new System.Drawing.Point(569, 135);
             this.PictureBoxPentagon.Name = "PictureBoxPentagon";
             this.PictureBoxPentagon.Size = new System.Drawing.Size(200, 200);
             this.PictureBoxPentagon.TabIndex = 27;
@@ -381,28 +385,32 @@
             // 
             // TextBoxSearch2
             // 
+            this.TextBoxSearch2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(49)))), ((int)(((byte)(49)))));
+            this.TextBoxSearch2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.TextBoxSearch2.Font = new System.Drawing.Font("Univers", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.TextBoxSearch2.ForeColor = System.Drawing.Color.White;
             this.TextBoxSearch2.Location = new System.Drawing.Point(1074, 671);
             this.TextBoxSearch2.Name = "TextBoxSearch2";
             this.TextBoxSearch2.Size = new System.Drawing.Size(228, 27);
             this.TextBoxSearch2.TabIndex = 45;
             this.TextBoxSearch2.TextChanged += new System.EventHandler(this.TextBoxSearch2_TextChanged);
             // 
-            // ListDota2Player2
+            // List2Player
             // 
-            this.ListDota2Player2.BackColor = System.Drawing.Color.White;
-            this.ListDota2Player2.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.ListDota2Player2.Font = new System.Drawing.Font("Univers", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.ListDota2Player2.ForeColor = System.Drawing.SystemColors.InfoText;
-            this.ListDota2Player2.FormattingEnabled = true;
-            this.ListDota2Player2.HorizontalScrollbar = true;
-            this.ListDota2Player2.ItemHeight = 20;
-            this.ListDota2Player2.Location = new System.Drawing.Point(1074, 56);
-            this.ListDota2Player2.Name = "ListDota2Player2";
-            this.ListDota2Player2.Size = new System.Drawing.Size(228, 584);
-            this.ListDota2Player2.Sorted = true;
-            this.ListDota2Player2.TabIndex = 44;
-            this.ListDota2Player2.SelectedIndexChanged += new System.EventHandler(this.ListDota2Player2_SelectedIndexChanged);
+            this.List2Player.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(49)))), ((int)(((byte)(49)))));
+            this.List2Player.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.List2Player.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.List2Player.Font = new System.Drawing.Font("Univers", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.List2Player.ForeColor = System.Drawing.Color.White;
+            this.List2Player.FormattingEnabled = true;
+            this.List2Player.HorizontalScrollbar = true;
+            this.List2Player.ItemHeight = 20;
+            this.List2Player.Location = new System.Drawing.Point(1074, 56);
+            this.List2Player.Name = "List2Player";
+            this.List2Player.Size = new System.Drawing.Size(228, 582);
+            this.List2Player.Sorted = true;
+            this.List2Player.TabIndex = 44;
+            this.List2Player.SelectedIndexChanged += new System.EventHandler(this.List2Player_SelectedIndexChanged);
             // 
             // LabelSignatureAdd
             // 
@@ -645,7 +653,7 @@
             this.LabelPentagonAngle1.AutoSize = true;
             this.LabelPentagonAngle1.BackColor = System.Drawing.Color.Transparent;
             this.LabelPentagonAngle1.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.LabelPentagonAngle1.Location = new System.Drawing.Point(545, 196);
+            this.LabelPentagonAngle1.Location = new System.Drawing.Point(564, 196);
             this.LabelPentagonAngle1.Name = "LabelPentagonAngle1";
             this.LabelPentagonAngle1.Size = new System.Drawing.Size(13, 13);
             this.LabelPentagonAngle1.TabIndex = 73;
@@ -656,7 +664,7 @@
             this.LabelPentagonAngle2.AutoSize = true;
             this.LabelPentagonAngle2.BackColor = System.Drawing.Color.Transparent;
             this.LabelPentagonAngle2.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.LabelPentagonAngle2.Location = new System.Drawing.Point(653, 126);
+            this.LabelPentagonAngle2.Location = new System.Drawing.Point(662, 126);
             this.LabelPentagonAngle2.Name = "LabelPentagonAngle2";
             this.LabelPentagonAngle2.Size = new System.Drawing.Size(13, 13);
             this.LabelPentagonAngle2.TabIndex = 74;
@@ -667,7 +675,7 @@
             this.LabelPentagonAngle3.AutoSize = true;
             this.LabelPentagonAngle3.BackColor = System.Drawing.Color.Transparent;
             this.LabelPentagonAngle3.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.LabelPentagonAngle3.Location = new System.Drawing.Point(757, 195);
+            this.LabelPentagonAngle3.Location = new System.Drawing.Point(764, 196);
             this.LabelPentagonAngle3.Name = "LabelPentagonAngle3";
             this.LabelPentagonAngle3.Size = new System.Drawing.Size(13, 13);
             this.LabelPentagonAngle3.TabIndex = 75;
@@ -678,7 +686,7 @@
             this.LabelPentagonAngle4.AutoSize = true;
             this.LabelPentagonAngle4.BackColor = System.Drawing.Color.Transparent;
             this.LabelPentagonAngle4.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.LabelPentagonAngle4.Location = new System.Drawing.Point(596, 329);
+            this.LabelPentagonAngle4.Location = new System.Drawing.Point(614, 329);
             this.LabelPentagonAngle4.Name = "LabelPentagonAngle4";
             this.LabelPentagonAngle4.Size = new System.Drawing.Size(13, 13);
             this.LabelPentagonAngle4.TabIndex = 76;
@@ -689,7 +697,7 @@
             this.LabelPentagonAngle5.AutoSize = true;
             this.LabelPentagonAngle5.BackColor = System.Drawing.Color.Transparent;
             this.LabelPentagonAngle5.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.LabelPentagonAngle5.Location = new System.Drawing.Point(710, 330);
+            this.LabelPentagonAngle5.Location = new System.Drawing.Point(711, 330);
             this.LabelPentagonAngle5.Name = "LabelPentagonAngle5";
             this.LabelPentagonAngle5.Size = new System.Drawing.Size(13, 13);
             this.LabelPentagonAngle5.TabIndex = 77;
@@ -793,7 +801,7 @@
             this.Controls.Add(this.LabelTeam2);
             this.Controls.Add(this.LabelSignatureAdd);
             this.Controls.Add(this.TextBoxSearch2);
-            this.Controls.Add(this.ListDota2Player2);
+            this.Controls.Add(this.List2Player);
             this.Controls.Add(this.LabelSurnameSelectedPlayer2);
             this.Controls.Add(this.LabelNickameSelectedPlayer2);
             this.Controls.Add(this.LabelNameSelectedPlayer2);
@@ -816,12 +824,14 @@
             this.Controls.Add(this.PictureSelectedPlayer);
             this.Controls.Add(this.labelListPlayer);
             this.Controls.Add(this.labelDota2);
-            this.Controls.Add(this.ListDota2Player);
+            this.Controls.Add(this.ListPlayer);
             this.Controls.Add(this.PictureBoxLogoGame);
             this.Name = "FormListPlayer";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form2";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Form2Dota2_FormClosed);
+            this.Load += new System.EventHandler(this.FormListPlayer_Load);
+            this.Shown += new System.EventHandler(this.FormListPlayer_Shown);
             ((System.ComponentModel.ISupportInitialize)(this.PictureBoxLogoGame)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.PictureSelectedPlayer)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.PictureBoxPentagon)).EndInit();
@@ -841,7 +851,7 @@
 
         private System.Windows.Forms.Label labelDota2;
         public System.Windows.Forms.PictureBox PictureBoxLogoGame;
-        public System.Windows.Forms.ListBox ListDota2Player;
+        public System.Windows.Forms.ListBox ListPlayer;
         public System.Windows.Forms.Label labelListPlayer;
         public System.Windows.Forms.PictureBox PictureSelectedPlayer;
         public System.Windows.Forms.Label LabelNameSelectedPlayer;
@@ -864,7 +874,7 @@
         public System.Windows.Forms.Label LabelNickameSelectedPlayer2;
         public System.Windows.Forms.Label LabelNameSelectedPlayer2;
         public System.Windows.Forms.TextBox TextBoxSearch2;
-        public System.Windows.Forms.ListBox ListDota2Player2;
+        public System.Windows.Forms.ListBox List2Player;
         public System.Windows.Forms.Label LabelSignatureAdd;
         public System.Windows.Forms.Label LabelSignatureAdd2;
         public System.Windows.Forms.Label LabelMMR2;

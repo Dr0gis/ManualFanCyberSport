@@ -92,9 +92,6 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Image\dota2logo.png" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Image\dota2logo100.png" />
   </ItemGroup>
   <ItemGroup>
@@ -114,6 +111,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="bin\Debug\image\heroes\Abaddon_icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\image\dota2_100_100.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\image\csgo_100_100.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

@@ -75,11 +75,15 @@ namespace CourseProject0_1
             );
         }
     }
-    class MethodsReadFile
+    class MethodsWorkWithFile
     {
-        public static string[] ReadFile()
+        public static string[] ReadAllLinesFile()
         {
             return File.ReadAllLines(Environment.CurrentDirectory + @"\textfiles\ListPlayer.txt");
+        }
+        public static string ReadAllTextFile()
+        {
+            return File.ReadAllText(Environment.CurrentDirectory + @"\textfiles\ListPlayer.txt");
         }
         public static Player CreateObjectPlayer(string[] LinesFile, int IndexStart, int IndexEnd)
         {
@@ -159,7 +163,7 @@ namespace CourseProject0_1
         {
             List<List<Player>> ListDiscyplineListPlayer = new List<List<Player>>();
             List<Player> TempListPlayer = new List<Player>();
-            string[] LinesFile = ReadFile();
+            string[] LinesFile = ReadAllLinesFile();
             int IndexStart = 1;
             int IndexEnd;
             int i = 0;
@@ -167,22 +171,17 @@ namespace CourseProject0_1
             {
                 if (Line.IndexOf('*') == 1)
                 {
-                    IndexEnd = i;
+                    IndexStart = i + 1;
+                    IndexEnd = IndexStart + 15;
                     TempListPlayer.Add(CreateObjectPlayer(LinesFile, IndexStart, IndexEnd));
-                    IndexStart = IndexEnd + 1;
                 }
                 if (Line.IndexOf('@') == 0)
                 {
-                    IndexEnd = i;
-                    TempListPlayer.Add(CreateObjectPlayer(LinesFile, IndexStart, IndexEnd));
                     ListDiscyplineListPlayer.Add(TempListPlayer);
-                    IndexStart = IndexEnd + 2;
                     TempListPlayer = new List<Player>();
                 }
                 if (i == LinesFile.Length - 1)
                 {
-                    IndexEnd = i + 1;
-                    TempListPlayer.Add(CreateObjectPlayer(LinesFile, IndexStart, IndexEnd));
                     ListDiscyplineListPlayer.Add(TempListPlayer);
                 }
                 i++;
@@ -190,130 +189,92 @@ namespace CourseProject0_1
 
             return ListDiscyplineListPlayer;
         }
-        /*
-        public static string ReadFile1()
+        public static void WriteFile(Dota2Player Dota2Player)
         {
-            return File.ReadAllText(Environment.CurrentDirectory + @"\textfiles\ListPlayer.txt");
-        }
-        public static string[] SplitOnDiscypline1(string textFile)
-        {
-            string[] ArrayDiscypline = textFile.Split('@');
-            return ArrayDiscypline;
-        }
-        public static string[] SplitOnPlayer1(string textDiscypline)
-        {
-            string[] ArrayPlayer = textDiscypline.Split('*');
-            return ArrayPlayer;
-        }
-        public static Player CreateObjectPlayer1(string TextPlayer)
-        {
-            string[] SplitOnPrompt = TextPlayer.Split(';');
-            string[] NameField = new string[]
+            string AllFile = ReadAllTextFile();
+            string[] SplitOnDiscypline = AllFile.Split('@');
+            SplitOnDiscypline[0] += Dota2Player.AllInfoForWriteInFile();
+            using (StreamWriter sw = new StreamWriter(Environment.CurrentDirectory + @"\textfiles\Example.txt", false))
             {
-                "Name",
-                "Nickname",
-                "Surname",
-                "Team",
-                "Country",
-                "City",
-                "Nationality",
-                "DateBirth",
-                "Role",
-                "Signature",
-                "NumberGames",
-                "ProcentWinGames",
-                "MMR",
-                "Pentagon",
-                "PhotoProfile",
-            };
-            //GlobalVariables.NameFieldInClassPlayer = NameField;
-            object[] ValueFild = new object[NameField.Length];
-            string tempString;
-            string[] tempStringArray;
-            int[] tempIntArray;
-            int templastIndex;
-
-            List<List<Player>> ListPlayerInDiscypline = new List<List<Player>>();
-            List<Player> ListPlayer = new List<Player>();
-
-            for (int i = 0; i < SplitOnPrompt.Length - 1; i++)
+                sw.Write(SplitOnDiscypline[0]);
+                sw.Write("\r\n@");
+                sw.Write(SplitOnDiscypline[1]);
+            }
+        }
+        public static void WriteFile(CSGOPlayer CSGOPlayer)
+        {
+            string AllFile = ReadAllTextFile();
+            string[] SplitOnDiscypline = AllFile.Split('@');
+            SplitOnDiscypline[1] += CSGOPlayer.AllInfoForWriteInFile();
+            using (StreamWriter sw = new StreamWriter(Environment.CurrentDirectory + @"\textfiles\Example.txt", false))
             {
-                switch (NameField[i])
+                sw.Write(SplitOnDiscypline[0]);
+                sw.Write("\r\n@");
+                sw.Write(SplitOnDiscypline[1]);
+            }
+        }
+        public static string[] RemovePlayerInFile(Player Player)
+        {
+            string[] AllLineFile = ReadAllLinesFile();
+            string[] NewLineFie = new string[AllLineFile.Length - 15];
+            //int i = 0;
+            int indexStart = 0;
+            int indexEnd = 0;
+            int index = 0;
+            foreach (string Line in AllLineFile)
+            {
+                index = Line.IndexOf(Player.Nickname);
+                if (index == 13)
                 {
-                    case "Signature":
-                        tempString = SplitOnPrompt[i].Substring(SplitOnPrompt[i].IndexOf(NameField[i]) + NameField[i].Length + 3);
-                        if (tempString == "" || tempString[0] != '[' || tempString[tempString.Length - 1] != ']')
-                        {
-                            return (Player)GlobalVariables.MessageErrorData();
-                        }
-                        tempStringArray = tempString.Split(new string[] { ", " }, StringSplitOptions.RemoveEmptyEntries);
-                        try
-                        {
-                            tempStringArray[0] = tempStringArray[0].Substring(1);
-                        }
-                        catch (IndexOutOfRangeException e)
-                        {
-                            return (Player)GlobalVariables.MessageErrorData();
-                        }
-                        templastIndex = tempStringArray.Length - 1;
-                        tempStringArray[templastIndex] = tempStringArray[templastIndex].Substring(0, tempStringArray[templastIndex].Length - 1);
-                        ValueFild[i] = tempStringArray;
-                        break;
-                    case "Pentagon":
-                        tempString = SplitOnPrompt[i].Substring(SplitOnPrompt[i].IndexOf(NameField[i]) + NameField[i].Length + 3);
-                        tempStringArray = tempString.Split(new string[] { ", " }, StringSplitOptions.RemoveEmptyEntries);
-                        tempStringArray[0] = tempStringArray[0].Substring(1);
-                        templastIndex = tempStringArray.Length - 1;
-                        tempStringArray[templastIndex] = tempStringArray[templastIndex].Substring(0, tempStringArray[templastIndex].Length - 1);
-                        tempIntArray = new int[tempStringArray.Length];
-                        int j = 0;
-                        foreach (string element in tempStringArray)
-                        {
-                            tempIntArray[j] = Convert.ToInt32(element);
-                            j++;
-                        }
-                        ValueFild[i] = tempIntArray;
-                        break;
-                    default:
-                        ValueFild[i] = SplitOnPrompt[i].Substring(SplitOnPrompt[i].IndexOf(NameField[i]) + NameField[i].Length + 3);
-                        break;
+                    break;
                 }
+                indexStart++;
             }
-            Player tempPlayer = new Dota2Player(ValueFild);
-            return tempPlayer;
-        }
-        public static List<List<Player>> CreateListPlayer1()
-        {
-            string TextFile = ReadFile1();
-            string[] ArrayDiscypline = SplitOnDiscypline1(TextFile);
-            string[][] ArrayArraysPlayerInDiscypline = new string[ArrayDiscypline.Length][];
-            int i = 0;
-            foreach (string discypline in ArrayDiscypline)
+            if (indexStart >= AllLineFile.Length)
             {
-                ArrayArraysPlayerInDiscypline[i] = SplitOnPlayer1(discypline);
-                i++;
+                return null;
+            }
+            indexStart -= 1;
+            indexEnd = indexStart + 15;
+
+            int j = 0;
+            for (int i = 0; i < indexStart; i++)
+            {
+                NewLineFie[i] = AllLineFile[i];
+                j = i;
+            }
+            for (int i = indexEnd; i < AllLineFile.Length; i++)
+            {
+                NewLineFie[j] = AllLineFile[i];
+                j++;
             }
 
-            List<List<Player>> ListDiscyplineListPlayer = new List<List<Player>>();
-            List<Player> ListPlayer = new List<Player>();
-            i = 0;
-            foreach (string[] disciplin in ArrayArraysPlayerInDiscypline)
+            using (StreamWriter sw = new StreamWriter(Environment.CurrentDirectory + @"\textfiles\Example.txt", false))
             {
-                foreach (string Player in disciplin)
+                int i = 0;
+                foreach (string Line in NewLineFie)
                 {
-                    Player tempPlayer = CreateObjectPlayer1(Player);
-                    if (tempPlayer == null)
+                    if (i == NewLineFie.Length - 1)
                     {
-                        return null;
+                        sw.Write(Line);
+                        break;
                     }
-                    ListPlayer.Add(tempPlayer);
+                    sw.WriteLine(Line);
+                    i++;
                 }
-                ListDiscyplineListPlayer.Add(ListPlayer);
-                ListPlayer = new List<Player>();
             }
-            return ListDiscyplineListPlayer;
+            return NewLineFie;
         }
-        */
+        public static void EditFile(Dota2Player Player)
+        {
+            RemovePlayerInFile(Player);
+            WriteFile(Player);
+        }
+        public static void EditFile(CSGOPlayer Player)
+        {
+            RemovePlayerInFile(Player);
+            WriteFile(Player);
+        }
     }
 
     abstract class Player
@@ -596,6 +557,91 @@ namespace CourseProject0_1
             rez += Surname;
             return rez;
         }
+        public string AllInfoForWriteInFile()
+        {
+            string rez = "";
+            rez += "\t";
+            rez += '*';
+
+            rez += "\r\n";
+            rez += "\t\t";
+            rez += "Name = ";
+            rez += Name;
+
+            rez += "\r\n";
+            rez += "\t\t";
+            rez += "Nickname = ";
+            rez += Nickname;
+
+            rez += "\r\n";
+            rez += "\t\t";
+            rez += "Surname = ";
+            rez += Surname;
+
+            rez += "\r\n";
+            rez += "\t\t";
+            rez += "Team = ";
+            rez += Team;
+
+            rez += "\r\n";
+            rez += "\t\t";
+            rez += "Country = ";
+            rez += Country;
+
+            rez += "\r\n";
+            rez += "\t\t";
+            rez += "City = ";
+            rez += City;
+
+            rez += "\r\n";
+            rez += "\t\t";
+            rez += "Nationality = ";
+            rez += Nationality;
+
+            rez += "\r\n";
+            rez += "\t\t";
+            rez += "DateBirth = ";
+            rez += ((DateBirth.Day < 10) ? "0" + DateBirth.Day + "." : DateBirth.Day + ".") + ((DateBirth.Month < 10) ? "0" + DateBirth.Month + "." : DateBirth.Month + ".") + DateBirth.Year;
+
+            rez += "\r\n";
+            rez += "\t\t";
+            rez += "Role = ";
+            rez += Role;
+
+            rez += "\r\n";
+            rez += "\t\t";
+            rez += "Signature = [";
+            rez += string.Join(", ", Signature);
+            rez += ']';
+
+            rez += "\r\n";
+            rez += "\t\t";
+            rez += "NumberGames = ";
+            rez += NumberGames;
+
+            rez += "\r\n";
+            rez += "\t\t";
+            rez += "ProcentWinGames = ";
+            rez += ProcentWinGames;
+
+            rez += "\r\n";
+            rez += "\t\t";
+            rez += "MMR = ";
+            rez += MMR;
+
+            rez += "\r\n";
+            rez += "\t\t";
+            rez += "Pentagon = [";
+            rez += string.Join(", ", Pentagon);
+            rez += ']';
+
+            rez += "\r\n";
+            rez += "\t\t";
+            rez += "PhotoProfile = ";
+            rez += PhotoProfile;
+
+            return rez;
+        }
     }
 
     class Dota2Player : Player
@@ -632,9 +678,11 @@ namespace CourseProject0_1
         [STAThread]
         static void Main()
         {
-            GlobalVariables.ListPlayerInDiscypline = MethodsReadFile.CreateListPlayer();
+            GlobalVariables.ListPlayerInDiscypline = MethodsWorkWithFile.CreateListPlayer();
             GlobalVariables.CheckOnRefreshPicturePentagonLeft = 0;
             GlobalVariables.CheckOnRefreshPicturePentagonLeft = 0;
+            //MethodsWorkWithFile.WriteFile((Dota2Player)GlobalVariables.ListPlayerInDiscypline[0][5]);
+            //MethodsWorkWithFile.WriteFile((Dota2Player)GlobalVariables.ListPlayerInDiscypline[0][0]);
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             if (GlobalVariables.ListPlayerInDiscypline != null)

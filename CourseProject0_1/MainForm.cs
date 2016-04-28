@@ -19,8 +19,8 @@ namespace CourseProject0_1
 
         private void MainFormLoad(object sender, EventArgs e)
         {
-            List<Player> ListTopPlayersDota2 = GlobalVariables.ListPlayerInDiscypline[0];
-            List<Player> ListTopPlayersCSGO = GlobalVariables.ListPlayerInDiscypline[1];
+            List<Player> ListTopPlayersDota2 = new List<Player>(GlobalVariables.ListPlayerInDiscypline[0]);
+            List<Player> ListTopPlayersCSGO = new List<Player>(GlobalVariables.ListPlayerInDiscypline[1]);
 
             ListTopPlayersDota2.Sort(delegate (Player a, Player b) { return b.MMR.CompareTo(a.MMR); });
             for (int i = 0; i < (ListTopPlayersDota2.Count() < 10 ? ListTopPlayersDota2.Count() : 10); i++)
@@ -33,6 +33,8 @@ namespace CourseProject0_1
             {
                 ListCSGOTopPlayer.Items.Add(ListTopPlayersCSGO[i].MMRInfo());
             }
+
+            ListDota2TopPlayer.Refresh();
         }
 
         private void labelDota2_Click(object sender, EventArgs e)
@@ -42,22 +44,16 @@ namespace CourseProject0_1
             FormDota2.Show();
             this.Hide();
             FormDota2.Text = "Список профессиональных игроков Dota 2";
-            FormDota2.PictureBoxLogoGame.Image = Properties.Resources.dota2logo100;
-            /*foreach (List<Player> discypline in GlobalVariables.ListPlayerInDiscypline)
-            {
-                foreach (Player player in discypline)
-                {
-                    FormDota2.textBoxExample.Text += player.MajorInfo();
-                    FormDota2.textBoxExample.Text += '\n';
-                }
-            }*/
+            FormDota2.PictureBoxLogoGame.Image = Properties.Resources.dota2_100_100;
             foreach (Player player in GlobalVariables.ListPlayerInDiscypline[0])
             {
-                FormDota2.ListDota2Player.Items.Add(player.MajorInfo());
-                FormDota2.ListDota2Player2.Items.Add(player.MajorInfo());
+                FormDota2.ListPlayer.Items.Add(player.MajorInfo());
+                FormDota2.List2Player.Items.Add(player.MajorInfo());
             }
-            //FormDota2.ListDota2Player.SelectedIndex = 0;
-            //FormDota2.ListDota2Player2.SelectedIndex = 0;
+
+            //FormDota2.PictureBoxPentagon.Refresh();
+            //FormDota2.ListPlayer.SelectedIndex = 0;
+            //FormDota2.List2Player.SelectedIndex = 0;
         }
 
         private void labelCSGO_Click(object sender, EventArgs e)
@@ -66,23 +62,17 @@ namespace CourseProject0_1
             FormListPlayer FormCSGO = new FormListPlayer();
             FormCSGO.Show();
             this.Hide();
-            FormCSGO.PictureBoxLogoGame.Image = Properties.Resources.csgologo43;
+            FormCSGO.PictureBoxLogoGame.Image = Properties.Resources.csgo_100_100;
             FormCSGO.Text = "Список профессиональных игроков CS:GO";
-            /*foreach (List<Player> discypline in GlobalVariables.ListPlayerInDiscypline)
-            {
-                foreach (Player player in discypline)
-                {
-                    FormCSGO.textBoxExample.Text += player.MajorInfo();
-                    FormCSGO.textBoxExample.Text += '\n';
-                }
-            }*/
             foreach (Player player in GlobalVariables.ListPlayerInDiscypline[1])
             {
-                FormCSGO.ListDota2Player.Items.Add(player.MajorInfo());
-                FormCSGO.ListDota2Player2.Items.Add(player.MajorInfo());
+                FormCSGO.ListPlayer.Items.Add(player.MajorInfo());
+                FormCSGO.List2Player.Items.Add(player.MajorInfo());
             }
-            //FormCSGO.ListDota2Player.SelectedIndex = 0;
-            //FormCSGO.ListDota2Player2.SelectedIndex = 0;
+
+            //FormCSGO.PictureBoxPentagon.Refresh();
+            //FormCSGO.ListPlayer.SelectedIndex = 0;
+            //FormCSGO.List2Player.SelectedIndex = 0;
         }
     }
 }

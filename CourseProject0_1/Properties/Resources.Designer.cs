@@ -83,6 +83,16 @@ namespace CourseProject0_1.Properties {
         /// <summary>
         ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap csgo_100_100 {
+            get {
+                object obj = ResourceManager.GetObject("csgo_100_100", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap csgologo100 {
             get {
                 object obj = ResourceManager.GetObject("csgologo100", resourceCulture);
@@ -103,9 +113,9 @@ namespace CourseProject0_1.Properties {
         /// <summary>
         ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap dota2logo {
+        internal static System.Drawing.Bitmap dota2_100_100 {
             get {
-                object obj = ResourceManager.GetObject("dota2logo", resourceCulture);
+                object obj = ResourceManager.GetObject("dota2_100_100", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -116,16 +126,6 @@ namespace CourseProject0_1.Properties {
         internal static System.Drawing.Bitmap dota2logo100 {
             get {
                 object obj = ResourceManager.GetObject("dota2logo100", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap ProfileNonLogo {
-            get {
-                object obj = ResourceManager.GetObject("ProfileNonLogo", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

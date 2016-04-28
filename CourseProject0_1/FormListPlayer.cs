@@ -16,13 +16,13 @@ namespace CourseProject0_1
         {
             InitializeComponent();
         }
-        private void SelectPlayerInDoat2List(object sender, EventArgs e)
+        private void ListPlayer_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (ListDota2Player.SelectedIndex == -1)
+            if (ListPlayer.SelectedIndex == -1)
             {
-                ListDota2Player.SelectedIndex = 0;
+                ListPlayer.SelectedIndex = 0;
             }
-            string SelectedPlayerMajorInfo = (string)ListDota2Player.SelectedItem;
+            string SelectedPlayerMajorInfo = (string)ListPlayer.SelectedItem;
             string SelectedPlayerName = "";
             string SelectedPlayerNickname = "";
             string SelectedPlayerSurname = "";
@@ -39,7 +39,7 @@ namespace CourseProject0_1
             string SelectedPlayerMMR = "";
             int[] SelectedPlayerPentagon = new int[5];
 
-            string SelectedPlayer2MajorInfo = (string)ListDota2Player2.SelectedItem;
+            string SelectedPlayer2MajorInfo = (string)List2Player.SelectedItem;
             int[] SelectedPlayer2Pentagon = new int[5];
 
             string SelectedPlayerPhotoProfile = "";
@@ -233,13 +233,13 @@ namespace CourseProject0_1
             g.DrawLine(Pens.Black, 94.2F, 109.1F, 42, 191);
         }
 
-        private void ListDota2Player2_SelectedIndexChanged(object sender, EventArgs e)
+        private void List2Player_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (ListDota2Player2.SelectedIndex == -1)
+            if (List2Player.SelectedIndex == -1)
             {
-                ListDota2Player2.SelectedIndex = 0;
+                List2Player.SelectedIndex = 0;
             }
-            string SelectedPlayer2MajorInfo = (string)ListDota2Player2.SelectedItem;
+            string SelectedPlayer2MajorInfo = (string)List2Player.SelectedItem;
             string SelectedPlayer2Name = "";
             string SelectedPlayer2Nickname = "";
             string SelectedPlayer2Surname = "";
@@ -255,7 +255,7 @@ namespace CourseProject0_1
             string SelectedPlayer2MMR = "";
             int[] SelectedPlayer2Pentagon = new int[5];
 
-            string SelectedPlayerMajorInfo = (string)ListDota2Player.SelectedItem;
+            string SelectedPlayerMajorInfo = (string)ListPlayer.SelectedItem;
             int[] SelectedPlayerPentagon = new int[5];
 
             string SelectedPlayerPhotoProfile = "";
@@ -390,7 +390,7 @@ namespace CourseProject0_1
         {
             string TextSearch = TextBoxSearch.Text;
             List<Player> ListSearchedPlayer = new List<Player>();
-            object SelectedPlayerMajorInfo = ListDota2Player.SelectedItem;
+            object SelectedPlayerMajorInfo = ListPlayer.SelectedItem;
             bool ChekOnincludeInSearchList = false;
 
             foreach (Player Player in GlobalVariables.ListPlayerInDiscypline[(GlobalVariables.SelectedDiscypline == "Dota2")?0:1])
@@ -401,7 +401,7 @@ namespace CourseProject0_1
                 }
             }
 
-            ListDota2Player.Items.Clear();
+            ListPlayer.Items.Clear();
 
             if (ListSearchedPlayer.Count == 0)
             {
@@ -409,7 +409,7 @@ namespace CourseProject0_1
             }
             foreach (Player Player in ListSearchedPlayer)
             {
-                ListDota2Player.Items.Add(Player.MajorInfo());
+                ListPlayer.Items.Add(Player.MajorInfo());
                 if (Player.MajorInfo() == (string)SelectedPlayerMajorInfo)
                 {
                     ChekOnincludeInSearchList = true;
@@ -417,11 +417,11 @@ namespace CourseProject0_1
             }
             if (ChekOnincludeInSearchList && SelectedPlayerMajorInfo != null)
             {
-                ListDota2Player.SelectedItem = SelectedPlayerMajorInfo;
+                ListPlayer.SelectedItem = SelectedPlayerMajorInfo;
             }
             if (SelectedPlayerMajorInfo == null || !ChekOnincludeInSearchList)
             {
-                ListDota2Player.SelectedIndex = 0;
+                ListPlayer.SelectedIndex = 0;
             }
         }
 
@@ -429,7 +429,7 @@ namespace CourseProject0_1
         {
             string TextSearch = TextBoxSearch2.Text;
             List<Player> ListSearchedPlayer = new List<Player>();
-            object SelectedPlayerMajorInfo = ListDota2Player2.SelectedItem;
+            object SelectedPlayerMajorInfo = List2Player.SelectedItem;
             bool ChekOnincludeInSearchList = false;
 
             foreach (Player Player in GlobalVariables.ListPlayerInDiscypline[(GlobalVariables.SelectedDiscypline == "Dota2") ? 0 : 1])
@@ -440,7 +440,7 @@ namespace CourseProject0_1
                 }
             }
 
-            ListDota2Player2.Items.Clear();
+            List2Player.Items.Clear();
 
             if (ListSearchedPlayer.Count == 0)
             {
@@ -448,7 +448,7 @@ namespace CourseProject0_1
             }
             foreach (Player Player in ListSearchedPlayer)
             {
-                ListDota2Player2.Items.Add(Player.MajorInfo());
+                List2Player.Items.Add(Player.MajorInfo());
                 if (Player.MajorInfo() == (string)SelectedPlayerMajorInfo)
                 {
                     ChekOnincludeInSearchList = true;
@@ -456,12 +456,31 @@ namespace CourseProject0_1
             }
             if (ChekOnincludeInSearchList && SelectedPlayerMajorInfo != null)
             {
-                ListDota2Player2.SelectedItem = SelectedPlayerMajorInfo;
+                List2Player.SelectedItem = SelectedPlayerMajorInfo;
             }
             if (SelectedPlayerMajorInfo == null || !ChekOnincludeInSearchList)
             {
-                ListDota2Player2.SelectedIndex = 0;
+                List2Player.SelectedIndex = 0;
             }
+        }
+
+        private void FormListPlayer_Load(object sender, EventArgs e)
+        {
+            //MethodsReadFile.WriteFile((Dota2Player)GlobalVariables.ListPlayerInDiscypline[0][0]);
+
+            if (GlobalVariables.SelectedDiscypline == "CSGO")
+            {
+                LabelSignature.Text = "Оружие:";
+                LabelSignature2.Text = "Оружие:";
+            }
+        }
+
+        private void FormListPlayer_Shown(object sender, EventArgs e)
+        {
+            PictureBoxPentagon.Refresh();
+            ListPlayer.SelectedIndex = 0;
+            List2Player.SelectedIndex = 0;
+            List2Player_SelectedIndexChanged(null, null);
         }
     }
 }
