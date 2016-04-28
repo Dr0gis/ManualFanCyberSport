@@ -11,6 +11,8 @@ namespace CourseProject0_1
     {
         public static List<List<Player>> ListPlayerInDiscypline;
         public static MainForm MainFormObject;
+        public static float[][] ArrayCoordsPentagons;
+        public static System.Drawing.Graphics graphic;
     }
     class MethodsReadFile
     {
@@ -47,7 +49,7 @@ namespace CourseProject0_1
                 "NumberGames",
                 "ProcentWinGames",
                 "MMR",
-                "Hexagon",
+                "Pentagon",
                 "PhotoProfile",
             };
             object[] ValueFild = new object[NameField.Length];
@@ -79,7 +81,7 @@ namespace CourseProject0_1
                         tempStringArray[templastIndex] = tempStringArray[templastIndex].Substring(0, tempStringArray[templastIndex].Length - 1);
                         ValueFild[i] = tempStringArray;
                         break;
-                    case "Hexagon":
+                    case "Pentagon":
                         tempString = SplitOnPrompt[i].Substring(SplitOnPrompt[i].IndexOf(NameField[i]) + NameField[i].Length + 3);
                         tempStringArray = tempString.Split(new string[] { ", " }, StringSplitOptions.RemoveEmptyEntries);
                         tempStringArray[0] = tempStringArray[0].Substring(1);
@@ -147,7 +149,7 @@ namespace CourseProject0_1
         private int numberGames;
         private double procentWinGames;
         private string mmr;
-        private int[] hexagon;
+        private int[] pentagon;
         private string photoProfile;
 
         public Player(object[] ArrayFilds)
@@ -175,7 +177,7 @@ namespace CourseProject0_1
             NumberGames = Convert.ToInt32((string)ArrayFilds[11]);
             ProcentWinGames = Convert.ToDouble((string)ArrayFilds[12]);
             MMR = (string)ArrayFilds[13];
-            Hexagon = (int[])ArrayFilds[14];
+            Pentagon = (int[])ArrayFilds[14];
             PhotoProfile = (string)ArrayFilds[15];
         }
         public Player(string name, string nickname, string surname, string team)
@@ -351,15 +353,15 @@ namespace CourseProject0_1
                 mmr = value;
             }
         }
-        public int[] Hexagon
+        public int[] Pentagon
         {
             get
             {
-                return hexagon;
+                return pentagon;
             }
             private set
             {
-                hexagon = value;
+                pentagon = value;
             }
         }
         public string PhotoProfile
@@ -406,7 +408,7 @@ namespace CourseProject0_1
             rez += ' ';
             rez += MMR + ' ';
             rez += ' ';
-            foreach (int element in Hexagon)
+            foreach (int element in Pentagon)
             {
                 rez += element;
                 rez += ' ';

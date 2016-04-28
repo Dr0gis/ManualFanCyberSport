@@ -48,10 +48,11 @@
             this.LabelNumberGames = new System.Windows.Forms.Label();
             this.LabelProcentWin = new System.Windows.Forms.Label();
             this.LabelMMR = new System.Windows.Forms.Label();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.PictureBoxPentagon = new System.Windows.Forms.PictureBox();
+            this.TextBoxPentagonTemp = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.PictureBoxLogoGame)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.PictureSelectedPlayer)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.PictureBoxPentagon)).BeginInit();
             this.SuspendLayout();
             // 
             // labelDota2
@@ -68,9 +69,9 @@
             // 
             // textBoxExample
             // 
-            this.textBoxExample.Location = new System.Drawing.Point(692, 457);
+            this.textBoxExample.Location = new System.Drawing.Point(259, 376);
             this.textBoxExample.Name = "textBoxExample";
-            this.textBoxExample.Size = new System.Drawing.Size(59, 62);
+            this.textBoxExample.Size = new System.Drawing.Size(492, 143);
             this.textBoxExample.TabIndex = 9;
             this.textBoxExample.Text = "";
             // 
@@ -273,14 +274,21 @@
             this.LabelMMR.TabIndex = 26;
             this.LabelMMR.Text = "MMR:";
             // 
-            // pictureBox1
+            // PictureBoxPentagon
             // 
-            this.pictureBox1.Location = new System.Drawing.Point(542, 136);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(200, 200);
-            this.pictureBox1.TabIndex = 27;
-            this.pictureBox1.TabStop = false;
-            this.pictureBox1.Paint += new System.Windows.Forms.PaintEventHandler(this.pictureBox1_Paint);
+            this.PictureBoxPentagon.Location = new System.Drawing.Point(542, 136);
+            this.PictureBoxPentagon.Name = "PictureBoxPentagon";
+            this.PictureBoxPentagon.Size = new System.Drawing.Size(200, 200);
+            this.PictureBoxPentagon.TabIndex = 27;
+            this.PictureBoxPentagon.TabStop = false;
+            this.PictureBoxPentagon.Paint += new System.Windows.Forms.PaintEventHandler(this.PictureBoxPentagon_Paint);
+            // 
+            // TextBoxPentagonTemp
+            // 
+            this.TextBoxPentagonTemp.Location = new System.Drawing.Point(542, 350);
+            this.TextBoxPentagonTemp.Name = "TextBoxPentagonTemp";
+            this.TextBoxPentagonTemp.Size = new System.Drawing.Size(200, 20);
+            this.TextBoxPentagonTemp.TabIndex = 28;
             // 
             // FormListPlayer
             // 
@@ -288,7 +296,9 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.ClientSize = new System.Drawing.Size(754, 521);
-            this.Controls.Add(this.pictureBox1);
+            this.Controls.Add(this.textBoxExample);
+            this.Controls.Add(this.TextBoxPentagonTemp);
+            this.Controls.Add(this.PictureBoxPentagon);
             this.Controls.Add(this.LabelMMR);
             this.Controls.Add(this.LabelProcentWin);
             this.Controls.Add(this.LabelNumberGames);
@@ -305,7 +315,6 @@
             this.Controls.Add(this.PictureSelectedPlayer);
             this.Controls.Add(this.labelListPlayer);
             this.Controls.Add(this.labelDota2);
-            this.Controls.Add(this.textBoxExample);
             this.Controls.Add(this.ListDota2Player);
             this.Controls.Add(this.PictureBoxLogoGame);
             this.Name = "FormListPlayer";
@@ -314,7 +323,7 @@
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Form2Dota2_FormClosed);
             ((System.ComponentModel.ISupportInitialize)(this.PictureBoxLogoGame)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.PictureSelectedPlayer)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.PictureBoxPentagon)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -341,6 +350,7 @@
         public System.Windows.Forms.Label LabelProcentWin;
         public System.Windows.Forms.Label LabelMMR;
         public System.Windows.Forms.Label LabelRole;
-        public System.Windows.Forms.PictureBox pictureBox1;
+        public System.Windows.Forms.PictureBox PictureBoxPentagon;
+        public System.Windows.Forms.TextBox TextBoxPentagonTemp;
     }
 }

@@ -13,7 +13,7 @@
 		NumberGames = 241;
 		ProcentWinGames = 46,47;
 		MMR = 6532;
-		Hexagon = [10, 10, 10, 10, 10, 10];
+		Pentagon = [3, 10, 4, 9, 9];
 		PhotoProfile = ArtStyle.png;
 	*
 		Name = Gleb;
@@ -30,7 +30,7 @@
 		NumberGames = 1313;
 		ProcentWinGames = 60,40;
 		MMR = 6658;
-		Hexagon = [10, 10, 10, 10, 10, 10];
+		Pentagon = [6, 7, 7, 3, 6];
 		PhotoProfile = Funnik.png;
 @
 CSGO:
@@ -48,7 +48,7 @@ CSGO:
 		NumberGames = 763;
 		ProcentWinGames = 51,39;
 		MMR = GlobalElite;
-		Hexagon = [10, 10, 10, 10, 10, 10];
+		Pentagon = [10, 10, 10, 10, 10];
 		PhotoProfile = Markeloff.png;
 	*
 		Name = Jarosław;
@@ -65,5 +65,5 @@ CSGO:
 		NumberGames = 559;
 		ProcentWinGames = 60,11;
 		MMR = GlobalElite;
-		Hexagon = [10, 10, 10, 10, 10, 10];
+		Pentagon = [10, 10, 10, 10, 10];
 		PhotoProfile = PashaBiceps.png;
