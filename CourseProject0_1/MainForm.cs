@@ -45,15 +45,14 @@ namespace CourseProject0_1
             this.Hide();
             FormDota2.Text = "Список профессиональных игроков Dota 2";
             FormDota2.PictureBoxLogoGame.Image = Properties.Resources.dota2_100_100;
-            foreach (Player player in GlobalVariables.ListPlayerInDiscypline[0])
-            {
-                FormDota2.ListPlayer.Items.Add(player.MajorInfo());
-                FormDota2.List2Player.Items.Add(player.MajorInfo());
-            }
-
-            //FormDota2.PictureBoxPentagon.Refresh();
-            //FormDota2.ListPlayer.SelectedIndex = 0;
-            //FormDota2.List2Player.SelectedIndex = 0;
+            //foreach (Player player in GlobalVariables.ListPlayerInDiscypline[0])
+            //{
+            //    if (player.Name != "")
+            //    {
+            //        FormDota2.ListPlayer.Items.Add(player.MajorInfo());
+            //        FormDota2.List2Player.Items.Add(player.MajorInfo());
+            //    }
+            //}
         }
 
         private void labelCSGO_Click(object sender, EventArgs e)
@@ -66,13 +65,34 @@ namespace CourseProject0_1
             FormCSGO.Text = "Список профессиональных игроков CS:GO";
             foreach (Player player in GlobalVariables.ListPlayerInDiscypline[1])
             {
-                FormCSGO.ListPlayer.Items.Add(player.MajorInfo());
-                FormCSGO.List2Player.Items.Add(player.MajorInfo());
+                if (player.Name != "")
+                {
+                    FormCSGO.ListPlayer.Items.Add(player.MajorInfo());
+                    FormCSGO.List2Player.Items.Add(player.MajorInfo());
+                }
             }
+        }
 
-            //FormCSGO.PictureBoxPentagon.Refresh();
-            //FormCSGO.ListPlayer.SelectedIndex = 0;
-            //FormCSGO.List2Player.SelectedIndex = 0;
+        private void buttonMyProfileDota2_Click(object sender, EventArgs e)
+        {
+            if (!GlobalVariables.FormMyProfileDota2Opened)
+            {
+                GlobalVariables.SelectedDiscypline = "Dota2";
+                MyProfile FormMyProfileDota2 = new MyProfile();
+                FormMyProfileDota2.Show();
+                GlobalVariables.FormMyProfileDota2Opened = true;
+            }
+        }
+
+        private void buttonMyProfileCSGO_Click(object sender, EventArgs e)
+        {
+            if (!GlobalVariables.FormMyProfileCSGOOpened)
+            {
+                GlobalVariables.SelectedDiscypline = "CSGO";
+                MyProfile FormMyProfileCSGO = new MyProfile();
+                FormMyProfileCSGO.Show();
+                GlobalVariables.FormMyProfileCSGOOpened = true;
+            }
         }
     }
 }

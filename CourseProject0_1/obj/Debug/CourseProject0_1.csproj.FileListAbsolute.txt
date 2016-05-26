@@ -41,3 +41,14 @@ D:\CourseProject0_1\CourseProject0_1\obj\Debug\CourseProject0_1.csproj.GenerateR
 J:\CourseProject0_1\CourseProject0_1\bin\Debug\CourseProject0_1.exe.config
 J:\CourseProject0_1\CourseProject0_1\obj\Debug\CourseProject0_1.exe
 J:\CourseProject0_1\CourseProject0_1\obj\Debug\CourseProject0_1.pdb
+D:\Program\ManualFunCyberSport\CourseProject0_1\bin\Debug\CourseProject0_1.exe.config
+D:\Program\ManualFunCyberSport\CourseProject0_1\obj\Debug\CourseProject0_1.exe
+D:\Program\ManualFunCyberSport\CourseProject0_1\obj\Debug\CourseProject0_1.pdb
+D:\Program\ManualFunCyberSport\CourseProject0_1\bin\Debug\CourseProject0_1.exe
+D:\Program\ManualFunCyberSport\CourseProject0_1\bin\Debug\CourseProject0_1.pdb
+D:\Program\ManualFunCyberSport\CourseProject0_1\obj\Debug\CourseProject0_1.csprojResolveAssemblyReference.cache
+D:\Program\ManualFunCyberSport\CourseProject0_1\obj\Debug\CourseProject0_1.MainForm.resources
+D:\Program\ManualFunCyberSport\CourseProject0_1\obj\Debug\CourseProject0_1.FormListPlayer.resources
+D:\Program\ManualFunCyberSport\CourseProject0_1\obj\Debug\CourseProject0_1.Properties.Resources.resources
+D:\Program\ManualFunCyberSport\CourseProject0_1\obj\Debug\CourseProject0_1.csproj.GenerateResource.Cache
+D:\Program\ManualFunCyberSport\CourseProject0_1\obj\Debug\CourseProject0_1.MyProfile.resources

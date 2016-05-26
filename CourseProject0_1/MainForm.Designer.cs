@@ -38,6 +38,8 @@
             this.ListCSGOTopPlayer = new System.Windows.Forms.ListBox();
             this.LabelTop10Dota2 = new System.Windows.Forms.Label();
             this.LabelTop10CSGO = new System.Windows.Forms.Label();
+            this.buttonMyProfileDota2 = new System.Windows.Forms.Button();
+            this.buttonMyProfileCSGO = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.PictureBoxPlayers)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
@@ -159,6 +161,36 @@
             this.LabelTop10CSGO.TabIndex = 13;
             this.LabelTop10CSGO.Text = "Топ 10";
             // 
+            // buttonMyProfileDota2
+            // 
+            this.buttonMyProfileDota2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(49)))), ((int)(((byte)(49)))));
+            this.buttonMyProfileDota2.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.buttonMyProfileDota2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonMyProfileDota2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.buttonMyProfileDota2.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.buttonMyProfileDota2.Location = new System.Drawing.Point(141, 629);
+            this.buttonMyProfileDota2.Name = "buttonMyProfileDota2";
+            this.buttonMyProfileDota2.Size = new System.Drawing.Size(227, 38);
+            this.buttonMyProfileDota2.TabIndex = 164;
+            this.buttonMyProfileDota2.Text = "Мой профиль";
+            this.buttonMyProfileDota2.UseVisualStyleBackColor = false;
+            this.buttonMyProfileDota2.Click += new System.EventHandler(this.buttonMyProfileDota2_Click);
+            // 
+            // buttonMyProfileCSGO
+            // 
+            this.buttonMyProfileCSGO.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(49)))), ((int)(((byte)(49)))));
+            this.buttonMyProfileCSGO.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.buttonMyProfileCSGO.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonMyProfileCSGO.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.buttonMyProfileCSGO.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.buttonMyProfileCSGO.Location = new System.Drawing.Point(969, 629);
+            this.buttonMyProfileCSGO.Name = "buttonMyProfileCSGO";
+            this.buttonMyProfileCSGO.Size = new System.Drawing.Size(227, 38);
+            this.buttonMyProfileCSGO.TabIndex = 165;
+            this.buttonMyProfileCSGO.Text = "Мой профиль";
+            this.buttonMyProfileCSGO.UseVisualStyleBackColor = false;
+            this.buttonMyProfileCSGO.Click += new System.EventHandler(this.buttonMyProfileCSGO_Click);
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -166,6 +198,8 @@
             this.BackColor = System.Drawing.Color.Gray;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.ClientSize = new System.Drawing.Size(1322, 721);
+            this.Controls.Add(this.buttonMyProfileCSGO);
+            this.Controls.Add(this.buttonMyProfileDota2);
             this.Controls.Add(this.LabelTop10CSGO);
             this.Controls.Add(this.LabelTop10Dota2);
             this.Controls.Add(this.ListCSGOTopPlayer);
@@ -198,6 +232,8 @@
         public System.Windows.Forms.ListBox ListCSGOTopPlayer;
         private System.Windows.Forms.Label LabelTop10Dota2;
         private System.Windows.Forms.Label LabelTop10CSGO;
+        private System.Windows.Forms.Button buttonMyProfileDota2;
+        private System.Windows.Forms.Button buttonMyProfileCSGO;
     }
 }
 

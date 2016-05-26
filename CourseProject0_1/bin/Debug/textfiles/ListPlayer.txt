@@ -3,7 +3,7 @@
 		Name = Ivan
 		Nickname = ArtStyle
 		Surname = Antonov
-		Team = Natus Vinsere
+		Team = Natus Vincere
 		Country = Ukraine
 		City = Kharkov
 		Nationality = Ukraine

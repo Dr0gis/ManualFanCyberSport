@@ -1,0 +1,35 @@
+Dota2:
+	*
+		Name = Igor
+		Nickname = Dr0gis
+		Surname = Sushinskiy
+		Team = InCT
+		Country = Ukraine
+		City = Kharkov
+		Nationality = Ukraine
+		DateBirth = 07.12.1998
+		Role = Solo Hard
+		Signature = [Weaver, Spectre, Mirana]
+		NumberGames = 1500
+		ProcentWinGames = 50,5
+		MMR = 3050
+		Pentagon = [7, 6, 5, 6, 6]
+		PhotoProfile = Dr0gis.png
+@
+CSGO:
+	*
+		Name = Name1
+		Nickname = Nickname
+		Surname = Surname
+		Team = Team
+		Country = Country
+		City = City
+		Nationality = Nationality
+		DateBirth = 01.01.1900
+		Role = Role
+		Signature = [AK-47, AK-47, AK-47]
+		NumberGames = 0
+		ProcentWinGames = 0
+		MMR = MMR
+		Pentagon = [1, 1, 1, 1, 1]
+		PhotoProfile = default.png

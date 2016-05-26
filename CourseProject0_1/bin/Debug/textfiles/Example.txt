@@ -1,5 +1,21 @@
 Dota2:
 	*
+		Name = Ivan
+		Nickname = ArtStyle
+		Surname = Antonov
+		Team = Natus Vincere
+		Country = Ukraine
+		City = Kharkov
+		Nationality = Ukraine
+		DateBirth = 20.04.1989
+		Role = Support
+		Signature = [Chen, Night Stalker, Shadow Demon]
+		NumberGames = 241
+		ProcentWinGames = 46,47
+		MMR = 6532
+		Pentagon = [3, 10, 4, 9, 9]
+		PhotoProfile = ArtStyle.png
+	*
 		Name = Danil
 		Nickname = Dendi
 		Surname = Ishutin
@@ -159,6 +175,22 @@ Dota2:
 		MMR = 7879
 		Pentagon = [5, 8, 7, 2, 7]
 		PhotoProfile = Afoninje.png
+	*
+		Name = Igor
+		Nickname = Dr0gis
+		Surname = Sushinskiy
+		Team = InCT
+		Country = Ukraine
+		City = Kharkov
+		Nationality = Country
+		DateBirth = 01.01.1900
+		Role = Solo Hard
+		Signature = [baddon, Abaddon, Abaddon]
+		NumberGames = 1500
+		ProcentWinGames = 0
+		MMR = 3050
+		Pentagon = [1, 1, 1, 1, 1]
+		PhotoProfile = default.png
 @
 CSGO:
 	*
