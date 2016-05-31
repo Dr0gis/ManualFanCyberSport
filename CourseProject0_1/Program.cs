@@ -24,7 +24,7 @@ namespace CourseProject0_1
         {
             get
             {
-                Dota2Player tempPlayer = new Dota2Player(new object[] {"", "", "", "", "", "", "", "0001.01.01", "", new string[] { "Abaddon", "Abaddon", "Abaddon" }, "0", "0", "", new int[] { 1, 1, 1, 1, 1 }, "default.png" });
+                Dota2Player tempPlayer = new Dota2Player(new object[] {"", "", "", "", "", "", "", "0001.01.01", "", new string[] { "Abaddon", "Abaddon", "Abaddon" }, "0", "0", "", new int[] { 1, 1, 1, 1, 1 }, "default.png", "false" });
                 return tempPlayer;
             }
         }
@@ -32,7 +32,7 @@ namespace CourseProject0_1
         {
             get
             {
-                CSGOPlayer tempPlayer = new CSGOPlayer(new object[] { "", "", "", "", "", "", "", "0001.01.01", "", new string[] { "AK-47", "AK-47", "AK-47" }, "0", "0", "", new int[] { 1, 1, 1, 1, 1 }, "default.png" });
+                CSGOPlayer tempPlayer = new CSGOPlayer(new object[] { "", "", "", "", "", "", "", "0001.01.01", "", new string[] { "AK-47", "AK-47", "AK-47" }, "0", "0", "", new int[] { 1, 1, 1, 1, 1 }, "default.png", "false" });
                 return tempPlayer;
             }
         }
@@ -105,6 +105,67 @@ namespace CourseProject0_1
 
         public static bool FormMyProfileDota2Opened;
         public static bool FormMyProfileCSGOOpened;
+
+        public static List<string> ListFullTeam;
+
+        public static void SearchFullTeam()
+        {
+            int tempKolPlayersInTeam = 0;
+            List<string> listFullTeam = new List<string>();
+            foreach (string Team in GlobalVariables.ListTeam)
+            {
+                foreach (Player Player in GlobalVariables.ListPlayerInDiscypline[0])
+                {
+                    if (Team == Player.Team)
+                    {
+                        tempKolPlayersInTeam++;
+                    }
+                }
+                if (tempKolPlayersInTeam == 5)
+                {
+                    listFullTeam.Add(Team);
+                }
+                tempKolPlayersInTeam = 0;
+            }
+            ListFullTeam = listFullTeam;
+        }
+        public static string Prediction(string Team1, string Team2)
+        {
+            int ratingTeam1 = 0;
+            int ratingTeam2 = 0;
+            foreach (Player player in GlobalVariables.ListPlayerInDiscypline[0])
+            {
+                if (player.Team == Team1)
+                {
+                    ratingTeam1 += Convert.ToInt32(player.MMR);
+                    foreach (int i in player.Pentagon)
+                    {
+                        ratingTeam1 += i;
+                    }
+                }
+                if (player.Team == Team2)
+                {
+                    ratingTeam2 += Convert.ToInt32(player.MMR);
+                    foreach (int i in player.Pentagon)
+                    {
+                        ratingTeam2 += i;
+                    }
+                }
+            }
+            if (ratingTeam1 == ratingTeam2)
+            {
+                Random random = new Random();
+                return random.Next(1, 2) == 1 ? Team1 : Team2;
+            }
+            if (ratingTeam1 > ratingTeam2)
+            {
+                return Team1;
+            }
+            else
+            {
+                return Team2;
+            }
+        }
     }
     class MethodsWorkWithFile
     {
@@ -116,7 +177,7 @@ namespace CourseProject0_1
         {
             return File.ReadAllText(Environment.CurrentDirectory + @"\textfiles\" + NameFile);
         }
-        public static Player CreateObjectPlayer(string[] LinesFile, int IndexStart, int IndexEnd)
+        public static Player CreateObjectPlayer(string[] LinesFile, int IndexStart, int IndexEnd, string discypline)
         {
             string[] NameField = new string[]
             {
@@ -135,6 +196,7 @@ namespace CourseProject0_1
                 "MMR",
                 "Pentagon",
                 "PhotoProfile",
+                "Edit",
             };
             object[] ValueFild = new object[NameField.Length];
             string tempString;
@@ -187,14 +249,24 @@ namespace CourseProject0_1
                 }
                 tempIndexNameField++;
             }
-            Player tempPlayer = new Dota2Player(ValueFild);
+            Player tempPlayer;
+            if (discypline == "Dota2")
+            {
+                tempPlayer = new Dota2Player(ValueFild);
+            }
+            else
+            {
+                tempPlayer = new CSGOPlayer(ValueFild);
+            }
+            
             return tempPlayer;
         }
-        public static List<List<Player>> CreateListPlayer()
+        public static List<List<Player>> CreateListPlayer(string NameFile)
         {
             List<List<Player>> ListDiscyplineListPlayer = new List<List<Player>>();
             List<Player> TempListPlayer = new List<Player>();
-            string[] LinesFile = ReadAllLinesFile("ListPlayer.txt");
+            string[] LinesFile = ReadAllLinesFile(NameFile);
+            string discypline = "Dota2";
             int IndexStart = 1;
             int IndexEnd;
             int i = 0;
@@ -203,13 +275,14 @@ namespace CourseProject0_1
                 if (Line.IndexOf('*') == 1)
                 {
                     IndexStart = i + 1;
-                    IndexEnd = IndexStart + 15;
-                    TempListPlayer.Add(CreateObjectPlayer(LinesFile, IndexStart, IndexEnd));
+                    IndexEnd = IndexStart + 16;
+                    TempListPlayer.Add(CreateObjectPlayer(LinesFile, IndexStart, IndexEnd, discypline));
                 }
                 if (Line.IndexOf('@') == 0)
                 {
                     ListDiscyplineListPlayer.Add(TempListPlayer);
                     TempListPlayer = new List<Player>();
+                    discypline = "CSGO";
                 }
                 if (i == LinesFile.Length - 1)
                 {
@@ -319,7 +392,7 @@ namespace CourseProject0_1
                 return null;
             }
             indexStart -= 1;
-            indexEnd = indexStart + 15;
+            indexEnd = indexStart + 16;
 
             int j = 0;
             for (int i = 0; i < indexStart; i++)
@@ -399,30 +472,31 @@ namespace CourseProject0_1
             int[] Dota2Pentagon = tempIntArray;
 
             string Dota2PhotoProfile = AllLinesFile[16].Substring(17);
+            string Dota2Edit = AllLinesFile[17].Substring(9);
 
-            MyProfiles[0] = new Dota2Player(new object[] { Dota2Name, Dota2Nickname, Dota2Surname, Dota2Team, Dota2Country, Dota2City, Dota2Nationality, Dota2DateBirth, Dota2Role, Dota2Signature, Dota2NumberGames, Dota2ProcentWinGames, Dota2MMR, Dota2Pentagon, Dota2PhotoProfile });
+            MyProfiles[0] = new Dota2Player(new object[] { Dota2Name, Dota2Nickname, Dota2Surname, Dota2Team, Dota2Country, Dota2City, Dota2Nationality, Dota2DateBirth, Dota2Role, Dota2Signature, Dota2NumberGames, Dota2ProcentWinGames, Dota2MMR, Dota2Pentagon, Dota2PhotoProfile, Dota2Edit });
 
-            string CSGOName = AllLinesFile[20].Substring(9);
-            string CSGONickname = AllLinesFile[21].Substring(13);
-            string CSGOSurname = AllLinesFile[22].Substring(12);
-            string CSGOTeam = AllLinesFile[23].Substring(9);
-            string CSGOCountry = AllLinesFile[24].Substring(12);
-            string CSGOCity = AllLinesFile[25].Substring(9);
-            string CSGONationality = AllLinesFile[26].Substring(16);
-            string CSGODateBirth = AllLinesFile[27].Substring(14);
-            string CSGORole = AllLinesFile[28].Substring(9);
+            string CSGOName = AllLinesFile[21].Substring(9);
+            string CSGONickname = AllLinesFile[22].Substring(13);
+            string CSGOSurname = AllLinesFile[23].Substring(12);
+            string CSGOTeam = AllLinesFile[24].Substring(9);
+            string CSGOCountry = AllLinesFile[25].Substring(12);
+            string CSGOCity = AllLinesFile[26].Substring(9);
+            string CSGONationality = AllLinesFile[27].Substring(16);
+            string CSGODateBirth = AllLinesFile[28].Substring(14);
+            string CSGORole = AllLinesFile[29].Substring(9);
 
-            string[] CSGOSignatureTemp = AllLinesFile[29].Substring(14).Split(new string[] { ", " }, StringSplitOptions.RemoveEmptyEntries);
+            string[] CSGOSignatureTemp = AllLinesFile[30].Substring(14).Split(new string[] { ", " }, StringSplitOptions.RemoveEmptyEntries);
             CSGOSignatureTemp[0] = CSGOSignatureTemp[0].Substring(1);
             templastIndex = CSGOSignatureTemp.Length - 1;
             CSGOSignatureTemp[templastIndex] = CSGOSignatureTemp[templastIndex].Substring(0, CSGOSignatureTemp[templastIndex].Length - 1);
             string[] CSGOSignature = CSGOSignatureTemp;
 
-            string CSGONumberGames = AllLinesFile[30].Substring(16);
-            string CSGOProcentWinGames = AllLinesFile[31].Substring(20);
-            string CSGOMMR = AllLinesFile[32].Substring(8);
+            string CSGONumberGames = AllLinesFile[31].Substring(16);
+            string CSGOProcentWinGames = AllLinesFile[32].Substring(20);
+            string CSGOMMR = AllLinesFile[33].Substring(8);
 
-            string[] CSGOPentagonTemp = AllLinesFile[33].Substring(13).Split(new string[] { ", " }, StringSplitOptions.RemoveEmptyEntries);
+            string[] CSGOPentagonTemp = AllLinesFile[34].Substring(13).Split(new string[] { ", " }, StringSplitOptions.RemoveEmptyEntries);
             CSGOPentagonTemp[0] = CSGOPentagonTemp[0].Substring(1);
             templastIndex = CSGOPentagonTemp.Length - 1;
             CSGOPentagonTemp[templastIndex] = CSGOPentagonTemp[templastIndex].Substring(0, CSGOPentagonTemp[templastIndex].Length - 1);
@@ -435,14 +509,55 @@ namespace CourseProject0_1
             }
             int[] CSGOPentagon = tempIntArray;
 
-            string CSGOPhotoProfile = AllLinesFile[34].Substring(17);
+            string CSGOPhotoProfile = AllLinesFile[35].Substring(17);
+            string CSGOEdit = AllLinesFile[36].Substring(9);
 
-            MyProfiles[1] = new CSGOPlayer(new object[] { CSGOName, CSGONickname, CSGOSurname, CSGOTeam, CSGOCountry, CSGOCity, CSGONationality, CSGODateBirth, CSGORole, CSGOSignature, CSGONumberGames, CSGOProcentWinGames, CSGOMMR, CSGOPentagon, CSGOPhotoProfile });
+            MyProfiles[1] = new CSGOPlayer(new object[] { CSGOName, CSGONickname, CSGOSurname, CSGOTeam, CSGOCountry, CSGOCity, CSGONationality, CSGODateBirth, CSGORole, CSGOSignature, CSGONumberGames, CSGOProcentWinGames, CSGOMMR, CSGOPentagon, CSGOPhotoProfile, CSGOEdit });
 
 
             return MyProfiles;
         }
-        //public static void
+
+        public static void SearchPlayer(List<Player> ListPlayer, Player Player, string Discypline)
+        {
+            foreach (Player player in ListPlayer)
+            {
+                if (player.Nickname == Player.Nickname)
+                {
+                    if (Discypline == "Dota2")
+                    {
+                        EditFile((Dota2Player)player, (Dota2Player)Player, "ListPlayer.txt");
+                        return;
+                    }
+                    else
+                    {
+                        EditFile((CSGOPlayer)(Player)player, (CSGOPlayer)(Player)Player, "ListPlayer.txt");
+                        return;
+                    }
+                }
+            }
+            if (Discypline == "Dota2")
+            {
+                WriteFile((Dota2Player)Player, "ListPlayer.txt");
+                return;
+            }
+            else
+            {
+                WriteFile((CSGOPlayer)(Player)Player, "ListPlayer.txt");
+                return;
+            }
+        }
+        public static void Sinhronizacia(List<List<Player>> ListPlayerMain, List<List<Player>> ListPlayerSelected)
+        {
+            foreach (Dota2Player player in ListPlayerSelected[0])
+            {
+                SearchPlayer(ListPlayerMain[0], player, "Dota2");
+            }
+            foreach (CSGOPlayer player in ListPlayerSelected[1])
+            {
+                SearchPlayer(ListPlayerMain[1], player, "CSGO");
+            }
+        }
     }
 
     abstract class Player
@@ -463,6 +578,7 @@ namespace CourseProject0_1
         private string mmr;
         private int[] pentagon;
         private string photoProfile;
+        private bool edit;
 
         public Player(object[] ArrayFilds)
         {
@@ -490,6 +606,7 @@ namespace CourseProject0_1
             MMR = (string)ArrayFilds[12];
             Pentagon = (int[])ArrayFilds[13];
             PhotoProfile = (string)ArrayFilds[14];
+            Edit = Convert.ToBoolean(ArrayFilds[15]);
         }
         public Player(string name, string nickname, string surname, string team)
         {
@@ -694,6 +811,17 @@ namespace CourseProject0_1
                 photoProfile = value;
             }
         }
+        public bool Edit
+        {
+            get
+            {
+                return edit;
+            }
+            set
+            {
+                edit = value;
+            }
+        }
 
         public string MajorInfo()
         {
@@ -827,6 +955,11 @@ namespace CourseProject0_1
             rez += "PhotoProfile = ";
             rez += PhotoProfile;
 
+            rez += "\r\n";
+            rez += "\t\t";
+            rez += "Edit = ";
+            rez += Edit;
+
             return rez;
         }
     }
@@ -859,12 +992,6 @@ namespace CourseProject0_1
         }
     }
 
-    class Methods
-    {
-        public static void EnterDataProgram()
-        {
-        }
-    }
     static class Program
     {
         /// <summary>
@@ -873,9 +1000,11 @@ namespace CourseProject0_1
         [STAThread]
         static void Main()
         {
-            GlobalVariables.ListPlayerInDiscypline = MethodsWorkWithFile.CreateListPlayer();
+            GlobalVariables.ListPlayerInDiscypline = MethodsWorkWithFile.CreateListPlayer("ListPlayer.txt");
 
             MethodsWorkWithFile.CreateLists(GlobalVariables.ListPlayerInDiscypline);
+
+            GlobalVariables.SearchFullTeam();
 
             Player[] MyProfiles = MethodsWorkWithFile.ReadMyProfile();
             GlobalVariables.MyProfileDota2 = (Dota2Player)MyProfiles[0];
@@ -884,6 +1013,7 @@ namespace CourseProject0_1
             GlobalVariables.ListPlayerInDiscypline[0].Add(GlobalVariables.PlayerDota2Clear);
             GlobalVariables.ListPlayerInDiscypline[0].Add(GlobalVariables.MyProfileDota2);
             GlobalVariables.ListPlayerInDiscypline[1].Add(GlobalVariables.PlayerCSGOClear);
+            GlobalVariables.ListPlayerInDiscypline[1].Add(GlobalVariables.MyProfileCSGO);
             GlobalVariables.ListPlayerInDiscyplineSearched = new List<List<Player>>(GlobalVariables.ListPlayerInDiscypline);
 
             //MethodsWorkWithFile.WriteFile((Dota2Player)GlobalVariables.ListPlayerInDiscypline[0][5]);

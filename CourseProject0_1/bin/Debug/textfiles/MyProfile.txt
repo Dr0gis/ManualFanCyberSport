@@ -9,12 +9,13 @@ Dota2:
 		Nationality = Ukraine
 		DateBirth = 07.12.1998
 		Role = Solo Hard
-		Signature = [Weaver, Spectre, Mirana]
+		Signature = [Weaver, Batrider, Mirana]
 		NumberGames = 1500
 		ProcentWinGames = 50,5
 		MMR = 3050
-		Pentagon = [7, 6, 5, 6, 6]
+		Pentagon = [6, 4, 8, 6, 4]
 		PhotoProfile = Dr0gis.png
+		Edit = True
 @
 CSGO:
 	*
@@ -30,6 +31,28 @@ CSGO:
 		Signature = [AK-47, AK-47, AK-47]
 		NumberGames = 0
 		ProcentWinGames = 0
-		MMR = MMR
+		MMR = Silver
 		Pentagon = [1, 1, 1, 1, 1]
 		PhotoProfile = default.png
+		Edit = False
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

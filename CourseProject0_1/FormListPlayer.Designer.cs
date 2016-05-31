@@ -91,7 +91,6 @@
             this.TextBoxEditTeam = new System.Windows.Forms.TextBox();
             this.TextBoxEditCountry = new System.Windows.Forms.TextBox();
             this.TextBoxEditCity = new System.Windows.Forms.TextBox();
-            this.TextBoxEditAge = new System.Windows.Forms.TextBox();
             this.TextBoxEditRole = new System.Windows.Forms.TextBox();
             this.TextBoxEditNumberGames = new System.Windows.Forms.TextBox();
             this.TextBoxEditProcentWin = new System.Windows.Forms.TextBox();
@@ -167,6 +166,47 @@
             this.labelFilterTeam2 = new System.Windows.Forms.Label();
             this.buttonFilterClear = new System.Windows.Forms.Button();
             this.buttonFilterClear2 = new System.Windows.Forms.Button();
+            this.buttonFilterProfile = new System.Windows.Forms.Button();
+            this.buttonFilterProfile2 = new System.Windows.Forms.Button();
+            this.comboBoxEditHero3 = new System.Windows.Forms.ComboBox();
+            this.comboBoxEditHero2 = new System.Windows.Forms.ComboBox();
+            this.comboBoxEditHero1 = new System.Windows.Forms.ComboBox();
+            this.comboBoxPentagon5 = new System.Windows.Forms.ComboBox();
+            this.comboBoxPentagon3 = new System.Windows.Forms.ComboBox();
+            this.comboBoxPentagon4 = new System.Windows.Forms.ComboBox();
+            this.comboBoxPentagon2 = new System.Windows.Forms.ComboBox();
+            this.comboBoxPentagon1 = new System.Windows.Forms.ComboBox();
+            this.comboBox2Pentagon5 = new System.Windows.Forms.ComboBox();
+            this.comboBox2Pentagon3 = new System.Windows.Forms.ComboBox();
+            this.comboBox2Pentagon4 = new System.Windows.Forms.ComboBox();
+            this.comboBox2Pentagon2 = new System.Windows.Forms.ComboBox();
+            this.comboBox2Pentagon1 = new System.Windows.Forms.ComboBox();
+            this.comboBox2EditHero3 = new System.Windows.Forms.ComboBox();
+            this.comboBox2EditHero2 = new System.Windows.Forms.ComboBox();
+            this.comboBox2EditHero1 = new System.Windows.Forms.ComboBox();
+            this.TextBoxEditSurname2 = new System.Windows.Forms.TextBox();
+            this.TextBoxEditNickname2 = new System.Windows.Forms.TextBox();
+            this.TextBoxEditName2 = new System.Windows.Forms.TextBox();
+            this.TextBoxEditMMR2 = new System.Windows.Forms.TextBox();
+            this.TextBoxEditProcentWin2 = new System.Windows.Forms.TextBox();
+            this.TextBoxEditNumberGames2 = new System.Windows.Forms.TextBox();
+            this.TextBoxEditRole2 = new System.Windows.Forms.TextBox();
+            this.TextBoxEditCity2 = new System.Windows.Forms.TextBox();
+            this.TextBoxEditCountry2 = new System.Windows.Forms.TextBox();
+            this.TextBoxEditTeam2 = new System.Windows.Forms.TextBox();
+            this.buttonAdd = new System.Windows.Forms.Button();
+            this.buttonAdd2 = new System.Windows.Forms.Button();
+            this.dateTimeEditDateBirth = new System.Windows.Forms.DateTimePicker();
+            this.openFileDialogEditPhotoProfile = new System.Windows.Forms.OpenFileDialog();
+            this.buttonEditPhotoPrifile = new System.Windows.Forms.Button();
+            this.buttonEditPhotoPrifile2 = new System.Windows.Forms.Button();
+            this.dateTimeEditDateBirth2 = new System.Windows.Forms.DateTimePicker();
+            this.openFileDialogEditPhotoProfile2 = new System.Windows.Forms.OpenFileDialog();
+            this.buttonCancel = new System.Windows.Forms.Button();
+            this.buttonCancel2 = new System.Windows.Forms.Button();
+            this.buttonDelete = new System.Windows.Forms.Button();
+            this.buttonDelete2 = new System.Windows.Forms.Button();
+            this.buttonAddSend = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.PictureBoxLogoGame)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.PictureSelectedPlayer)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.PictureBoxPentagon)).BeginInit();
@@ -882,12 +922,13 @@
             this.ButtonEdit2Player.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.ButtonEdit2Player.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.ButtonEdit2Player.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.ButtonEdit2Player.Location = new System.Drawing.Point(756, 605);
+            this.ButtonEdit2Player.Location = new System.Drawing.Point(764, 605);
             this.ButtonEdit2Player.Name = "ButtonEdit2Player";
             this.ButtonEdit2Player.Size = new System.Drawing.Size(132, 38);
             this.ButtonEdit2Player.TabIndex = 84;
             this.ButtonEdit2Player.Text = "Редактировать";
             this.ButtonEdit2Player.UseVisualStyleBackColor = false;
+            this.ButtonEdit2Player.Click += new System.EventHandler(this.ButtonEdit2Player_Click);
             // 
             // TextBoxEditTeam
             // 
@@ -921,17 +962,6 @@
             this.TextBoxEditCity.Size = new System.Drawing.Size(158, 20);
             this.TextBoxEditCity.TabIndex = 87;
             this.TextBoxEditCity.Visible = false;
-            // 
-            // TextBoxEditAge
-            // 
-            this.TextBoxEditAge.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(49)))), ((int)(((byte)(49)))));
-            this.TextBoxEditAge.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.TextBoxEditAge.ForeColor = System.Drawing.Color.White;
-            this.TextBoxEditAge.Location = new System.Drawing.Point(330, 264);
-            this.TextBoxEditAge.Name = "TextBoxEditAge";
-            this.TextBoxEditAge.Size = new System.Drawing.Size(158, 20);
-            this.TextBoxEditAge.TabIndex = 88;
-            this.TextBoxEditAge.Visible = false;
             // 
             // TextBoxEditRole
             // 
@@ -984,7 +1014,7 @@
             this.ButtonEditPlayerSend.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.ButtonEditPlayerSend.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.ButtonEditPlayerSend.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.ButtonEditPlayerSend.Location = new System.Drawing.Point(411, 604);
+            this.ButtonEditPlayerSend.Location = new System.Drawing.Point(267, 659);
             this.ButtonEditPlayerSend.Name = "ButtonEditPlayerSend";
             this.ButtonEditPlayerSend.Size = new System.Drawing.Size(132, 38);
             this.ButtonEditPlayerSend.TabIndex = 93;
@@ -1033,13 +1063,14 @@
             this.ButtonEdit2PlayerSend.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.ButtonEdit2PlayerSend.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.ButtonEdit2PlayerSend.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.ButtonEdit2PlayerSend.Location = new System.Drawing.Point(901, 605);
+            this.ButtonEdit2PlayerSend.Location = new System.Drawing.Point(764, 659);
             this.ButtonEdit2PlayerSend.Name = "ButtonEdit2PlayerSend";
             this.ButtonEdit2PlayerSend.Size = new System.Drawing.Size(132, 38);
             this.ButtonEdit2PlayerSend.TabIndex = 97;
             this.ButtonEdit2PlayerSend.Text = "Отправить";
             this.ButtonEdit2PlayerSend.UseVisualStyleBackColor = false;
             this.ButtonEdit2PlayerSend.Visible = false;
+            this.ButtonEdit2PlayerSend.Click += new System.EventHandler(this.ButtonEdit2PlayerSend_Click);
             // 
             // buttonFilter
             // 
@@ -1365,7 +1396,7 @@
             this.buttonFilterApply.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonFilterApply.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.buttonFilterApply.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.buttonFilterApply.Location = new System.Drawing.Point(79, 549);
+            this.buttonFilterApply.Location = new System.Drawing.Point(23, 546);
             this.buttonFilterApply.Name = "buttonFilterApply";
             this.buttonFilterApply.Size = new System.Drawing.Size(96, 38);
             this.buttonFilterApply.TabIndex = 127;
@@ -1476,7 +1507,7 @@
             this.buttonFilterApply2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonFilterApply2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.buttonFilterApply2.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.buttonFilterApply2.Location = new System.Drawing.Point(1141, 546);
+            this.buttonFilterApply2.Location = new System.Drawing.Point(1078, 546);
             this.buttonFilterApply2.Name = "buttonFilterApply2";
             this.buttonFilterApply2.Size = new System.Drawing.Size(96, 38);
             this.buttonFilterApply2.TabIndex = 158;
@@ -1780,7 +1811,7 @@
             this.buttonFilterClear.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.buttonFilterClear.Location = new System.Drawing.Point(18, 604);
             this.buttonFilterClear.Name = "buttonFilterClear";
-            this.buttonFilterClear.Size = new System.Drawing.Size(227, 38);
+            this.buttonFilterClear.Size = new System.Drawing.Size(228, 38);
             this.buttonFilterClear.TabIndex = 163;
             this.buttonFilterClear.Text = "Сбросить фильтр";
             this.buttonFilterClear.UseVisualStyleBackColor = false;
@@ -1801,14 +1832,555 @@
             this.buttonFilterClear2.UseVisualStyleBackColor = false;
             this.buttonFilterClear2.Click += new System.EventHandler(this.buttonFilterClear2_Click);
             // 
+            // buttonFilterProfile
+            // 
+            this.buttonFilterProfile.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(49)))), ((int)(((byte)(49)))));
+            this.buttonFilterProfile.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.buttonFilterProfile.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonFilterProfile.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.buttonFilterProfile.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.buttonFilterProfile.Location = new System.Drawing.Point(125, 546);
+            this.buttonFilterProfile.Name = "buttonFilterProfile";
+            this.buttonFilterProfile.Size = new System.Drawing.Size(118, 38);
+            this.buttonFilterProfile.TabIndex = 165;
+            this.buttonFilterProfile.Text = "По профилю";
+            this.buttonFilterProfile.UseVisualStyleBackColor = false;
+            this.buttonFilterProfile.Click += new System.EventHandler(this.buttonFilterProfile_Click);
+            // 
+            // buttonFilterProfile2
+            // 
+            this.buttonFilterProfile2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(49)))), ((int)(((byte)(49)))));
+            this.buttonFilterProfile2.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.buttonFilterProfile2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonFilterProfile2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.buttonFilterProfile2.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.buttonFilterProfile2.Location = new System.Drawing.Point(1180, 546);
+            this.buttonFilterProfile2.Name = "buttonFilterProfile2";
+            this.buttonFilterProfile2.Size = new System.Drawing.Size(118, 38);
+            this.buttonFilterProfile2.TabIndex = 166;
+            this.buttonFilterProfile2.Text = "По профилю";
+            this.buttonFilterProfile2.UseVisualStyleBackColor = false;
+            this.buttonFilterProfile2.Click += new System.EventHandler(this.buttonFilterProfile2_Click);
+            // 
+            // comboBoxEditHero3
+            // 
+            this.comboBoxEditHero3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(49)))), ((int)(((byte)(49)))));
+            this.comboBoxEditHero3.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBoxEditHero3.ForeColor = System.Drawing.Color.White;
+            this.comboBoxEditHero3.FormattingEnabled = true;
+            this.comboBoxEditHero3.Location = new System.Drawing.Point(414, 389);
+            this.comboBoxEditHero3.Name = "comboBoxEditHero3";
+            this.comboBoxEditHero3.Size = new System.Drawing.Size(56, 21);
+            this.comboBoxEditHero3.TabIndex = 188;
+            this.comboBoxEditHero3.Visible = false;
+            // 
+            // comboBoxEditHero2
+            // 
+            this.comboBoxEditHero2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(49)))), ((int)(((byte)(49)))));
+            this.comboBoxEditHero2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBoxEditHero2.ForeColor = System.Drawing.Color.White;
+            this.comboBoxEditHero2.FormattingEnabled = true;
+            this.comboBoxEditHero2.Location = new System.Drawing.Point(334, 389);
+            this.comboBoxEditHero2.Name = "comboBoxEditHero2";
+            this.comboBoxEditHero2.Size = new System.Drawing.Size(56, 21);
+            this.comboBoxEditHero2.TabIndex = 187;
+            this.comboBoxEditHero2.Visible = false;
+            // 
+            // comboBoxEditHero1
+            // 
+            this.comboBoxEditHero1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(49)))), ((int)(((byte)(49)))));
+            this.comboBoxEditHero1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBoxEditHero1.ForeColor = System.Drawing.Color.White;
+            this.comboBoxEditHero1.FormattingEnabled = true;
+            this.comboBoxEditHero1.Location = new System.Drawing.Point(259, 389);
+            this.comboBoxEditHero1.Name = "comboBoxEditHero1";
+            this.comboBoxEditHero1.Size = new System.Drawing.Size(56, 21);
+            this.comboBoxEditHero1.TabIndex = 186;
+            this.comboBoxEditHero1.Visible = false;
+            // 
+            // comboBoxPentagon5
+            // 
+            this.comboBoxPentagon5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(49)))), ((int)(((byte)(49)))));
+            this.comboBoxPentagon5.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBoxPentagon5.ForeColor = System.Drawing.Color.White;
+            this.comboBoxPentagon5.FormattingEnabled = true;
+            this.comboBoxPentagon5.Location = new System.Drawing.Point(502, 563);
+            this.comboBoxPentagon5.Name = "comboBoxPentagon5";
+            this.comboBoxPentagon5.Size = new System.Drawing.Size(45, 21);
+            this.comboBoxPentagon5.TabIndex = 198;
+            this.comboBoxPentagon5.Visible = false;
+            // 
+            // comboBoxPentagon3
+            // 
+            this.comboBoxPentagon3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(49)))), ((int)(((byte)(49)))));
+            this.comboBoxPentagon3.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBoxPentagon3.ForeColor = System.Drawing.Color.White;
+            this.comboBoxPentagon3.FormattingEnabled = true;
+            this.comboBoxPentagon3.Location = new System.Drawing.Point(383, 563);
+            this.comboBoxPentagon3.Name = "comboBoxPentagon3";
+            this.comboBoxPentagon3.Size = new System.Drawing.Size(45, 21);
+            this.comboBoxPentagon3.TabIndex = 197;
+            this.comboBoxPentagon3.Visible = false;
+            // 
+            // comboBoxPentagon4
+            // 
+            this.comboBoxPentagon4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(49)))), ((int)(((byte)(49)))));
+            this.comboBoxPentagon4.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBoxPentagon4.ForeColor = System.Drawing.Color.White;
+            this.comboBoxPentagon4.FormattingEnabled = true;
+            this.comboBoxPentagon4.Location = new System.Drawing.Point(445, 563);
+            this.comboBoxPentagon4.Name = "comboBoxPentagon4";
+            this.comboBoxPentagon4.Size = new System.Drawing.Size(45, 21);
+            this.comboBoxPentagon4.TabIndex = 196;
+            this.comboBoxPentagon4.Visible = false;
+            // 
+            // comboBoxPentagon2
+            // 
+            this.comboBoxPentagon2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(49)))), ((int)(((byte)(49)))));
+            this.comboBoxPentagon2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBoxPentagon2.ForeColor = System.Drawing.Color.White;
+            this.comboBoxPentagon2.FormattingEnabled = true;
+            this.comboBoxPentagon2.Location = new System.Drawing.Point(324, 563);
+            this.comboBoxPentagon2.Name = "comboBoxPentagon2";
+            this.comboBoxPentagon2.Size = new System.Drawing.Size(45, 21);
+            this.comboBoxPentagon2.TabIndex = 195;
+            this.comboBoxPentagon2.Visible = false;
+            // 
+            // comboBoxPentagon1
+            // 
+            this.comboBoxPentagon1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(49)))), ((int)(((byte)(49)))));
+            this.comboBoxPentagon1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBoxPentagon1.ForeColor = System.Drawing.Color.White;
+            this.comboBoxPentagon1.FormattingEnabled = true;
+            this.comboBoxPentagon1.Location = new System.Drawing.Point(265, 563);
+            this.comboBoxPentagon1.Name = "comboBoxPentagon1";
+            this.comboBoxPentagon1.Size = new System.Drawing.Size(45, 21);
+            this.comboBoxPentagon1.TabIndex = 194;
+            this.comboBoxPentagon1.Visible = false;
+            // 
+            // comboBox2Pentagon5
+            // 
+            this.comboBox2Pentagon5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(49)))), ((int)(((byte)(49)))));
+            this.comboBox2Pentagon5.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBox2Pentagon5.ForeColor = System.Drawing.Color.White;
+            this.comboBox2Pentagon5.FormattingEnabled = true;
+            this.comboBox2Pentagon5.Location = new System.Drawing.Point(1002, 563);
+            this.comboBox2Pentagon5.Name = "comboBox2Pentagon5";
+            this.comboBox2Pentagon5.Size = new System.Drawing.Size(45, 21);
+            this.comboBox2Pentagon5.TabIndex = 217;
+            this.comboBox2Pentagon5.Visible = false;
+            // 
+            // comboBox2Pentagon3
+            // 
+            this.comboBox2Pentagon3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(49)))), ((int)(((byte)(49)))));
+            this.comboBox2Pentagon3.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBox2Pentagon3.ForeColor = System.Drawing.Color.White;
+            this.comboBox2Pentagon3.FormattingEnabled = true;
+            this.comboBox2Pentagon3.Location = new System.Drawing.Point(883, 563);
+            this.comboBox2Pentagon3.Name = "comboBox2Pentagon3";
+            this.comboBox2Pentagon3.Size = new System.Drawing.Size(45, 21);
+            this.comboBox2Pentagon3.TabIndex = 216;
+            this.comboBox2Pentagon3.Visible = false;
+            // 
+            // comboBox2Pentagon4
+            // 
+            this.comboBox2Pentagon4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(49)))), ((int)(((byte)(49)))));
+            this.comboBox2Pentagon4.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBox2Pentagon4.ForeColor = System.Drawing.Color.White;
+            this.comboBox2Pentagon4.FormattingEnabled = true;
+            this.comboBox2Pentagon4.Location = new System.Drawing.Point(945, 563);
+            this.comboBox2Pentagon4.Name = "comboBox2Pentagon4";
+            this.comboBox2Pentagon4.Size = new System.Drawing.Size(45, 21);
+            this.comboBox2Pentagon4.TabIndex = 215;
+            this.comboBox2Pentagon4.Visible = false;
+            // 
+            // comboBox2Pentagon2
+            // 
+            this.comboBox2Pentagon2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(49)))), ((int)(((byte)(49)))));
+            this.comboBox2Pentagon2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBox2Pentagon2.ForeColor = System.Drawing.Color.White;
+            this.comboBox2Pentagon2.FormattingEnabled = true;
+            this.comboBox2Pentagon2.Location = new System.Drawing.Point(824, 563);
+            this.comboBox2Pentagon2.Name = "comboBox2Pentagon2";
+            this.comboBox2Pentagon2.Size = new System.Drawing.Size(45, 21);
+            this.comboBox2Pentagon2.TabIndex = 214;
+            this.comboBox2Pentagon2.Visible = false;
+            // 
+            // comboBox2Pentagon1
+            // 
+            this.comboBox2Pentagon1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(49)))), ((int)(((byte)(49)))));
+            this.comboBox2Pentagon1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBox2Pentagon1.ForeColor = System.Drawing.Color.White;
+            this.comboBox2Pentagon1.FormattingEnabled = true;
+            this.comboBox2Pentagon1.Location = new System.Drawing.Point(765, 563);
+            this.comboBox2Pentagon1.Name = "comboBox2Pentagon1";
+            this.comboBox2Pentagon1.Size = new System.Drawing.Size(45, 21);
+            this.comboBox2Pentagon1.TabIndex = 213;
+            this.comboBox2Pentagon1.Visible = false;
+            // 
+            // comboBox2EditHero3
+            // 
+            this.comboBox2EditHero3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(49)))), ((int)(((byte)(49)))));
+            this.comboBox2EditHero3.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBox2EditHero3.ForeColor = System.Drawing.Color.White;
+            this.comboBox2EditHero3.FormattingEnabled = true;
+            this.comboBox2EditHero3.Location = new System.Drawing.Point(926, 389);
+            this.comboBox2EditHero3.Name = "comboBox2EditHero3";
+            this.comboBox2EditHero3.Size = new System.Drawing.Size(56, 21);
+            this.comboBox2EditHero3.TabIndex = 212;
+            this.comboBox2EditHero3.Visible = false;
+            // 
+            // comboBox2EditHero2
+            // 
+            this.comboBox2EditHero2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(49)))), ((int)(((byte)(49)))));
+            this.comboBox2EditHero2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBox2EditHero2.ForeColor = System.Drawing.Color.White;
+            this.comboBox2EditHero2.FormattingEnabled = true;
+            this.comboBox2EditHero2.Location = new System.Drawing.Point(843, 389);
+            this.comboBox2EditHero2.Name = "comboBox2EditHero2";
+            this.comboBox2EditHero2.Size = new System.Drawing.Size(56, 21);
+            this.comboBox2EditHero2.TabIndex = 211;
+            this.comboBox2EditHero2.Visible = false;
+            // 
+            // comboBox2EditHero1
+            // 
+            this.comboBox2EditHero1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(49)))), ((int)(((byte)(49)))));
+            this.comboBox2EditHero1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBox2EditHero1.ForeColor = System.Drawing.Color.White;
+            this.comboBox2EditHero1.FormattingEnabled = true;
+            this.comboBox2EditHero1.Location = new System.Drawing.Point(762, 389);
+            this.comboBox2EditHero1.Name = "comboBox2EditHero1";
+            this.comboBox2EditHero1.Size = new System.Drawing.Size(56, 21);
+            this.comboBox2EditHero1.TabIndex = 210;
+            this.comboBox2EditHero1.Visible = false;
+            // 
+            // TextBoxEditSurname2
+            // 
+            this.TextBoxEditSurname2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(49)))), ((int)(((byte)(49)))));
+            this.TextBoxEditSurname2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.TextBoxEditSurname2.ForeColor = System.Drawing.Color.White;
+            this.TextBoxEditSurname2.Location = new System.Drawing.Point(889, 92);
+            this.TextBoxEditSurname2.Name = "TextBoxEditSurname2";
+            this.TextBoxEditSurname2.Size = new System.Drawing.Size(158, 20);
+            this.TextBoxEditSurname2.TabIndex = 209;
+            this.TextBoxEditSurname2.Visible = false;
+            // 
+            // TextBoxEditNickname2
+            // 
+            this.TextBoxEditNickname2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(49)))), ((int)(((byte)(49)))));
+            this.TextBoxEditNickname2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.TextBoxEditNickname2.ForeColor = System.Drawing.Color.White;
+            this.TextBoxEditNickname2.Location = new System.Drawing.Point(889, 55);
+            this.TextBoxEditNickname2.Name = "TextBoxEditNickname2";
+            this.TextBoxEditNickname2.Size = new System.Drawing.Size(158, 20);
+            this.TextBoxEditNickname2.TabIndex = 208;
+            this.TextBoxEditNickname2.Visible = false;
+            // 
+            // TextBoxEditName2
+            // 
+            this.TextBoxEditName2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(49)))), ((int)(((byte)(49)))));
+            this.TextBoxEditName2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.TextBoxEditName2.ForeColor = System.Drawing.Color.White;
+            this.TextBoxEditName2.Location = new System.Drawing.Point(889, 18);
+            this.TextBoxEditName2.Name = "TextBoxEditName2";
+            this.TextBoxEditName2.Size = new System.Drawing.Size(158, 20);
+            this.TextBoxEditName2.TabIndex = 207;
+            this.TextBoxEditName2.Visible = false;
+            // 
+            // TextBoxEditMMR2
+            // 
+            this.TextBoxEditMMR2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(49)))), ((int)(((byte)(49)))));
+            this.TextBoxEditMMR2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.TextBoxEditMMR2.ForeColor = System.Drawing.Color.White;
+            this.TextBoxEditMMR2.Location = new System.Drawing.Point(810, 522);
+            this.TextBoxEditMMR2.Name = "TextBoxEditMMR2";
+            this.TextBoxEditMMR2.Size = new System.Drawing.Size(158, 20);
+            this.TextBoxEditMMR2.TabIndex = 206;
+            this.TextBoxEditMMR2.Visible = false;
+            // 
+            // TextBoxEditProcentWin2
+            // 
+            this.TextBoxEditProcentWin2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(49)))), ((int)(((byte)(49)))));
+            this.TextBoxEditProcentWin2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.TextBoxEditProcentWin2.ForeColor = System.Drawing.Color.White;
+            this.TextBoxEditProcentWin2.Location = new System.Drawing.Point(888, 478);
+            this.TextBoxEditProcentWin2.Name = "TextBoxEditProcentWin2";
+            this.TextBoxEditProcentWin2.Size = new System.Drawing.Size(158, 20);
+            this.TextBoxEditProcentWin2.TabIndex = 205;
+            this.TextBoxEditProcentWin2.Visible = false;
+            // 
+            // TextBoxEditNumberGames2
+            // 
+            this.TextBoxEditNumberGames2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(49)))), ((int)(((byte)(49)))));
+            this.TextBoxEditNumberGames2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.TextBoxEditNumberGames2.ForeColor = System.Drawing.Color.White;
+            this.TextBoxEditNumberGames2.Location = new System.Drawing.Point(892, 436);
+            this.TextBoxEditNumberGames2.Name = "TextBoxEditNumberGames2";
+            this.TextBoxEditNumberGames2.Size = new System.Drawing.Size(158, 20);
+            this.TextBoxEditNumberGames2.TabIndex = 204;
+            this.TextBoxEditNumberGames2.Visible = false;
+            // 
+            // TextBoxEditRole2
+            // 
+            this.TextBoxEditRole2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(49)))), ((int)(((byte)(49)))));
+            this.TextBoxEditRole2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.TextBoxEditRole2.ForeColor = System.Drawing.Color.White;
+            this.TextBoxEditRole2.Location = new System.Drawing.Point(809, 309);
+            this.TextBoxEditRole2.Name = "TextBoxEditRole2";
+            this.TextBoxEditRole2.Size = new System.Drawing.Size(158, 20);
+            this.TextBoxEditRole2.TabIndex = 203;
+            this.TextBoxEditRole2.Visible = false;
+            // 
+            // TextBoxEditCity2
+            // 
+            this.TextBoxEditCity2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(49)))), ((int)(((byte)(49)))));
+            this.TextBoxEditCity2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.TextBoxEditCity2.ForeColor = System.Drawing.Color.White;
+            this.TextBoxEditCity2.Location = new System.Drawing.Point(817, 221);
+            this.TextBoxEditCity2.Name = "TextBoxEditCity2";
+            this.TextBoxEditCity2.Size = new System.Drawing.Size(158, 20);
+            this.TextBoxEditCity2.TabIndex = 201;
+            this.TextBoxEditCity2.Visible = false;
+            // 
+            // TextBoxEditCountry2
+            // 
+            this.TextBoxEditCountry2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(49)))), ((int)(((byte)(49)))));
+            this.TextBoxEditCountry2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.TextBoxEditCountry2.ForeColor = System.Drawing.Color.White;
+            this.TextBoxEditCountry2.Location = new System.Drawing.Point(826, 176);
+            this.TextBoxEditCountry2.Name = "TextBoxEditCountry2";
+            this.TextBoxEditCountry2.Size = new System.Drawing.Size(158, 20);
+            this.TextBoxEditCountry2.TabIndex = 200;
+            this.TextBoxEditCountry2.Visible = false;
+            // 
+            // TextBoxEditTeam2
+            // 
+            this.TextBoxEditTeam2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(49)))), ((int)(((byte)(49)))));
+            this.TextBoxEditTeam2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.TextBoxEditTeam2.ForeColor = System.Drawing.Color.White;
+            this.TextBoxEditTeam2.Location = new System.Drawing.Point(839, 136);
+            this.TextBoxEditTeam2.Name = "TextBoxEditTeam2";
+            this.TextBoxEditTeam2.Size = new System.Drawing.Size(158, 20);
+            this.TextBoxEditTeam2.TabIndex = 199;
+            this.TextBoxEditTeam2.Visible = false;
+            // 
+            // buttonAdd
+            // 
+            this.buttonAdd.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(49)))), ((int)(((byte)(49)))));
+            this.buttonAdd.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.buttonAdd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonAdd.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.buttonAdd.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.buttonAdd.Location = new System.Drawing.Point(417, 605);
+            this.buttonAdd.Name = "buttonAdd";
+            this.buttonAdd.Size = new System.Drawing.Size(132, 38);
+            this.buttonAdd.TabIndex = 218;
+            this.buttonAdd.Text = "Добавить";
+            this.buttonAdd.UseVisualStyleBackColor = false;
+            this.buttonAdd.Click += new System.EventHandler(this.buttonAdd_Click);
+            // 
+            // buttonAdd2
+            // 
+            this.buttonAdd2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(49)))), ((int)(((byte)(49)))));
+            this.buttonAdd2.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.buttonAdd2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonAdd2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.buttonAdd2.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.buttonAdd2.Location = new System.Drawing.Point(914, 605);
+            this.buttonAdd2.Name = "buttonAdd2";
+            this.buttonAdd2.Size = new System.Drawing.Size(132, 38);
+            this.buttonAdd2.TabIndex = 219;
+            this.buttonAdd2.Text = "Добавить";
+            this.buttonAdd2.UseVisualStyleBackColor = false;
+            // 
+            // dateTimeEditDateBirth
+            // 
+            this.dateTimeEditDateBirth.Cursor = System.Windows.Forms.Cursors.Default;
+            this.dateTimeEditDateBirth.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dateTimeEditDateBirth.Location = new System.Drawing.Point(328, 263);
+            this.dateTimeEditDateBirth.Name = "dateTimeEditDateBirth";
+            this.dateTimeEditDateBirth.Size = new System.Drawing.Size(141, 20);
+            this.dateTimeEditDateBirth.TabIndex = 220;
+            this.dateTimeEditDateBirth.Value = new System.DateTime(1900, 1, 1, 0, 0, 0, 0);
+            this.dateTimeEditDateBirth.Visible = false;
+            // 
+            // openFileDialogEditPhotoProfile
+            // 
+            this.openFileDialogEditPhotoProfile.FileName = "openFileDialog1";
+            this.openFileDialogEditPhotoProfile.Filter = "\"Изображения(*.png)|*.png|Все файлы (*.*)|*.*\"";
+            // 
+            // buttonEditPhotoPrifile
+            // 
+            this.buttonEditPhotoPrifile.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(49)))), ((int)(((byte)(49)))));
+            this.buttonEditPhotoPrifile.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.buttonEditPhotoPrifile.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonEditPhotoPrifile.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.buttonEditPhotoPrifile.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.buttonEditPhotoPrifile.Location = new System.Drawing.Point(276, 80);
+            this.buttonEditPhotoPrifile.Name = "buttonEditPhotoPrifile";
+            this.buttonEditPhotoPrifile.Size = new System.Drawing.Size(69, 38);
+            this.buttonEditPhotoPrifile.TabIndex = 221;
+            this.buttonEditPhotoPrifile.Text = "Обзор";
+            this.buttonEditPhotoPrifile.UseVisualStyleBackColor = false;
+            this.buttonEditPhotoPrifile.Visible = false;
+            this.buttonEditPhotoPrifile.Click += new System.EventHandler(this.buttonEditPhotoPrifile_Click);
+            // 
+            // buttonEditPhotoPrifile2
+            // 
+            this.buttonEditPhotoPrifile2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(49)))), ((int)(((byte)(49)))));
+            this.buttonEditPhotoPrifile2.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.buttonEditPhotoPrifile2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonEditPhotoPrifile2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.buttonEditPhotoPrifile2.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.buttonEditPhotoPrifile2.Location = new System.Drawing.Point(782, 83);
+            this.buttonEditPhotoPrifile2.Name = "buttonEditPhotoPrifile2";
+            this.buttonEditPhotoPrifile2.Size = new System.Drawing.Size(69, 38);
+            this.buttonEditPhotoPrifile2.TabIndex = 222;
+            this.buttonEditPhotoPrifile2.Text = "Обзор";
+            this.buttonEditPhotoPrifile2.UseVisualStyleBackColor = false;
+            this.buttonEditPhotoPrifile2.Visible = false;
+            // 
+            // dateTimeEditDateBirth2
+            // 
+            this.dateTimeEditDateBirth2.Cursor = System.Windows.Forms.Cursors.Default;
+            this.dateTimeEditDateBirth2.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dateTimeEditDateBirth2.Location = new System.Drawing.Point(834, 264);
+            this.dateTimeEditDateBirth2.Name = "dateTimeEditDateBirth2";
+            this.dateTimeEditDateBirth2.Size = new System.Drawing.Size(141, 20);
+            this.dateTimeEditDateBirth2.TabIndex = 223;
+            this.dateTimeEditDateBirth2.Value = new System.DateTime(1900, 1, 1, 0, 0, 0, 0);
+            this.dateTimeEditDateBirth2.Visible = false;
+            // 
+            // openFileDialogEditPhotoProfile2
+            // 
+            this.openFileDialogEditPhotoProfile2.FileName = "openFileDialog1";
+            this.openFileDialogEditPhotoProfile2.Filter = "\"Изображения(*.png)|*.png|Все файлы (*.*)|*.*\"";
+            // 
+            // buttonCancel
+            // 
+            this.buttonCancel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(49)))), ((int)(((byte)(49)))));
+            this.buttonCancel.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.buttonCancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonCancel.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.buttonCancel.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.buttonCancel.Location = new System.Drawing.Point(417, 659);
+            this.buttonCancel.Name = "buttonCancel";
+            this.buttonCancel.Size = new System.Drawing.Size(132, 38);
+            this.buttonCancel.TabIndex = 224;
+            this.buttonCancel.Text = "Отменить";
+            this.buttonCancel.UseVisualStyleBackColor = false;
+            this.buttonCancel.Visible = false;
+            this.buttonCancel.Click += new System.EventHandler(this.buttonCancel_Click);
+            // 
+            // buttonCancel2
+            // 
+            this.buttonCancel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(49)))), ((int)(((byte)(49)))));
+            this.buttonCancel2.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.buttonCancel2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonCancel2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.buttonCancel2.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.buttonCancel2.Location = new System.Drawing.Point(914, 659);
+            this.buttonCancel2.Name = "buttonCancel2";
+            this.buttonCancel2.Size = new System.Drawing.Size(132, 38);
+            this.buttonCancel2.TabIndex = 225;
+            this.buttonCancel2.Text = "Отменить";
+            this.buttonCancel2.UseVisualStyleBackColor = false;
+            this.buttonCancel2.Visible = false;
+            this.buttonCancel2.Click += new System.EventHandler(this.buttonCancel2_Click);
+            // 
+            // buttonDelete
+            // 
+            this.buttonDelete.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(49)))), ((int)(((byte)(49)))));
+            this.buttonDelete.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.buttonDelete.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonDelete.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.buttonDelete.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.buttonDelete.Location = new System.Drawing.Point(267, 659);
+            this.buttonDelete.Name = "buttonDelete";
+            this.buttonDelete.Size = new System.Drawing.Size(282, 38);
+            this.buttonDelete.TabIndex = 226;
+            this.buttonDelete.Text = "Удалить";
+            this.buttonDelete.UseVisualStyleBackColor = false;
+            this.buttonDelete.Click += new System.EventHandler(this.buttonDelete_Click);
+            // 
+            // buttonDelete2
+            // 
+            this.buttonDelete2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(49)))), ((int)(((byte)(49)))));
+            this.buttonDelete2.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.buttonDelete2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonDelete2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.buttonDelete2.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.buttonDelete2.Location = new System.Drawing.Point(764, 659);
+            this.buttonDelete2.Name = "buttonDelete2";
+            this.buttonDelete2.Size = new System.Drawing.Size(282, 38);
+            this.buttonDelete2.TabIndex = 227;
+            this.buttonDelete2.Text = "Удалить";
+            this.buttonDelete2.UseVisualStyleBackColor = false;
+            this.buttonDelete2.Click += new System.EventHandler(this.buttonDelete2_Click);
+            // 
+            // buttonAddSend
+            // 
+            this.buttonAddSend.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(49)))), ((int)(((byte)(49)))));
+            this.buttonAddSend.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.buttonAddSend.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonAddSend.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.buttonAddSend.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.buttonAddSend.Location = new System.Drawing.Point(267, 659);
+            this.buttonAddSend.Name = "buttonAddSend";
+            this.buttonAddSend.Size = new System.Drawing.Size(132, 38);
+            this.buttonAddSend.TabIndex = 228;
+            this.buttonAddSend.Text = "Отправить";
+            this.buttonAddSend.UseVisualStyleBackColor = false;
+            this.buttonAddSend.Visible = false;
+            this.buttonAddSend.Click += new System.EventHandler(this.buttonAddSend_Click);
+            // 
             // FormListPlayer
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.ClientSize = new System.Drawing.Size(1322, 721);
-            this.Controls.Add(this.ListPlayer);
+            this.Controls.Add(this.buttonDelete);
+            this.Controls.Add(this.buttonAddSend);
+            this.Controls.Add(this.buttonDelete2);
+            this.Controls.Add(this.buttonCancel2);
+            this.Controls.Add(this.buttonCancel);
+            this.Controls.Add(this.dateTimeEditDateBirth2);
+            this.Controls.Add(this.buttonEditPhotoPrifile2);
+            this.Controls.Add(this.buttonEditPhotoPrifile);
+            this.Controls.Add(this.dateTimeEditDateBirth);
+            this.Controls.Add(this.buttonAdd2);
+            this.Controls.Add(this.buttonAdd);
+            this.Controls.Add(this.comboBox2Pentagon5);
+            this.Controls.Add(this.comboBox2Pentagon3);
+            this.Controls.Add(this.comboBox2Pentagon4);
+            this.Controls.Add(this.comboBox2Pentagon2);
+            this.Controls.Add(this.comboBox2Pentagon1);
+            this.Controls.Add(this.comboBox2EditHero3);
+            this.Controls.Add(this.comboBox2EditHero2);
+            this.Controls.Add(this.comboBox2EditHero1);
+            this.Controls.Add(this.TextBoxEditSurname2);
+            this.Controls.Add(this.TextBoxEditNickname2);
+            this.Controls.Add(this.TextBoxEditName2);
+            this.Controls.Add(this.TextBoxEditMMR2);
+            this.Controls.Add(this.TextBoxEditProcentWin2);
+            this.Controls.Add(this.TextBoxEditNumberGames2);
+            this.Controls.Add(this.TextBoxEditRole2);
+            this.Controls.Add(this.TextBoxEditCity2);
+            this.Controls.Add(this.TextBoxEditCountry2);
+            this.Controls.Add(this.TextBoxEditTeam2);
+            this.Controls.Add(this.comboBoxPentagon5);
+            this.Controls.Add(this.comboBoxPentagon3);
+            this.Controls.Add(this.comboBoxPentagon4);
+            this.Controls.Add(this.comboBoxPentagon2);
+            this.Controls.Add(this.comboBoxPentagon1);
+            this.Controls.Add(this.comboBoxEditHero3);
+            this.Controls.Add(this.comboBoxEditHero2);
+            this.Controls.Add(this.comboBoxEditHero1);
             this.Controls.Add(this.List2Player);
+            this.Controls.Add(this.ListPlayer);
+            this.Controls.Add(this.buttonFilterProfile2);
+            this.Controls.Add(this.buttonFilterProfile);
             this.Controls.Add(this.buttonFilterClear2);
             this.Controls.Add(this.buttonFilterClear);
             this.Controls.Add(this.numericUpDownAgeDo2);
@@ -1884,7 +2456,6 @@
             this.Controls.Add(this.TextBoxEditProcentWin);
             this.Controls.Add(this.TextBoxEditNumberGames);
             this.Controls.Add(this.TextBoxEditRole);
-            this.Controls.Add(this.TextBoxEditAge);
             this.Controls.Add(this.TextBoxEditCity);
             this.Controls.Add(this.TextBoxEditCountry);
             this.Controls.Add(this.TextBoxEditTeam);
@@ -2046,7 +2617,6 @@
         public System.Windows.Forms.TextBox TextBoxEditTeam;
         public System.Windows.Forms.TextBox TextBoxEditCountry;
         public System.Windows.Forms.TextBox TextBoxEditCity;
-        public System.Windows.Forms.TextBox TextBoxEditAge;
         public System.Windows.Forms.TextBox TextBoxEditRole;
         public System.Windows.Forms.TextBox TextBoxEditNumberGames;
         public System.Windows.Forms.TextBox TextBoxEditProcentWin;
@@ -2122,5 +2692,46 @@
         public System.Windows.Forms.Label labelFilterTeam2;
         private System.Windows.Forms.Button buttonFilterClear;
         private System.Windows.Forms.Button buttonFilterClear2;
+        private System.Windows.Forms.Button buttonFilterProfile;
+        private System.Windows.Forms.Button buttonFilterProfile2;
+        public System.Windows.Forms.ComboBox comboBoxEditHero3;
+        public System.Windows.Forms.ComboBox comboBoxEditHero2;
+        public System.Windows.Forms.ComboBox comboBoxEditHero1;
+        public System.Windows.Forms.ComboBox comboBoxPentagon5;
+        public System.Windows.Forms.ComboBox comboBoxPentagon3;
+        public System.Windows.Forms.ComboBox comboBoxPentagon4;
+        public System.Windows.Forms.ComboBox comboBoxPentagon2;
+        public System.Windows.Forms.ComboBox comboBoxPentagon1;
+        public System.Windows.Forms.ComboBox comboBox2Pentagon5;
+        public System.Windows.Forms.ComboBox comboBox2Pentagon3;
+        public System.Windows.Forms.ComboBox comboBox2Pentagon4;
+        public System.Windows.Forms.ComboBox comboBox2Pentagon2;
+        public System.Windows.Forms.ComboBox comboBox2Pentagon1;
+        public System.Windows.Forms.ComboBox comboBox2EditHero3;
+        public System.Windows.Forms.ComboBox comboBox2EditHero2;
+        public System.Windows.Forms.ComboBox comboBox2EditHero1;
+        public System.Windows.Forms.TextBox TextBoxEditSurname2;
+        public System.Windows.Forms.TextBox TextBoxEditNickname2;
+        public System.Windows.Forms.TextBox TextBoxEditName2;
+        public System.Windows.Forms.TextBox TextBoxEditMMR2;
+        public System.Windows.Forms.TextBox TextBoxEditProcentWin2;
+        public System.Windows.Forms.TextBox TextBoxEditNumberGames2;
+        public System.Windows.Forms.TextBox TextBoxEditRole2;
+        public System.Windows.Forms.TextBox TextBoxEditCity2;
+        public System.Windows.Forms.TextBox TextBoxEditCountry2;
+        public System.Windows.Forms.TextBox TextBoxEditTeam2;
+        private System.Windows.Forms.Button buttonAdd;
+        private System.Windows.Forms.Button buttonAdd2;
+        private System.Windows.Forms.DateTimePicker dateTimeEditDateBirth;
+        private System.Windows.Forms.OpenFileDialog openFileDialogEditPhotoProfile;
+        private System.Windows.Forms.Button buttonEditPhotoPrifile;
+        private System.Windows.Forms.Button buttonEditPhotoPrifile2;
+        private System.Windows.Forms.DateTimePicker dateTimeEditDateBirth2;
+        private System.Windows.Forms.OpenFileDialog openFileDialogEditPhotoProfile2;
+        private System.Windows.Forms.Button buttonCancel;
+        private System.Windows.Forms.Button buttonCancel2;
+        private System.Windows.Forms.Button buttonDelete;
+        private System.Windows.Forms.Button buttonDelete2;
+        private System.Windows.Forms.Button buttonAddSend;
     }
 }

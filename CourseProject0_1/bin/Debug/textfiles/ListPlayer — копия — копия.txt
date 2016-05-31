@@ -1,0 +1,54 @@
+﻿Dota2:
+	*
+		Name = Ivan
+		Nickname = ArtStyle
+		Surname = Antonov
+		Team = Natus Vinsere
+		Country = Ukraine
+		City = Kharkov
+		Nationality = Ukraine
+		DateBirth = 20.04.1989
+		Role = Support
+		Signature = [Chen, Night Stalker, Shadow Demon]
+		NumberGames = 241
+		ProcentWinGames = 46,47
+		MMR = 6532
+		Pentagon = [3, 10, 4, 9, 9]
+		PhotoProfile = ArtStyle.png
+		Edit = false
+	*
+		Name = Andrey1
+		Nickname = Afoninje
+		Surname = Afonin1
+		Team = Polarity1
+		Country = Russia1
+		City = Sankt-Peterburg
+		Nationality = Russia
+		DateBirth = 27.09.1996
+		Role = Solo Middle
+		Signature = [Shadow Fiend, Puck, Zeus]
+		NumberGames = 375
+		ProcentWinGames = 52,53
+		MMR = 7879
+		Pentagon = [5, 8, 7, 2, 7]
+		PhotoProfile = Afoninje.png
+		Edit = false
+	*
+		Name = fasdf
+		Nickname = sadfsadf
+		Surname = asdf
+		Team = sadf
+		Country = asg
+		City = adgasd
+		Nationality = asdg
+		DateBirth = 27.09.1996
+		Role = asg
+		Signature = [Shadow Fiend, Puck, Zeus]
+		NumberGames = 375
+		ProcentWinGames = 52,53
+		MMR = 7879
+		Pentagon = [5, 8, 7, 2, 7]
+		PhotoProfile = Afoninje.png
+		Edit = true
+@
+CSGO:

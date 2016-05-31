@@ -1,20 +1,4 @@
-﻿Dota2:
-	*
-		Name = Ivan
-		Nickname = ArtStyle
-		Surname = Antonov
-		Team = Natus Vincere
-		Country = Ukraine
-		City = Kharkov
-		Nationality = Ukraine
-		DateBirth = 20.04.1989
-		Role = Support
-		Signature = [Chen, Night Stalker, Shadow Demon]
-		NumberGames = 241
-		ProcentWinGames = 46,47
-		MMR = 6532
-		Pentagon = [3, 10, 4, 9, 9]
-		PhotoProfile = ArtStyle.png
+Dota2:
 	*
 		Name = Danil
 		Nickname = Dendi
@@ -31,22 +15,7 @@
 		MMR = 7194
 		Pentagon = [8, 7, 8, 2, 7]
 		PhotoProfile = Dendi.png
-	*
-		Name = Akbar
-		Nickname = SoNNeikO
-		Surname = Butaev
-		Team = Natus Vincere
-		Country = Uzbekistan
-		City = Tashkent
-		Nationality = Russia
-		DateBirth = 16.05.1997
-		Role = Support
-		Signature = [Io, Earthshaker, Winter Wyvern]
-		NumberGames = 625
-		ProcentWinGames = 50,88
-		MMR = 8175
-		Pentagon = [9, 7, 4, 8, 7]
-		PhotoProfile = SoNNeikO.png
+		Edit = false
 	*
 		Name = Dmitry
 		Nickname = Ditya Ra
@@ -63,6 +32,7 @@
 		MMR = 7975
 		Pentagon = [3, 7, 8, 2, 8]
 		PhotoProfile = Ditya Ra.png
+		Edit = false
 	*
 		Name = Victor
 		Nickname = GeneRaL
@@ -79,6 +49,7 @@
 		MMR = 8015
 		Pentagon = [4, 7, 7, 3, 8]
 		PhotoProfile = GeneRaL.png
+		Edit = false
 	*
 		Name = Gleb
 		Nickname = Funnik
@@ -88,13 +59,14 @@
 		City = Kharkov
 		Nationality = Ukraine
 		DateBirth = 16.11.1992
-		Role = Solo Offlane
+		Role = Solo Hard
 		Signature = [Batrider, Dark Seer, Clinkz]
 		NumberGames = 1313
 		ProcentWinGames = 60,40
 		MMR = 7134
 		Pentagon = [6, 7, 7, 3, 6]
 		PhotoProfile = Funnik.png
+		Edit = false
 	*
 		Name = Ilya
 		Nickname = Illidan
@@ -111,6 +83,7 @@
 		MMR = 8624
 		Pentagon = [5, 5, 9, 2, 7]
 		PhotoProfile = Illidan.png
+		Edit = false
 	*
 		Name = Artur
 		Nickname = Goblak
@@ -127,6 +100,7 @@
 		MMR = 6324
 		Pentagon = [6, 5, 2, 8, 6]
 		PhotoProfile = Goblak.png
+		Edit = false
 	*
 		Name = Andrey
 		Nickname = ALWAYSWANNAFLY
@@ -143,6 +117,7 @@
 		MMR = 6877
 		Pentagon = [7, 6, 3, 7, 5]
 		PhotoProfile = ALWAYSWANNAFLY.png
+		Edit = false
 	*
 		Name = Bogdan
 		Nickname = Iceberg
@@ -159,12 +134,47 @@
 		MMR = 7164
 		Pentagon = [4, 7, 6, 2, 6]
 		PhotoProfile = Iceberg.png
+		Edit = false
 	*
-		Name = Andrey
+		Name = Akbar
+		Nickname = SoNNeikO
+		Surname = Butaev
+		Team = Natus Vincere
+		Country = Uzbekistan
+		City = Tashkent
+		Nationality = Uzbekistan
+		DateBirth = 16.05.1997
+		Role = Support
+		Signature = [Io, Earthshaker, Winter Wyvern]
+		NumberGames = 625
+		ProcentWinGames = 50,88
+		MMR = 8175
+		Pentagon = [9, 7, 4, 8, 7]
+		PhotoProfile = SoNNeikO.png
+		Edit = false
+	*
+		Name = Ivan
+		Nickname = ArtStyle
+		Surname = Antonov
+		Team = Natus Vinsere
+		Country = Ukraine
+		City = Kharkov
+		Nationality = Ukraine
+		DateBirth = 20.04.1989
+		Role = Support
+		Signature = [Chen, Night Stalker, Shadow Demon]
+		NumberGames = 241
+		ProcentWinGames = 46,47
+		MMR = 6532
+		Pentagon = [3, 10, 4, 9, 9]
+		PhotoProfile = ArtStyle.png
+		Edit = False
+	*
+		Name = Andrey1
 		Nickname = Afoninje
-		Surname = Afonin
-		Team = Polarity
-		Country = Russia
+		Surname = Afonin1
+		Team = Polarity1
+		Country = Russia1
 		City = Sankt-Peterburg
 		Nationality = Russia
 		DateBirth = 27.09.1996
@@ -175,6 +185,7 @@
 		MMR = 7879
 		Pentagon = [5, 8, 7, 2, 7]
 		PhotoProfile = Afoninje.png
+		Edit = False
 @
 CSGO:
 	*
@@ -193,6 +204,7 @@ CSGO:
 		MMR = GlobalElite
 		Pentagon = [5, 7, 8, 5, 2]
 		PhotoProfile = Markeloff.png
+		Edit = false
 	*
 		Name = Jarosław
 		Nickname = pashaBiceps
@@ -209,6 +221,7 @@ CSGO:
 		MMR = GlobalElite
 		Pentagon = [6, 8, 7, 3, 5]
 		PhotoProfile = PashaBiceps.png
+		Edit = false
 	*
 		Name = Danylo
 		Nickname = Zeus
@@ -225,3 +238,38 @@ CSGO:
 		MMR = GlobalElite
 		Pentagon = [7, 8, 6, 5, 7]
 		PhotoProfile = Zeus.png
+		Edit = false
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

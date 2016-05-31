@@ -33,6 +33,19 @@ namespace CourseProject0_1
 
         private void MyProfile_Load(object sender, EventArgs e)
         {
+            comboBoxPentagon1.Items.Clear();
+            comboBoxPentagon2.Items.Clear();
+            comboBoxPentagon3.Items.Clear();
+            comboBoxPentagon4.Items.Clear();
+            comboBoxPentagon5.Items.Clear();
+            for (int i = 1; i <= 10; i++)
+            {
+                comboBoxPentagon1.Items.Add(i);
+                comboBoxPentagon2.Items.Add(i);
+                comboBoxPentagon3.Items.Add(i);
+                comboBoxPentagon4.Items.Add(i);
+                comboBoxPentagon5.Items.Add(i);
+            }
             if (GlobalVariables.SelectedDiscypline == "Dota2")
             {
                 PictureBoxLogoGame.Image = Properties.Resources.dota2_100_100;
@@ -61,6 +74,7 @@ namespace CourseProject0_1
             LabelNumberGames.Text = "Количество игр: " + MyProfileTemp.NumberGames;
             LabelProcentWin.Text = "Процент побед: " + MyProfileTemp.ProcentWinGames;
             LabelMMR.Text = "MMR: " + MyProfileTemp.MMR;
+            labelPentagon.Text = string.Join(" ,", MyProfileTemp.Pentagon);
 
             //LabelPentagon.ForeColor = Color.Red;
             //LabelPentagon2.ForeColor = Color.Aqua;
@@ -83,6 +97,14 @@ namespace CourseProject0_1
 
         private void buttonSave_Click(object sender, EventArgs e)
         {
+            comboBoxPentagon1.Visible = false;
+            comboBoxPentagon2.Visible = false;
+            comboBoxPentagon3.Visible = false;
+            comboBoxPentagon4.Visible = false;
+            comboBoxPentagon5.Visible = false;
+
+            labelPentagon.Visible = true;
+
             PictureBoxSignature1.Visible = true;
             PictureBoxSignature2.Visible = true;
             PictureBoxSignature3.Visible = true;
@@ -119,7 +141,7 @@ namespace CourseProject0_1
                 string tempCountry = String.Copy(tempPlayer.Country);
                 string tempCity = String.Copy(tempPlayer.City);
                 string tempNationality = tempCountry;
-                string tempDateBirth = ((tempPlayer.DateBirth.Day < 10) ? ("0" + tempPlayer.DateBirth.Day) : (Convert.ToString(tempPlayer.DateBirth.Day))) + "." + ((dateTimeDateBirth.Value.Month < 10) ? ("0" + tempPlayer.DateBirth.Month) : (Convert.ToString(tempPlayer.DateBirth.Month))) + "." + tempPlayer.DateBirth.Year;
+                string tempDateBirth = ((tempPlayer.DateBirth.Day < 10) ? ("0" + tempPlayer.DateBirth.Day) : (Convert.ToString(tempPlayer.DateBirth.Day))) + "." + ((tempPlayer.DateBirth.Month < 10) ? ("0" + tempPlayer.DateBirth.Month) : (Convert.ToString(tempPlayer.DateBirth.Month))) + "." + tempPlayer.DateBirth.Year;
                 //string tempAge = Convert.ToString(tempPlayer.Age);
                 string tempRole = String.Copy(tempPlayer.Role);
                 string[] tempSignature = tempPlayer.Signature;
@@ -128,6 +150,8 @@ namespace CourseProject0_1
                 string tempMMR = String.Copy(tempPlayer.MMR);
                 int[] tempPentagon = tempPlayer.Pentagon;
                 string tempPhotoProfile = tempPlayer.PhotoProfile;
+                bool tempEdit = true;
+                string TempOldNickname = "";
 
                 if (TextBoxEditName.Text != "")
                 {
@@ -139,6 +163,7 @@ namespace CourseProject0_1
                 }
                 if (TextBoxEditNickname.Text != "")
                 {
+                    TempOldNickname = string.Copy(tempNickname);
                     tempNickname = TextBoxEditNickname.Text;
                 }
                 if (TextBoxEditTeam.Text != "")
@@ -191,14 +216,56 @@ namespace CourseProject0_1
                 {
                     tempPhotoProfile = tempNickname + ".png";
                 }
+
+                if (comboBoxPentagon1.SelectedItem != null)
+                {
+                    tempPentagon[0] = (int)comboBoxPentagon1.SelectedItem;
+                }
+                if (comboBoxPentagon2.SelectedItem != null)
+                {
+                    tempPentagon[1] = (int)comboBoxPentagon2.SelectedItem;
+                }
+                if (comboBoxPentagon3.SelectedItem != null)
+                {
+                    tempPentagon[2] = (int)comboBoxPentagon3.SelectedItem;
+                }
+                if (comboBoxPentagon4.SelectedItem != null)
+                {
+                    tempPentagon[3] = (int)comboBoxPentagon4.SelectedItem;
+                }
+                if (comboBoxPentagon5.SelectedItem != null)
+                {
+                    tempPentagon[4] = (int)comboBoxPentagon5.SelectedItem;
+                }
                 buttonSave.Visible = false;
+
+                if (TempOldNickname != "")
+                {
+                    File.Copy(Environment.CurrentDirectory + @"\image\photoProfiles\" + TempOldNickname + ".png", Environment.CurrentDirectory + @"\image\photoProfiles\" + tempNickname + ".png");
+                    File.Delete(Environment.CurrentDirectory + @"\image\photoProfiles\" + TempOldNickname + ".png");
+                }
                 //MyProfiles[0] = new Dota2Player(new object[] { Dota2Name, Dota2Nickname, Dota2Surname, Dota2Team, Dota2Country, Dota2City, Dota2Nationality, Dota2DateBirth, Dota2Role, Dota2Signature, Dota2NumberGames, Dota2ProcentWinGames, Dota2MMR, Dota2Pentagon, Dota2PhotoProfile });
 
-                GlobalVariables.MyProfileDota2 = new Dota2Player(new object[] { tempName, tempNickname, tempSurname, tempTeam, tempCountry, tempCity, tempNationality, tempDateBirth, tempRole, tempSignature, tempNumberGames, tempProcentWin, tempMMR, tempPentagon, tempPhotoProfile });
+                GlobalVariables.MyProfileDota2 = new Dota2Player(new object[] { tempName, tempNickname, tempSurname, tempTeam, tempCountry, tempCity, tempNationality, tempDateBirth, tempRole, tempSignature, tempNumberGames, tempProcentWin, tempMMR, tempPentagon, tempPhotoProfile, tempEdit });
 
                 MethodsWorkWithFile.EditFile(tempPlayer, GlobalVariables.MyProfileDota2, "MyProfile.txt");
 
+                GlobalVariables.ListPlayerInDiscypline = MethodsWorkWithFile.CreateListPlayer("ListPlayer.txt");
+
+                MethodsWorkWithFile.CreateLists(GlobalVariables.ListPlayerInDiscypline);
+
+                Player[] MyProfiles = MethodsWorkWithFile.ReadMyProfile();
+                GlobalVariables.MyProfileDota2 = (Dota2Player)MyProfiles[0];
+                GlobalVariables.MyProfileCSGO = (CSGOPlayer)MyProfiles[1];
+
+                GlobalVariables.ListPlayerInDiscypline[0].Add(GlobalVariables.PlayerDota2Clear);
+                GlobalVariables.ListPlayerInDiscypline[0].Add(GlobalVariables.MyProfileDota2);
+                GlobalVariables.ListPlayerInDiscypline[1].Add(GlobalVariables.PlayerCSGOClear);
+                GlobalVariables.ListPlayerInDiscypline[1].Add(GlobalVariables.MyProfileCSGO);
+                GlobalVariables.ListPlayerInDiscyplineSearched = new List<List<Player>>(GlobalVariables.ListPlayerInDiscypline);
+
                 MyProfile_Load(null, null);
+                
             }
             else
             {
@@ -209,6 +276,13 @@ namespace CourseProject0_1
 
         private void buttonEdit_Click(object sender, EventArgs e)
         {
+            labelPentagon.Visible = false;
+            comboBoxPentagon1.Visible = true;
+            comboBoxPentagon2.Visible = true;
+            comboBoxPentagon3.Visible = true;
+            comboBoxPentagon4.Visible = true;
+            comboBoxPentagon5.Visible = true;
+
             PictureBoxSignature1.Visible = false;
             PictureBoxSignature2.Visible = false;
             PictureBoxSignature3.Visible = false;

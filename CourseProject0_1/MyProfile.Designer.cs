@@ -64,6 +64,12 @@
             this.comboBoxEditHero3 = new System.Windows.Forms.ComboBox();
             this.buttonEditPhotoPrifile = new System.Windows.Forms.Button();
             this.openFileDialogEditPhotoProfile = new System.Windows.Forms.OpenFileDialog();
+            this.labelPentagon = new System.Windows.Forms.Label();
+            this.comboBoxPentagon4 = new System.Windows.Forms.ComboBox();
+            this.comboBoxPentagon2 = new System.Windows.Forms.ComboBox();
+            this.comboBoxPentagon1 = new System.Windows.Forms.ComboBox();
+            this.comboBoxPentagon5 = new System.Windows.Forms.ComboBox();
+            this.comboBoxPentagon3 = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.PictureSelectedPlayer)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.PictureBoxLogoGame)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.PictureBoxSignature3)).BeginInit();
@@ -243,7 +249,7 @@
             this.buttonEdit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonEdit.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.buttonEdit.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.buttonEdit.Location = new System.Drawing.Point(16, 494);
+            this.buttonEdit.Location = new System.Drawing.Point(16, 525);
             this.buttonEdit.Name = "buttonEdit";
             this.buttonEdit.Size = new System.Drawing.Size(127, 38);
             this.buttonEdit.TabIndex = 165;
@@ -258,7 +264,7 @@
             this.buttonSave.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonSave.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.buttonSave.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.buttonSave.Location = new System.Drawing.Point(173, 494);
+            this.buttonSave.Location = new System.Drawing.Point(173, 525);
             this.buttonSave.Name = "buttonSave";
             this.buttonSave.Size = new System.Drawing.Size(127, 38);
             this.buttonSave.TabIndex = 166;
@@ -432,7 +438,9 @@
             // 
             // comboBoxEditHero1
             // 
+            this.comboBoxEditHero1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(49)))), ((int)(((byte)(49)))));
             this.comboBoxEditHero1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBoxEditHero1.ForeColor = System.Drawing.Color.White;
             this.comboBoxEditHero1.FormattingEnabled = true;
             this.comboBoxEditHero1.Location = new System.Drawing.Point(17, 372);
             this.comboBoxEditHero1.Name = "comboBoxEditHero1";
@@ -442,7 +450,9 @@
             // 
             // comboBoxEditHero2
             // 
+            this.comboBoxEditHero2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(49)))), ((int)(((byte)(49)))));
             this.comboBoxEditHero2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBoxEditHero2.ForeColor = System.Drawing.Color.White;
             this.comboBoxEditHero2.FormattingEnabled = true;
             this.comboBoxEditHero2.Location = new System.Drawing.Point(92, 372);
             this.comboBoxEditHero2.Name = "comboBoxEditHero2";
@@ -452,7 +462,9 @@
             // 
             // comboBoxEditHero3
             // 
+            this.comboBoxEditHero3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(49)))), ((int)(((byte)(49)))));
             this.comboBoxEditHero3.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBoxEditHero3.ForeColor = System.Drawing.Color.White;
             this.comboBoxEditHero3.FormattingEnabled = true;
             this.comboBoxEditHero3.Location = new System.Drawing.Point(172, 372);
             this.comboBoxEditHero3.Name = "comboBoxEditHero3";
@@ -467,7 +479,7 @@
             this.buttonEditPhotoPrifile.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonEditPhotoPrifile.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.buttonEditPhotoPrifile.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.buttonEditPhotoPrifile.Location = new System.Drawing.Point(123, 73);
+            this.buttonEditPhotoPrifile.Location = new System.Drawing.Point(34, 73);
             this.buttonEditPhotoPrifile.Name = "buttonEditPhotoPrifile";
             this.buttonEditPhotoPrifile.Size = new System.Drawing.Size(69, 38);
             this.buttonEditPhotoPrifile.TabIndex = 186;
@@ -481,12 +493,90 @@
             this.openFileDialogEditPhotoProfile.FileName = "openFileDialog1";
             this.openFileDialogEditPhotoProfile.Filter = "\"Изображения(*.png)|*.png|Все файлы (*.*)|*.*\"";
             // 
+            // labelPentagon
+            // 
+            this.labelPentagon.AutoSize = true;
+            this.labelPentagon.BackColor = System.Drawing.Color.Transparent;
+            this.labelPentagon.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.labelPentagon.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.labelPentagon.Location = new System.Drawing.Point(114, 490);
+            this.labelPentagon.Name = "labelPentagon";
+            this.labelPentagon.Size = new System.Drawing.Size(86, 20);
+            this.labelPentagon.TabIndex = 187;
+            this.labelPentagon.Text = "0, 0, 0, 0, 0";
+            // 
+            // comboBoxPentagon4
+            // 
+            this.comboBoxPentagon4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(49)))), ((int)(((byte)(49)))));
+            this.comboBoxPentagon4.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBoxPentagon4.ForeColor = System.Drawing.Color.White;
+            this.comboBoxPentagon4.FormattingEnabled = true;
+            this.comboBoxPentagon4.Location = new System.Drawing.Point(198, 490);
+            this.comboBoxPentagon4.Name = "comboBoxPentagon4";
+            this.comboBoxPentagon4.Size = new System.Drawing.Size(45, 21);
+            this.comboBoxPentagon4.TabIndex = 190;
+            this.comboBoxPentagon4.Visible = false;
+            // 
+            // comboBoxPentagon2
+            // 
+            this.comboBoxPentagon2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(49)))), ((int)(((byte)(49)))));
+            this.comboBoxPentagon2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBoxPentagon2.ForeColor = System.Drawing.Color.White;
+            this.comboBoxPentagon2.FormattingEnabled = true;
+            this.comboBoxPentagon2.Location = new System.Drawing.Point(77, 490);
+            this.comboBoxPentagon2.Name = "comboBoxPentagon2";
+            this.comboBoxPentagon2.Size = new System.Drawing.Size(45, 21);
+            this.comboBoxPentagon2.TabIndex = 189;
+            this.comboBoxPentagon2.Visible = false;
+            // 
+            // comboBoxPentagon1
+            // 
+            this.comboBoxPentagon1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(49)))), ((int)(((byte)(49)))));
+            this.comboBoxPentagon1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBoxPentagon1.ForeColor = System.Drawing.Color.White;
+            this.comboBoxPentagon1.FormattingEnabled = true;
+            this.comboBoxPentagon1.Location = new System.Drawing.Point(18, 490);
+            this.comboBoxPentagon1.Name = "comboBoxPentagon1";
+            this.comboBoxPentagon1.Size = new System.Drawing.Size(45, 21);
+            this.comboBoxPentagon1.TabIndex = 188;
+            this.comboBoxPentagon1.Visible = false;
+            // 
+            // comboBoxPentagon5
+            // 
+            this.comboBoxPentagon5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(49)))), ((int)(((byte)(49)))));
+            this.comboBoxPentagon5.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBoxPentagon5.ForeColor = System.Drawing.Color.White;
+            this.comboBoxPentagon5.FormattingEnabled = true;
+            this.comboBoxPentagon5.Location = new System.Drawing.Point(255, 490);
+            this.comboBoxPentagon5.Name = "comboBoxPentagon5";
+            this.comboBoxPentagon5.Size = new System.Drawing.Size(45, 21);
+            this.comboBoxPentagon5.TabIndex = 193;
+            this.comboBoxPentagon5.Visible = false;
+            // 
+            // comboBoxPentagon3
+            // 
+            this.comboBoxPentagon3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(49)))), ((int)(((byte)(49)))));
+            this.comboBoxPentagon3.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBoxPentagon3.ForeColor = System.Drawing.Color.White;
+            this.comboBoxPentagon3.FormattingEnabled = true;
+            this.comboBoxPentagon3.Location = new System.Drawing.Point(136, 490);
+            this.comboBoxPentagon3.Name = "comboBoxPentagon3";
+            this.comboBoxPentagon3.Size = new System.Drawing.Size(45, 21);
+            this.comboBoxPentagon3.TabIndex = 192;
+            this.comboBoxPentagon3.Visible = false;
+            // 
             // MyProfile
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(49)))), ((int)(((byte)(49)))));
-            this.ClientSize = new System.Drawing.Size(312, 540);
+            this.ClientSize = new System.Drawing.Size(312, 588);
+            this.Controls.Add(this.comboBoxPentagon5);
+            this.Controls.Add(this.comboBoxPentagon3);
+            this.Controls.Add(this.comboBoxPentagon4);
+            this.Controls.Add(this.comboBoxPentagon2);
+            this.Controls.Add(this.comboBoxPentagon1);
+            this.Controls.Add(this.labelPentagon);
             this.Controls.Add(this.buttonEditPhotoPrifile);
             this.Controls.Add(this.comboBoxEditHero3);
             this.Controls.Add(this.comboBoxEditHero2);
@@ -574,5 +664,11 @@
         public System.Windows.Forms.ComboBox comboBoxEditHero3;
         private System.Windows.Forms.Button buttonEditPhotoPrifile;
         private System.Windows.Forms.OpenFileDialog openFileDialogEditPhotoProfile;
+        public System.Windows.Forms.Label labelPentagon;
+        public System.Windows.Forms.ComboBox comboBoxPentagon4;
+        public System.Windows.Forms.ComboBox comboBoxPentagon2;
+        public System.Windows.Forms.ComboBox comboBoxPentagon1;
+        public System.Windows.Forms.ComboBox comboBoxPentagon5;
+        public System.Windows.Forms.ComboBox comboBoxPentagon3;
     }
 }

@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Drawing.Drawing2D;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -94,6 +95,8 @@ namespace CourseProject0_1
         }
         private void ListPlayer_SelectedIndexChanged(object sender, EventArgs e)
         {
+            HideEditField();
+
             if (ListPlayer.SelectedIndex == -1)
             {
                 ListPlayer.SelectedIndex = 0;
@@ -112,6 +115,7 @@ namespace CourseProject0_1
             string SelectedPlayerProcentWin = "";
             string SelectedPlayerMMR = "";
             int[] SelectedPlayerPentagon = new int[5];
+            bool SelectedPlayerEdit = false;
 
             string SelectedPlayer2MajorInfo = (string)List2Player.SelectedItem;
             int[] SelectedPlayer2Pentagon = new int[5];
@@ -137,6 +141,7 @@ namespace CourseProject0_1
                         SelectedPlayerProcentWin = Player.ProcentWinGames.ToString();
                         SelectedPlayerMMR = Player.MMR;
                         SelectedPlayerPentagon = Player.Pentagon;
+                        SelectedPlayerEdit = Player.Edit;
 
                         SelectedPlayerPhotoProfile = Player.PhotoProfile;
                     }
@@ -163,6 +168,9 @@ namespace CourseProject0_1
             LabelNumberGames.Text = "Количество игр: " + SelectedPlayerNumberGames;
             LabelProcentWin.Text = "Процент побед: " + SelectedPlayerProcentWin;
             LabelMMR.Text = "MMR: " + SelectedPlayerMMR;
+
+            ButtonEditPlayer.Enabled = SelectedPlayerEdit;
+            buttonDelete.Enabled = SelectedPlayerEdit;
 
             LabelPentagon.ForeColor = Color.Red;
             LabelPentagon2.ForeColor = Color.Aqua;
@@ -197,6 +205,8 @@ namespace CourseProject0_1
 
         private void List2Player_SelectedIndexChanged(object sender, EventArgs e)
         {
+            HideEditField2();
+
             if (List2Player.SelectedIndex == -1)
             {
                 List2Player.SelectedIndex = 0;
@@ -215,6 +225,7 @@ namespace CourseProject0_1
             string SelectedPlayer2ProcentWin = "";
             string SelectedPlayer2MMR = "";
             int[] SelectedPlayer2Pentagon = new int[5];
+            bool SelectedPlayerEdit = false;
 
             string SelectedPlayerMajorInfo = (string)ListPlayer.SelectedItem;
             int[] SelectedPlayerPentagon = new int[5];
@@ -240,6 +251,7 @@ namespace CourseProject0_1
                         SelectedPlayer2ProcentWin = Player.ProcentWinGames.ToString();
                         SelectedPlayer2MMR = Player.MMR;
                         SelectedPlayer2Pentagon = Player.Pentagon;
+                        SelectedPlayerEdit = Player.Edit;
 
                         SelectedPlayerPhotoProfile = Player.PhotoProfile;
                     }
@@ -266,6 +278,9 @@ namespace CourseProject0_1
             LabelNumberGames2.Text = "Количество игр: " + SelectedPlayer2NumberGames;
             LabelProcentWin2.Text = "Процент побед: " + SelectedPlayer2ProcentWin;
             LabelMMR2.Text = "MMR: " + SelectedPlayer2MMR;
+
+            ButtonEdit2Player.Enabled = SelectedPlayerEdit;
+            buttonDelete2.Enabled = SelectedPlayerEdit;
 
             LabelPentagon2.ForeColor = Color.Aqua;
             LabelPentagon.ForeColor = Color.Red;
@@ -495,6 +510,120 @@ namespace CourseProject0_1
             buttonFilterApply2_Click(null, null);
         }
 
+        private void buttonFilterProfile_Click(object sender, EventArgs e)
+        {
+
+            List<Player> listPlayer = new List<Player>();
+
+            bool temp1 = false;
+            bool temp2 = false;
+            bool temp3 = false;
+
+            foreach (Player player in GlobalVariables.ListPlayerInDiscyplineSearched[GlobalVariables.SelectedDiscypline == "Dota2" ? 0 : 1])
+            {
+                if (GlobalVariables.MyProfileDota2.Country != player.Country)
+                {
+                    continue;
+                }
+                if (GlobalVariables.MyProfileDota2.City != player.City)
+                {
+                    continue;
+                }
+                if (GlobalVariables.MyProfileDota2.Role != player.Role)
+                {
+                    continue;
+                }
+                if (!(GlobalVariables.MyProfileDota2.Signature[0] == player.Signature[0] || GlobalVariables.MyProfileDota2.Signature[0] == player.Signature[1] || GlobalVariables.MyProfileDota2.Signature[0] == player.Signature[2]))
+                {
+                    temp1 = true;
+                }
+                if (!(GlobalVariables.MyProfileDota2.Signature[1] == player.Signature[0] || GlobalVariables.MyProfileDota2.Signature[1] == player.Signature[1] || GlobalVariables.MyProfileDota2.Signature[1] == player.Signature[2]))
+                {
+                    temp2 = true;
+                }
+                if (!(GlobalVariables.MyProfileDota2.Signature[2] == player.Signature[0] || GlobalVariables.MyProfileDota2.Signature[2] == player.Signature[1] || GlobalVariables.MyProfileDota2.Signature[2] == player.Signature[2]))
+                {
+                    temp3 = true;
+                }
+                if (!(temp1 || temp2 || temp3))
+                {
+                    continue;
+                }
+                listPlayer.Add(player);
+            }
+
+            ListPlayer.Items.Clear();
+            foreach (Player Player in listPlayer)
+            {
+                if (Player.Nickname != "")
+                {
+                    ListPlayer.Items.Add(Player.MajorInfo());
+                }
+            }
+            if (ListPlayer.Items.Count == 0)
+            {
+                ListPlayer.Items.Add(GlobalVariables.SelectedDiscypline == "Dota2" ? GlobalVariables.PlayerDota2Clear.MajorInfo() : GlobalVariables.PlayerCSGOClear.MajorInfo());
+            }
+            ListPlayer.SelectedIndex = 0;
+            ListPlayer.Visible = true;
+        }
+
+        private void buttonFilterProfile2_Click(object sender, EventArgs e)
+        {
+            List<Player> listPlayer = new List<Player>();
+
+            bool temp1 = false;
+            bool temp2 = false;
+            bool temp3 = false;
+
+            foreach (Player player in GlobalVariables.ListPlayerInDiscyplineSearched[GlobalVariables.SelectedDiscypline == "Dota2" ? 0 : 1])
+            {
+                if (GlobalVariables.MyProfileDota2.Country != player.Country)
+                {
+                    continue;
+                }
+                if (GlobalVariables.MyProfileDota2.City != player.City)
+                {
+                    continue;
+                }
+                if (GlobalVariables.MyProfileDota2.Role != player.Role)
+                {
+                    continue;
+                }
+                if (!(GlobalVariables.MyProfileDota2.Signature[0] == player.Signature[0] || GlobalVariables.MyProfileDota2.Signature[0] == player.Signature[1] || GlobalVariables.MyProfileDota2.Signature[0] == player.Signature[2]))
+                {
+                    temp1 = true;
+                }
+                if (!(GlobalVariables.MyProfileDota2.Signature[1] == player.Signature[0] || GlobalVariables.MyProfileDota2.Signature[1] == player.Signature[1] || GlobalVariables.MyProfileDota2.Signature[1] == player.Signature[2]))
+                {
+                    temp2 = true;
+                }
+                if (!(GlobalVariables.MyProfileDota2.Signature[2] == player.Signature[0] || GlobalVariables.MyProfileDota2.Signature[2] == player.Signature[1] || GlobalVariables.MyProfileDota2.Signature[2] == player.Signature[2]))
+                {
+                    temp3 = true;
+                }
+                if (!(temp1 || temp2 || temp3))
+                {
+                    continue;
+                }
+                listPlayer.Add(player);
+            }
+
+            List2Player.Items.Clear();
+            foreach (Player Player in listPlayer)
+            {
+                if (Player.Nickname != "")
+                {
+                    List2Player.Items.Add(Player.MajorInfo());
+                }
+            }
+            if (List2Player.Items.Count == 0)
+            {
+                List2Player.Items.Add(GlobalVariables.SelectedDiscypline == "Dota2" ? GlobalVariables.PlayerDota2Clear.MajorInfo() : GlobalVariables.PlayerCSGOClear.MajorInfo());
+            }
+            List2Player.SelectedIndex = 0;
+            List2Player.Visible = true;
+        }
 
         private void FormListPlayer_Load(object sender, EventArgs e)
         {
@@ -504,6 +633,9 @@ namespace CourseProject0_1
                 LabelSignature.Text = "Оружие:";
                 LabelSignature2.Text = "Оружие:";
             }
+
+            ListPlayer.Items.Clear();
+            List2Player.Items.Clear();
 
             foreach (Player player in GlobalVariables.ListPlayerInDiscypline[GlobalVariables.SelectedDiscypline == "Dota2" ? 0: 1])
             {
@@ -541,6 +673,10 @@ namespace CourseProject0_1
 
         private void ButtonEditPlayer_Click(object sender, EventArgs e)
         {
+            buttonEditPhotoPrifile.Visible = true;
+            buttonCancel.Visible = true;
+            buttonDelete.Visible = false;
+
             TextBoxEditName.Visible = true;
             TextBoxEditSurname.Visible = true;
             TextBoxEditNickname.Visible = true;
@@ -548,17 +684,40 @@ namespace CourseProject0_1
             TextBoxEditCity.Visible = true;
             TextBoxEditCountry.Visible = true;
             TextBoxEditCity.Visible = true;
-            TextBoxEditAge.Visible = true;
+            dateTimeEditDateBirth.Visible = true;
             TextBoxEditRole.Visible = true;
+
+            comboBoxEditHero1.Visible = true;
+            comboBoxEditHero2.Visible = true;
+            comboBoxEditHero3.Visible = true;
+
             TextBoxEditNumberGames.Visible = true;
             TextBoxEditProcentWin.Visible = true;
             TextBoxEditMMR.Visible = true;
 
+            comboBoxPentagon1.Visible = true;
+            comboBoxPentagon2.Visible = true;
+            comboBoxPentagon3.Visible = true;
+            comboBoxPentagon4.Visible = true;
+            comboBoxPentagon5.Visible = true;
+
+            PictureBoxSignature1.Visible = false;
+            PictureBoxSignature2.Visible = false;
+            PictureBoxSignature3.Visible = false;
+
             ButtonEditPlayerSend.Visible = true;
+
+            comboBoxEditHero1.DataSource = new List<string>(GlobalVariables.ListHero);
+            comboBoxEditHero2.DataSource = new List<string>(GlobalVariables.ListHero);
+            comboBoxEditHero3.DataSource = new List<string>(GlobalVariables.ListHero);
         }
 
-        private void ButtonEditPlayerSend_Click(object sender, EventArgs e)
+        private void HideEditField()
         {
+            buttonEditPhotoPrifile.Visible = false;
+            buttonCancel.Visible = false;
+            buttonDelete.Visible = true;
+
             TextBoxEditName.Visible = false;
             TextBoxEditSurname.Visible = false;
             TextBoxEditNickname.Visible = false;
@@ -566,13 +725,774 @@ namespace CourseProject0_1
             TextBoxEditCity.Visible = false;
             TextBoxEditCountry.Visible = false;
             TextBoxEditCity.Visible = false;
-            TextBoxEditAge.Visible = false;
+            dateTimeEditDateBirth.Visible = false;
             TextBoxEditRole.Visible = false;
+
+            comboBoxEditHero1.Visible = false;
+            comboBoxEditHero2.Visible = false;
+            comboBoxEditHero3.Visible = false;
+
             TextBoxEditNumberGames.Visible = false;
             TextBoxEditProcentWin.Visible = false;
             TextBoxEditMMR.Visible = false;
 
+            comboBoxPentagon1.Visible = false;
+            comboBoxPentagon2.Visible = false;
+            comboBoxPentagon3.Visible = false;
+            comboBoxPentagon4.Visible = false;
+            comboBoxPentagon5.Visible = false;
+
+            PictureBoxSignature1.Visible = true;
+            PictureBoxSignature2.Visible = true;
+            PictureBoxSignature3.Visible = true;
+
             ButtonEditPlayerSend.Visible = false;
+        }
+        private void ButtonEditPlayerSend_Click(object sender, EventArgs e)
+        {
+            HideEditField();
+
+            if (GlobalVariables.SelectedDiscypline == "Dota2")
+            {
+                Dota2Player tempPlayer = null;
+                foreach (Player player in GlobalVariables.ListPlayerInDiscypline[0])
+                {
+                    if (player.MajorInfo() == (string)ListPlayer.SelectedItem)
+                    {
+                        tempPlayer = new Dota2Player(player);
+                        break;
+                    }
+                }
+                string tempName = String.Copy(tempPlayer.Name);
+                string tempNickname = String.Copy(tempPlayer.Nickname);
+                string tempSurname = String.Copy(tempPlayer.Surname);
+
+                string tempTeam = String.Copy(tempPlayer.Team);
+                string tempCountry = String.Copy(tempPlayer.Country);
+                string tempCity = String.Copy(tempPlayer.City);
+                string tempNationality = tempCountry;
+                string tempDateBirth = ((tempPlayer.DateBirth.Day < 10) ? ("0" + tempPlayer.DateBirth.Day) : (Convert.ToString(tempPlayer.DateBirth.Day))) + "." + ((tempPlayer.DateBirth.Month < 10) ? ("0" + tempPlayer.DateBirth.Month) : (Convert.ToString(tempPlayer.DateBirth.Month))) + "." + tempPlayer.DateBirth.Year;
+                string tempRole = String.Copy(tempPlayer.Role);
+                string[] tempSignature = tempPlayer.Signature;
+                string tempNumberGames = Convert.ToString(tempPlayer.NumberGames);
+                string tempProcentWin = Convert.ToString(tempPlayer.ProcentWinGames);
+                string tempMMR = String.Copy(tempPlayer.MMR);
+                int[] tempPentagon = tempPlayer.Pentagon;
+                string tempPhotoProfile = tempPlayer.PhotoProfile;
+                bool tempEdit = true;
+
+                string TempOldNickname = "";
+
+                if (TextBoxEditName.Text != "")
+                {
+                    tempName = TextBoxEditName.Text;
+                }
+                if (TextBoxEditSurname.Text != "")
+                {
+                    tempSurname = TextBoxEditSurname.Text;
+                }
+                if (TextBoxEditNickname.Text != "")
+                {
+                    TempOldNickname = string.Copy(tempNickname);
+                    tempNickname = TextBoxEditNickname.Text;
+                }
+                if (TextBoxEditTeam.Text != "")
+                {
+                    tempTeam = TextBoxEditTeam.Text;
+                }
+                if (TextBoxEditCity.Text != "")
+                {
+                    tempCity = TextBoxEditCity.Text;
+                }
+                if (TextBoxEditCountry.Text != "")
+                {
+                    tempCountry = TextBoxEditCountry.Text;
+                }
+                if (((dateTimeEditDateBirth.Value.Day < 10) ? ("0" + dateTimeEditDateBirth.Value.Day) : (Convert.ToString(dateTimeEditDateBirth.Value.Day))) + "." + ((dateTimeEditDateBirth.Value.Month < 10) ? ("0" + dateTimeEditDateBirth.Value.Month) : (Convert.ToString(dateTimeEditDateBirth.Value.Month))) + "." + dateTimeEditDateBirth.Value.Year != "01.01.1900")
+                {
+                    tempDateBirth = ((dateTimeEditDateBirth.Value.Day < 10) ? ("0" + dateTimeEditDateBirth.Value.Day) : (Convert.ToString(dateTimeEditDateBirth.Value.Day))) + "." + ((dateTimeEditDateBirth.Value.Month < 10) ? ("0" + dateTimeEditDateBirth.Value.Month) : (Convert.ToString(dateTimeEditDateBirth.Value.Month))) + "." + dateTimeEditDateBirth.Value.Year;
+                }
+                if (TextBoxEditRole.Text != "")
+                {
+                    tempRole = TextBoxEditRole.Text;
+                }
+
+                if (comboBoxEditHero1.Text != "All")
+                {
+                    tempSignature[0] = comboBoxEditHero1.Text;
+                }
+                if (comboBoxEditHero2.Text != "All")
+                {
+                    tempSignature[1] = comboBoxEditHero2.Text;
+                }
+                if (comboBoxEditHero3.Text != "All")
+                {
+                    tempSignature[2] = comboBoxEditHero3.Text;
+                }
+
+                if (TextBoxEditNumberGames.Text != "")
+                {
+                    tempNumberGames = TextBoxEditNumberGames.Text;
+                }
+                if (TextBoxEditProcentWin.Text != "")
+                {
+                    tempProcentWin = TextBoxEditProcentWin.Text;
+                }
+                if (TextBoxEditMMR.Text != "")
+                {
+                    tempMMR = TextBoxEditMMR.Text;
+                }
+                if (openFileDialogEditPhotoProfile.FileName != "")
+                {
+                    tempPhotoProfile = tempNickname + ".png";
+                }
+
+                if (comboBoxPentagon1.SelectedItem != null)
+                {
+                    tempPentagon[0] = (int)comboBoxPentagon1.SelectedItem;
+                }
+                if (comboBoxPentagon2.SelectedItem != null)
+                {
+                    tempPentagon[1] = (int)comboBoxPentagon2.SelectedItem;
+                }
+                if (comboBoxPentagon3.SelectedItem != null)
+                {
+                    tempPentagon[2] = (int)comboBoxPentagon3.SelectedItem;
+                }
+                if (comboBoxPentagon4.SelectedItem != null)
+                {
+                    tempPentagon[3] = (int)comboBoxPentagon4.SelectedItem;
+                }
+                if (comboBoxPentagon5.SelectedItem != null)
+                {
+                    tempPentagon[4] = (int)comboBoxPentagon5.SelectedItem;
+                }
+
+                if (TempOldNickname != "")
+                {
+                    try
+                    {
+                        File.Copy(Environment.CurrentDirectory + @"\image\photoProfiles\" + TempOldNickname + ".png", Environment.CurrentDirectory + @"\image\photoProfiles\" + tempNickname + ".png");
+                        File.Delete(Environment.CurrentDirectory + @"\image\photoProfiles\" + TempOldNickname + ".png");
+                    }
+                    catch (FileNotFoundException ex)
+                    {
+                        File.Copy(Environment.CurrentDirectory + @"\image\photoProfiles\default.png", Environment.CurrentDirectory + @"\image\photoProfiles\" + tempNickname + ".png");
+                    }
+                }
+                //buttonSave.Visible = false;
+                //MyProfiles[0] = new Dota2Player(new object[] { Dota2Name, Dota2Nickname, Dota2Surname, Dota2Team, Dota2Country, Dota2City, Dota2Nationality, Dota2DateBirth, Dota2Role, Dota2Signature, Dota2NumberGames, Dota2ProcentWinGames, Dota2MMR, Dota2Pentagon, Dota2PhotoProfile });
+
+                Dota2Player EditedPlayer = new Dota2Player(new object[] { tempName, tempNickname, tempSurname, tempTeam, tempCountry, tempCity, tempNationality, tempDateBirth, tempRole, tempSignature, tempNumberGames, tempProcentWin, tempMMR, tempPentagon, tempPhotoProfile, tempEdit });
+
+                MethodsWorkWithFile.EditFile(tempPlayer, EditedPlayer, "ListPlayer.txt");
+
+                GlobalVariables.ListPlayerInDiscypline = MethodsWorkWithFile.CreateListPlayer("ListPlayer.txt");
+
+                MethodsWorkWithFile.CreateLists(GlobalVariables.ListPlayerInDiscypline);
+
+                GlobalVariables.ListPlayerInDiscypline[0].Add(GlobalVariables.PlayerDota2Clear);
+                GlobalVariables.ListPlayerInDiscypline[0].Add(GlobalVariables.MyProfileDota2);
+                GlobalVariables.ListPlayerInDiscypline[1].Add(GlobalVariables.PlayerCSGOClear);
+                GlobalVariables.ListPlayerInDiscypline[1].Add(GlobalVariables.MyProfileCSGO);
+                GlobalVariables.ListPlayerInDiscyplineSearched = new List<List<Player>>(GlobalVariables.ListPlayerInDiscypline);
+
+                //FormListPlayer_Load(null, null);
+                this.Close();
+                GlobalVariables.MainFormObject.labelDota2_Click(null, null);
+            }
+            else
+            {
+                CSGOPlayer tempPlayer = new CSGOPlayer(GlobalVariables.MyProfileCSGO);
+            }
+        }
+
+        private void ButtonEdit2Player_Click(object sender, EventArgs e)
+        {
+            buttonEditPhotoPrifile2.Visible = true;
+            buttonCancel2.Visible = true;
+            buttonDelete2.Visible = false;
+
+            TextBoxEditName2.Visible = true;
+            TextBoxEditSurname2.Visible = true;
+            TextBoxEditNickname2.Visible = true;
+            TextBoxEditTeam2.Visible = true;
+            TextBoxEditCity2.Visible = true;
+            TextBoxEditCountry2.Visible = true;
+            TextBoxEditCity2.Visible = true;
+            dateTimeEditDateBirth2.Visible = true;
+            TextBoxEditRole2.Visible = true;
+
+            comboBox2EditHero1.Visible = true;
+            comboBox2EditHero2.Visible = true;
+            comboBox2EditHero3.Visible = true;
+
+            TextBoxEditNumberGames2.Visible = true;
+            TextBoxEditProcentWin2.Visible = true;
+            TextBoxEditMMR2.Visible = true;
+
+            comboBox2Pentagon1.Visible = true;
+            comboBox2Pentagon2.Visible = true;
+            comboBox2Pentagon3.Visible = true;
+            comboBox2Pentagon4.Visible = true;
+            comboBox2Pentagon5.Visible = true;
+
+            PictureBox2Signature1.Visible = false;
+            PictureBox2Signature2.Visible = false;
+            PictureBox2Signature3.Visible = false;
+
+            ButtonEdit2PlayerSend.Visible = true;
+
+            comboBox2EditHero1.DataSource = new List<string>(GlobalVariables.ListHero);
+            comboBox2EditHero2.DataSource = new List<string>(GlobalVariables.ListHero);
+            comboBox2EditHero3.DataSource = new List<string>(GlobalVariables.ListHero);
+        }
+
+        private void HideEditField2()
+        {
+            buttonEditPhotoPrifile2.Visible = false;
+            buttonCancel2.Visible = false;
+            buttonDelete2.Visible = true;
+
+            TextBoxEditName2.Visible = false;
+            TextBoxEditSurname2.Visible = false;
+            TextBoxEditNickname2.Visible = false;
+            TextBoxEditTeam2.Visible = false;
+            TextBoxEditCity2.Visible = false;
+            TextBoxEditCountry2.Visible = false;
+            TextBoxEditCity2.Visible = false;
+            dateTimeEditDateBirth2.Visible = false;
+            TextBoxEditRole2.Visible = false;
+
+            comboBox2EditHero1.Visible = false;
+            comboBox2EditHero2.Visible = false;
+            comboBox2EditHero3.Visible = false;
+
+            TextBoxEditNumberGames2.Visible = false;
+            TextBoxEditProcentWin2.Visible = false;
+            TextBoxEditMMR2.Visible = false;
+
+            comboBox2Pentagon1.Visible = false;
+            comboBox2Pentagon2.Visible = false;
+            comboBox2Pentagon3.Visible = false;
+            comboBox2Pentagon4.Visible = false;
+            comboBox2Pentagon5.Visible = false;
+
+            PictureBox2Signature1.Visible = true;
+            PictureBox2Signature2.Visible = true;
+            PictureBox2Signature3.Visible = true;
+
+            ButtonEdit2PlayerSend.Visible = false;
+        }
+        private void ButtonEdit2PlayerSend_Click(object sender, EventArgs e)
+        {
+            HideEditField2();
+
+            if (GlobalVariables.SelectedDiscypline == "Dota2")
+            {
+                Dota2Player tempPlayer = null;
+                foreach (Player player in GlobalVariables.ListPlayerInDiscypline[0])
+                {
+                    if (player.MajorInfo() == (string)List2Player.SelectedItem)
+                    {
+                        tempPlayer = new Dota2Player(player);
+                        break;
+                    }
+                }
+                string tempName = String.Copy(tempPlayer.Name);
+                string tempNickname = String.Copy(tempPlayer.Nickname);
+                string tempSurname = String.Copy(tempPlayer.Surname);
+
+                string tempTeam = String.Copy(tempPlayer.Team);
+                string tempCountry = String.Copy(tempPlayer.Country);
+                string tempCity = String.Copy(tempPlayer.City);
+                string tempNationality = tempCountry;
+                string tempDateBirth = ((tempPlayer.DateBirth.Day < 10) ? ("0" + tempPlayer.DateBirth.Day) : (Convert.ToString(tempPlayer.DateBirth.Day))) + "." + ((tempPlayer.DateBirth.Month < 10) ? ("0" + tempPlayer.DateBirth.Month) : (Convert.ToString(tempPlayer.DateBirth.Month))) + "." + tempPlayer.DateBirth.Year;
+                string tempRole = String.Copy(tempPlayer.Role);
+                string[] tempSignature = tempPlayer.Signature;
+                string tempNumberGames = Convert.ToString(tempPlayer.NumberGames);
+                string tempProcentWin = Convert.ToString(tempPlayer.ProcentWinGames);
+                string tempMMR = String.Copy(tempPlayer.MMR);
+                int[] tempPentagon = tempPlayer.Pentagon;
+                string tempPhotoProfile = tempPlayer.PhotoProfile;
+                bool tempEdit = true;
+
+                string TempOldNickname = "";
+
+                if (TextBoxEditName2.Text != "")
+                {
+                    tempName = TextBoxEditName2.Text;
+                }
+                if (TextBoxEditSurname2.Text != "")
+                {
+                    tempSurname = TextBoxEditSurname2.Text;
+                }
+                if (TextBoxEditNickname2.Text != "")
+                {
+                    TempOldNickname = string.Copy(tempNickname);
+                    tempNickname = TextBoxEditNickname2.Text;
+                }
+                if (TextBoxEditTeam2.Text != "")
+                {
+                    tempTeam = TextBoxEditTeam2.Text;
+                }
+                if (TextBoxEditCity2.Text != "")
+                {
+                    tempCity = TextBoxEditCity2.Text;
+                }
+                if (TextBoxEditCountry2.Text != "")
+                {
+                    tempCountry = TextBoxEditCountry2.Text;
+                }
+                if (((dateTimeEditDateBirth2.Value.Day < 10) ? ("0" + dateTimeEditDateBirth2.Value.Day) : (Convert.ToString(dateTimeEditDateBirth2.Value.Day))) + "." + ((dateTimeEditDateBirth2.Value.Month < 10) ? ("0" + dateTimeEditDateBirth2.Value.Month) : (Convert.ToString(dateTimeEditDateBirth2.Value.Month))) + "." + dateTimeEditDateBirth2.Value.Year != "01.01.1900")
+                {
+                    tempDateBirth = ((dateTimeEditDateBirth2.Value.Day < 10) ? ("0" + dateTimeEditDateBirth2.Value.Day) : (Convert.ToString(dateTimeEditDateBirth2.Value.Day))) + "." + ((dateTimeEditDateBirth2.Value.Month < 10) ? ("0" + dateTimeEditDateBirth2.Value.Month) : (Convert.ToString(dateTimeEditDateBirth2.Value.Month))) + "." + dateTimeEditDateBirth2.Value.Year;
+                }
+                if (TextBoxEditRole.Text != "")
+                {
+                    tempRole = TextBoxEditRole2.Text;
+                }
+
+                if (comboBox2EditHero1.Text != "All")
+                {
+                    tempSignature[0] = comboBox2EditHero1.Text;
+                }
+                if (comboBox2EditHero2.Text != "All")
+                {
+                    tempSignature[1] = comboBox2EditHero2.Text;
+                }
+                if (comboBox2EditHero3.Text != "All")
+                {
+                    tempSignature[2] = comboBox2EditHero3.Text;
+                }
+
+                if (TextBoxEditNumberGames2.Text != "")
+                {
+                    tempNumberGames = TextBoxEditNumberGames2.Text;
+                }
+                if (TextBoxEditProcentWin2.Text != "")
+                {
+                    tempProcentWin = TextBoxEditProcentWin2.Text;
+                }
+                if (TextBoxEditMMR2.Text != "")
+                {
+                    tempMMR = TextBoxEditMMR2.Text;
+                }
+                if (openFileDialogEditPhotoProfile2.FileName != "")
+                {
+                    tempPhotoProfile = tempNickname + ".png";
+                }
+
+                if (comboBox2Pentagon1.SelectedItem != null)
+                {
+                    tempPentagon[0] = (int)comboBox2Pentagon1.SelectedItem;
+                }
+                if (comboBox2Pentagon2.SelectedItem != null)
+                {
+                    tempPentagon[1] = (int)comboBox2Pentagon2.SelectedItem;
+                }
+                if (comboBox2Pentagon3.SelectedItem != null)
+                {
+                    tempPentagon[2] = (int)comboBox2Pentagon3.SelectedItem;
+                }
+                if (comboBox2Pentagon4.SelectedItem != null)
+                {
+                    tempPentagon[3] = (int)comboBox2Pentagon4.SelectedItem;
+                }
+                if (comboBox2Pentagon5.SelectedItem != null)
+                {
+                    tempPentagon[4] = (int)comboBox2Pentagon5.SelectedItem;
+                }
+
+                if (TempOldNickname != "")
+                {
+                    try
+                    {
+                        File.Copy(Environment.CurrentDirectory + @"\image\photoProfiles\" + TempOldNickname + ".png", Environment.CurrentDirectory + @"\image\photoProfiles\" + tempNickname + ".png");
+                        File.Delete(Environment.CurrentDirectory + @"\image\photoProfiles\" + TempOldNickname + ".png");
+                    }
+                    catch (FileNotFoundException ex)
+                    {
+                        File.Copy(Environment.CurrentDirectory + @"\image\photoProfiles\default.png", Environment.CurrentDirectory + @"\image\photoProfiles\" + tempNickname + ".png");
+                    }
+                }
+                //buttonSave.Visible = false;
+                //MyProfiles[0] = new Dota2Player(new object[] { Dota2Name, Dota2Nickname, Dota2Surname, Dota2Team, Dota2Country, Dota2City, Dota2Nationality, Dota2DateBirth, Dota2Role, Dota2Signature, Dota2NumberGames, Dota2ProcentWinGames, Dota2MMR, Dota2Pentagon, Dota2PhotoProfile });
+
+                Dota2Player EditedPlayer = new Dota2Player(new object[] { tempName, tempNickname, tempSurname, tempTeam, tempCountry, tempCity, tempNationality, tempDateBirth, tempRole, tempSignature, tempNumberGames, tempProcentWin, tempMMR, tempPentagon, tempPhotoProfile, tempEdit });
+
+                MethodsWorkWithFile.EditFile(tempPlayer, EditedPlayer, "ListPlayer.txt");
+
+                GlobalVariables.ListPlayerInDiscypline = MethodsWorkWithFile.CreateListPlayer("ListPlayer.txt");
+
+                MethodsWorkWithFile.CreateLists(GlobalVariables.ListPlayerInDiscypline);
+
+                GlobalVariables.ListPlayerInDiscypline[0].Add(GlobalVariables.PlayerDota2Clear);
+                GlobalVariables.ListPlayerInDiscypline[0].Add(GlobalVariables.MyProfileDota2);
+                GlobalVariables.ListPlayerInDiscypline[1].Add(GlobalVariables.PlayerCSGOClear);
+                GlobalVariables.ListPlayerInDiscypline[1].Add(GlobalVariables.MyProfileCSGO);
+                GlobalVariables.ListPlayerInDiscyplineSearched = new List<List<Player>>(GlobalVariables.ListPlayerInDiscypline);
+
+                //FormListPlayer_Load(null, null);
+                this.Close();
+                GlobalVariables.MainFormObject.labelDota2_Click(null, null);
+            }
+            else
+            {
+                CSGOPlayer tempPlayer = new CSGOPlayer(GlobalVariables.MyProfileCSGO);
+            }
+        }
+
+        private void buttonCancel_Click(object sender, EventArgs e)
+        {
+            HideEditField();
+        }
+
+        private void buttonCancel2_Click(object sender, EventArgs e)
+        {
+            HideEditField2();
+        }
+
+        private void buttonDelete_Click(object sender, EventArgs e)
+        {
+            if (GlobalVariables.SelectedDiscypline == "Dota2")
+            {
+                Dota2Player tempPlayer = null;
+                foreach (Player player in GlobalVariables.ListPlayerInDiscypline[0])
+                {
+                    if (player.MajorInfo() == (string)ListPlayer.SelectedItem)
+                    {
+                        tempPlayer = new Dota2Player(player);
+                        break;
+                    }
+                }
+                MethodsWorkWithFile.RemovePlayerInFile(tempPlayer, "ListPlayer.txt");
+
+                GlobalVariables.ListPlayerInDiscypline = MethodsWorkWithFile.CreateListPlayer("ListPlayer.txt");
+
+                MethodsWorkWithFile.CreateLists(GlobalVariables.ListPlayerInDiscypline);
+
+                GlobalVariables.ListPlayerInDiscypline[0].Add(GlobalVariables.PlayerDota2Clear);
+                GlobalVariables.ListPlayerInDiscypline[0].Add(GlobalVariables.MyProfileDota2);
+                GlobalVariables.ListPlayerInDiscypline[1].Add(GlobalVariables.PlayerCSGOClear);
+                GlobalVariables.ListPlayerInDiscypline[1].Add(GlobalVariables.MyProfileCSGO);
+                GlobalVariables.ListPlayerInDiscyplineSearched = new List<List<Player>>(GlobalVariables.ListPlayerInDiscypline);
+
+                this.Close();
+                GlobalVariables.MainFormObject.labelDota2_Click(null, null);
+            }
+            else
+            {
+                
+            }
+        }
+
+        private void buttonDelete2_Click(object sender, EventArgs e)
+        {
+            if (GlobalVariables.SelectedDiscypline == "Dota2")
+            {
+                Dota2Player tempPlayer = null;
+                foreach (Player player in GlobalVariables.ListPlayerInDiscypline[0])
+                {
+                    if (player.MajorInfo() == (string)List2Player.SelectedItem)
+                    {
+                        tempPlayer = new Dota2Player(player);
+                        break;
+                    }
+                }
+                MethodsWorkWithFile.RemovePlayerInFile(tempPlayer, "ListPlayer.txt");
+
+                GlobalVariables.ListPlayerInDiscypline = MethodsWorkWithFile.CreateListPlayer("ListPlayer.txt");
+
+                MethodsWorkWithFile.CreateLists(GlobalVariables.ListPlayerInDiscypline);
+
+                GlobalVariables.ListPlayerInDiscypline[0].Add(GlobalVariables.PlayerDota2Clear);
+                GlobalVariables.ListPlayerInDiscypline[0].Add(GlobalVariables.MyProfileDota2);
+                GlobalVariables.ListPlayerInDiscypline[1].Add(GlobalVariables.PlayerCSGOClear);
+                GlobalVariables.ListPlayerInDiscypline[1].Add(GlobalVariables.MyProfileCSGO);
+                GlobalVariables.ListPlayerInDiscyplineSearched = new List<List<Player>>(GlobalVariables.ListPlayerInDiscypline);
+
+                this.Close();
+                GlobalVariables.MainFormObject.labelDota2_Click(null, null);
+            }
+            else
+            {
+
+            }
+        }
+
+        private void buttonAdd_Click(object sender, EventArgs e)
+        {
+            ButtonEditPlayer_Click(null, null);
+
+            for (int i = 1; i <= 10; i++)
+            {
+                comboBoxPentagon1.Items.Add(i);
+                comboBoxPentagon2.Items.Add(i);
+                comboBoxPentagon3.Items.Add(i);
+                comboBoxPentagon4.Items.Add(i);
+                comboBoxPentagon5.Items.Add(i);
+            }
+            comboBoxEditHero1.DataSource = new List<string>(GlobalVariables.ListHero);
+            comboBoxEditHero2.DataSource = new List<string>(GlobalVariables.ListHero);
+            comboBoxEditHero3.DataSource = new List<string>(GlobalVariables.ListHero);
+
+            buttonAddSend.Visible = true;
+        }
+
+        private void buttonAddSend_Click(object sender, EventArgs e)
+        {
+            HideEditField();
+
+            string tempName = "";
+            string tempNickname = "";
+            string tempSurname = "";
+
+            string tempTeam = "";
+            string tempCountry = "";
+            string tempCity = "";
+            string tempNationality = tempCountry;
+            string tempDateBirth = "";
+            string tempRole = "";
+            string[] tempSignature = new string[3];
+            string tempNumberGames = "";
+            string tempProcentWin = "";
+            string tempMMR = "";
+            int[] tempPentagon = new int[5];
+            string tempPhotoProfile = "default.png";
+            bool tempEdit = true;
+
+            if (TextBoxEditName.Text == "")
+            {
+                GlobalVariables.MessageErrorData();
+                return;
+            }
+            else
+            {
+                tempName = TextBoxEditName.Text;
+            }
+            if (TextBoxEditSurname.Text == "")
+            {
+                GlobalVariables.MessageErrorData();
+                return;
+            }
+            else
+            {
+                tempSurname = TextBoxEditSurname.Text;
+            }
+            if (TextBoxEditNickname.Text == "")
+            {
+                GlobalVariables.MessageErrorData();
+                return;
+            }
+            else
+            {
+                tempNickname = TextBoxEditNickname.Text;
+            }
+            if (TextBoxEditTeam.Text == "")
+            {
+                GlobalVariables.MessageErrorData();
+                return;
+            }
+            else
+            {
+                tempTeam = TextBoxEditTeam.Text;
+            }
+            if (TextBoxEditCity.Text == "")
+            {
+                GlobalVariables.MessageErrorData();
+                return;
+            }
+            else
+            {
+                tempCity = TextBoxEditCity.Text;
+            }
+            if (TextBoxEditCountry.Text == "")
+            {
+                GlobalVariables.MessageErrorData();
+                return;
+            }
+            else
+            {
+                tempCountry = TextBoxEditCountry.Text;
+                tempNationality = tempCountry;
+            }
+            if (((dateTimeEditDateBirth.Value.Day < 10) ? ("0" + dateTimeEditDateBirth.Value.Day) : (Convert.ToString(dateTimeEditDateBirth.Value.Day))) + "." + ((dateTimeEditDateBirth.Value.Month < 10) ? ("0" + dateTimeEditDateBirth.Value.Month) : (Convert.ToString(dateTimeEditDateBirth.Value.Month))) + "." + dateTimeEditDateBirth.Value.Year == "01.01.1900")
+            {
+                GlobalVariables.MessageErrorData();
+                return;
+            }
+            else
+            {
+                tempDateBirth = ((dateTimeEditDateBirth.Value.Day < 10) ? ("0" + dateTimeEditDateBirth.Value.Day) : (Convert.ToString(dateTimeEditDateBirth.Value.Day))) + "." + ((dateTimeEditDateBirth.Value.Month < 10) ? ("0" + dateTimeEditDateBirth.Value.Month) : (Convert.ToString(dateTimeEditDateBirth.Value.Month))) + "." + dateTimeEditDateBirth.Value.Year;
+            }
+            if (TextBoxEditRole.Text == "")
+            {
+                GlobalVariables.MessageErrorData();
+                return;
+            }
+            else
+            {
+                tempRole = TextBoxEditRole.Text;
+            }
+
+            if (comboBoxEditHero1.Text == "All")
+            {
+                GlobalVariables.MessageErrorData();
+                return;
+            }
+            else
+            {
+                tempSignature[0] = comboBoxEditHero1.Text;
+            }
+            if (comboBoxEditHero2.Text == "All")
+            {
+                GlobalVariables.MessageErrorData();
+                return;
+            }
+            else
+            {
+                tempSignature[1] = comboBoxEditHero2.Text;
+            }
+            if (comboBoxEditHero3.Text == "All")
+            {
+                GlobalVariables.MessageErrorData();
+                return;
+            }
+            else
+            {
+                tempSignature[2] = comboBoxEditHero3.Text;
+            }
+
+            if (TextBoxEditNumberGames.Text == "")
+            {
+                GlobalVariables.MessageErrorData();
+                return;
+            }
+            else
+            {
+                tempNumberGames = TextBoxEditNumberGames.Text;
+            }
+            if (TextBoxEditProcentWin.Text == "")
+            {
+                GlobalVariables.MessageErrorData();
+                return;
+            }
+            else
+            {
+                tempProcentWin = TextBoxEditProcentWin.Text;
+            }
+            if (TextBoxEditMMR.Text == "")
+            {
+                GlobalVariables.MessageErrorData();
+                return;
+            }
+            else
+            {
+                tempMMR = TextBoxEditMMR.Text;
+            }
+            if (openFileDialogEditPhotoProfile.FileName == "")
+            {
+                GlobalVariables.MessageErrorData();
+                return;
+            }
+            else
+            {
+                tempPhotoProfile = tempNickname + ".png";
+            }
+
+            if (comboBoxPentagon1.SelectedItem == null)
+            {
+                GlobalVariables.MessageErrorData();
+                return;
+            }
+            else
+            {
+                tempPentagon[0] = (int)comboBoxPentagon1.SelectedItem;
+            }
+            if (comboBoxPentagon2.SelectedItem == null)
+            {
+                GlobalVariables.MessageErrorData();
+                return;
+            }
+            else
+            {
+                tempPentagon[1] = (int)comboBoxPentagon2.SelectedItem;
+            }
+            if (comboBoxPentagon3.SelectedItem == null)
+            {
+                GlobalVariables.MessageErrorData();
+                return;
+            }
+            else
+            {
+                tempPentagon[2] = (int)comboBoxPentagon3.SelectedItem;
+            }
+            if (comboBoxPentagon4.SelectedItem == null)
+            {
+                GlobalVariables.MessageErrorData();
+                return;
+            }
+            else
+            {
+                tempPentagon[3] = (int)comboBoxPentagon4.SelectedItem;
+            }
+            if (comboBoxPentagon5.SelectedItem == null)
+            {
+                GlobalVariables.MessageErrorData();
+                return;
+            }
+            else
+            {
+                tempPentagon[4] = (int)comboBoxPentagon5.SelectedItem;
+            }
+
+            if (GlobalVariables.SelectedDiscypline == "Dota2")
+            {
+                //Dota2Player tempPlayer = null;
+                Dota2Player tempPlayer = new Dota2Player(new object[] { tempName, tempNickname, tempSurname, tempTeam, tempCountry, tempCity, tempNationality, tempDateBirth, tempRole, tempSignature, tempNumberGames, tempProcentWin, tempMMR, tempPentagon, tempPhotoProfile, tempEdit });
+                MethodsWorkWithFile.WriteFile(tempPlayer, "ListPlayer.txt");
+
+                GlobalVariables.ListPlayerInDiscypline = MethodsWorkWithFile.CreateListPlayer("ListPlayer.txt");
+
+                MethodsWorkWithFile.CreateLists(GlobalVariables.ListPlayerInDiscypline);
+
+                GlobalVariables.ListPlayerInDiscypline[0].Add(GlobalVariables.PlayerDota2Clear);
+                GlobalVariables.ListPlayerInDiscypline[0].Add(GlobalVariables.MyProfileDota2);
+                GlobalVariables.ListPlayerInDiscypline[1].Add(GlobalVariables.PlayerCSGOClear);
+                GlobalVariables.ListPlayerInDiscypline[1].Add(GlobalVariables.MyProfileCSGO);
+                GlobalVariables.ListPlayerInDiscyplineSearched = new List<List<Player>>(GlobalVariables.ListPlayerInDiscypline);
+
+                this.Close();
+                GlobalVariables.MainFormObject.labelDota2_Click(null, null);
+            }
+            else
+            {
+
+            }
+        }
+
+        private void buttonEditPhotoPrifile_Click(object sender, EventArgs e)
+        {
+            if (TextBoxEditNickname.Text == "")
+            {
+                MessageBox.Show("Внимание", "Введите сначала Nickname", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+            if (openFileDialogEditPhotoProfile.ShowDialog() != DialogResult.OK)
+            {
+                return;
+            }
+            string selectedFile = openFileDialogEditPhotoProfile.FileName;
+            try
+            {
+                File.Copy(selectedFile, Environment.CurrentDirectory + @"\image\photoProfiles\" + TextBoxEditNickname.Text + ".png");
+            }
+            catch (IOException ex)
+            {
+                File.Delete(Environment.CurrentDirectory + @"\image\photoProfiles\" + TextBoxEditNickname.Text + ".png");
+                File.Copy(selectedFile, Environment.CurrentDirectory + @"\image\photoProfiles\" + TextBoxEditNickname.Text + ".png");
+            }
         }
     }
 }

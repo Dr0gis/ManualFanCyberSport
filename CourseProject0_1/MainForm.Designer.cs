@@ -40,6 +40,14 @@
             this.LabelTop10CSGO = new System.Windows.Forms.Label();
             this.buttonMyProfileDota2 = new System.Windows.Forms.Button();
             this.buttonMyProfileCSGO = new System.Windows.Forms.Button();
+            this.buttonSinhronizacia = new System.Windows.Forms.Button();
+            this.openFileSinhronizacia = new System.Windows.Forms.OpenFileDialog();
+            this.comboBoxPredictionSelectTeam = new System.Windows.Forms.ComboBox();
+            this.comboBoxPredictionSelectTeam2 = new System.Windows.Forms.ComboBox();
+            this.labelVersus = new System.Windows.Forms.Label();
+            this.buttonCalculated = new System.Windows.Forms.Button();
+            this.LabelPredictionGame = new System.Windows.Forms.Label();
+            this.labelPredictionResult = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.PictureBoxPlayers)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
@@ -112,7 +120,7 @@
             this.ListDota2TopPlayer.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(49)))), ((int)(((byte)(49)))));
             this.ListDota2TopPlayer.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.ListDota2TopPlayer.Cursor = System.Windows.Forms.Cursors.Arrow;
-            this.ListDota2TopPlayer.Font = new System.Drawing.Font("Univers", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.ListDota2TopPlayer.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.ListDota2TopPlayer.ForeColor = System.Drawing.Color.White;
             this.ListDota2TopPlayer.FormattingEnabled = true;
             this.ListDota2TopPlayer.HorizontalScrollbar = true;
@@ -127,7 +135,7 @@
             this.ListCSGOTopPlayer.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(49)))), ((int)(((byte)(49)))));
             this.ListCSGOTopPlayer.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.ListCSGOTopPlayer.Cursor = System.Windows.Forms.Cursors.Arrow;
-            this.ListCSGOTopPlayer.Font = new System.Drawing.Font("Univers", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.ListCSGOTopPlayer.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.ListCSGOTopPlayer.ForeColor = System.Drawing.Color.White;
             this.ListCSGOTopPlayer.FormattingEnabled = true;
             this.ListCSGOTopPlayer.HorizontalScrollbar = true;
@@ -141,11 +149,11 @@
             // 
             this.LabelTop10Dota2.AutoSize = true;
             this.LabelTop10Dota2.BackColor = System.Drawing.Color.Transparent;
-            this.LabelTop10Dota2.Font = new System.Drawing.Font("Univers", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.LabelTop10Dota2.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.LabelTop10Dota2.ForeColor = System.Drawing.Color.White;
             this.LabelTop10Dota2.Location = new System.Drawing.Point(198, 336);
             this.LabelTop10Dota2.Name = "LabelTop10Dota2";
-            this.LabelTop10Dota2.Size = new System.Drawing.Size(112, 35);
+            this.LabelTop10Dota2.Size = new System.Drawing.Size(105, 33);
             this.LabelTop10Dota2.TabIndex = 12;
             this.LabelTop10Dota2.Text = "Топ 10";
             // 
@@ -153,11 +161,11 @@
             // 
             this.LabelTop10CSGO.AutoSize = true;
             this.LabelTop10CSGO.BackColor = System.Drawing.Color.Transparent;
-            this.LabelTop10CSGO.Font = new System.Drawing.Font("Univers", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.LabelTop10CSGO.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.LabelTop10CSGO.ForeColor = System.Drawing.Color.White;
             this.LabelTop10CSGO.Location = new System.Drawing.Point(1028, 336);
             this.LabelTop10CSGO.Name = "LabelTop10CSGO";
-            this.LabelTop10CSGO.Size = new System.Drawing.Size(112, 35);
+            this.LabelTop10CSGO.Size = new System.Drawing.Size(105, 33);
             this.LabelTop10CSGO.TabIndex = 13;
             this.LabelTop10CSGO.Text = "Топ 10";
             // 
@@ -191,6 +199,100 @@
             this.buttonMyProfileCSGO.UseVisualStyleBackColor = false;
             this.buttonMyProfileCSGO.Click += new System.EventHandler(this.buttonMyProfileCSGO_Click);
             // 
+            // buttonSinhronizacia
+            // 
+            this.buttonSinhronizacia.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(49)))), ((int)(((byte)(49)))));
+            this.buttonSinhronizacia.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.buttonSinhronizacia.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonSinhronizacia.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.buttonSinhronizacia.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.buttonSinhronizacia.Location = new System.Drawing.Point(559, 341);
+            this.buttonSinhronizacia.Name = "buttonSinhronizacia";
+            this.buttonSinhronizacia.Size = new System.Drawing.Size(227, 38);
+            this.buttonSinhronizacia.TabIndex = 166;
+            this.buttonSinhronizacia.Text = "Синхонизация";
+            this.buttonSinhronizacia.UseVisualStyleBackColor = false;
+            this.buttonSinhronizacia.Click += new System.EventHandler(this.buttonSinhronizacia_Click);
+            // 
+            // openFileSinhronizacia
+            // 
+            this.openFileSinhronizacia.FileName = "openFileDialog1";
+            this.openFileSinhronizacia.Filter = "\"Текстовые файлы(*.txt)|*.txt|Все файлы (*.*)|*.*\"";
+            // 
+            // comboBoxPredictionSelectTeam
+            // 
+            this.comboBoxPredictionSelectTeam.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(49)))), ((int)(((byte)(49)))));
+            this.comboBoxPredictionSelectTeam.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBoxPredictionSelectTeam.ForeColor = System.Drawing.Color.White;
+            this.comboBoxPredictionSelectTeam.FormattingEnabled = true;
+            this.comboBoxPredictionSelectTeam.Location = new System.Drawing.Point(513, 440);
+            this.comboBoxPredictionSelectTeam.Name = "comboBoxPredictionSelectTeam";
+            this.comboBoxPredictionSelectTeam.Size = new System.Drawing.Size(115, 21);
+            this.comboBoxPredictionSelectTeam.TabIndex = 189;
+            // 
+            // comboBoxPredictionSelectTeam2
+            // 
+            this.comboBoxPredictionSelectTeam2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(49)))), ((int)(((byte)(49)))));
+            this.comboBoxPredictionSelectTeam2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBoxPredictionSelectTeam2.ForeColor = System.Drawing.Color.White;
+            this.comboBoxPredictionSelectTeam2.FormattingEnabled = true;
+            this.comboBoxPredictionSelectTeam2.Location = new System.Drawing.Point(723, 440);
+            this.comboBoxPredictionSelectTeam2.Name = "comboBoxPredictionSelectTeam2";
+            this.comboBoxPredictionSelectTeam2.Size = new System.Drawing.Size(115, 21);
+            this.comboBoxPredictionSelectTeam2.TabIndex = 191;
+            // 
+            // labelVersus
+            // 
+            this.labelVersus.AutoSize = true;
+            this.labelVersus.BackColor = System.Drawing.Color.Transparent;
+            this.labelVersus.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.labelVersus.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.labelVersus.Location = new System.Drawing.Point(648, 440);
+            this.labelVersus.Name = "labelVersus";
+            this.labelVersus.Size = new System.Drawing.Size(55, 20);
+            this.labelVersus.TabIndex = 192;
+            this.labelVersus.Text = "versus";
+            // 
+            // buttonCalculated
+            // 
+            this.buttonCalculated.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(49)))), ((int)(((byte)(49)))));
+            this.buttonCalculated.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.buttonCalculated.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonCalculated.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.buttonCalculated.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.buttonCalculated.Location = new System.Drawing.Point(603, 488);
+            this.buttonCalculated.Name = "buttonCalculated";
+            this.buttonCalculated.Size = new System.Drawing.Size(145, 38);
+            this.buttonCalculated.TabIndex = 193;
+            this.buttonCalculated.Text = "Просчитать";
+            this.buttonCalculated.UseVisualStyleBackColor = false;
+            this.buttonCalculated.Click += new System.EventHandler(this.buttonCalculated_Click);
+            // 
+            // LabelPredictionGame
+            // 
+            this.LabelPredictionGame.AutoSize = true;
+            this.LabelPredictionGame.BackColor = System.Drawing.Color.Transparent;
+            this.LabelPredictionGame.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.LabelPredictionGame.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.LabelPredictionGame.ForeColor = System.Drawing.SystemColors.ControlLight;
+            this.LabelPredictionGame.Location = new System.Drawing.Point(597, 398);
+            this.LabelPredictionGame.Name = "LabelPredictionGame";
+            this.LabelPredictionGame.Size = new System.Drawing.Size(159, 26);
+            this.LabelPredictionGame.TabIndex = 194;
+            this.LabelPredictionGame.Text = "Прогноз Игры:";
+            // 
+            // labelPredictionResult
+            // 
+            this.labelPredictionResult.AutoSize = true;
+            this.labelPredictionResult.BackColor = System.Drawing.Color.Transparent;
+            this.labelPredictionResult.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.labelPredictionResult.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.labelPredictionResult.Location = new System.Drawing.Point(509, 544);
+            this.labelPredictionResult.Name = "labelPredictionResult";
+            this.labelPredictionResult.Size = new System.Drawing.Size(93, 20);
+            this.labelPredictionResult.TabIndex = 195;
+            this.labelPredictionResult.Text = "Результат:";
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -198,6 +300,13 @@
             this.BackColor = System.Drawing.Color.Gray;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.ClientSize = new System.Drawing.Size(1322, 721);
+            this.Controls.Add(this.labelPredictionResult);
+            this.Controls.Add(this.LabelPredictionGame);
+            this.Controls.Add(this.buttonCalculated);
+            this.Controls.Add(this.labelVersus);
+            this.Controls.Add(this.comboBoxPredictionSelectTeam2);
+            this.Controls.Add(this.comboBoxPredictionSelectTeam);
+            this.Controls.Add(this.buttonSinhronizacia);
             this.Controls.Add(this.buttonMyProfileCSGO);
             this.Controls.Add(this.buttonMyProfileDota2);
             this.Controls.Add(this.LabelTop10CSGO);
@@ -213,6 +322,9 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Справочник Фаната";
             this.Load += new System.EventHandler(this.MainFormLoad);
+            this.Shown += new System.EventHandler(this.MainForm_Shown);
+            this.HelpRequested += new System.Windows.Forms.HelpEventHandler(this.MainForm_HelpRequested);
+            this.KeyUp += new System.Windows.Forms.KeyEventHandler(this.MainForm_KeyUp);
             ((System.ComponentModel.ISupportInitialize)(this.PictureBoxPlayers)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
@@ -234,6 +346,14 @@
         private System.Windows.Forms.Label LabelTop10CSGO;
         private System.Windows.Forms.Button buttonMyProfileDota2;
         private System.Windows.Forms.Button buttonMyProfileCSGO;
+        private System.Windows.Forms.Button buttonSinhronizacia;
+        private System.Windows.Forms.OpenFileDialog openFileSinhronizacia;
+        public System.Windows.Forms.ComboBox comboBoxPredictionSelectTeam;
+        public System.Windows.Forms.ComboBox comboBoxPredictionSelectTeam2;
+        public System.Windows.Forms.Label labelVersus;
+        private System.Windows.Forms.Button buttonCalculated;
+        private System.Windows.Forms.Label LabelPredictionGame;
+        public System.Windows.Forms.Label labelPredictionResult;
     }
 }
 

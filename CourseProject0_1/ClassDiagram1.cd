@@ -1,11 +1,71 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <ClassDiagram MajorVersion="1" MinorVersion="1">
-  <Class Name="CourseProject0_1.Program" Collapsed="true">
-    <Position X="0.5" Y="0.5" Width="1.5" />
+  <Class Name="CourseProject0_1.CSGOPlayer" Collapsed="true">
+    <Position X="2.5" Y="1" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAA=</HashCode>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Program.cs</FileName>
     </TypeIdentifier>
+  </Class>
+  <Class Name="CourseProject0_1.Dota2Player" Collapsed="true">
+    <Position X="0.5" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Program.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CourseProject0_1.Player">
+    <Position X="5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AEABCQBAAQAAQAEKEEAVChQABAIWAAACEgAIAoAACQE=</HashCode>
+      <FileName>Program.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CourseProject0_1.MethodsWorkWithFile" Collapsed="true">
+    <Position X="2.5" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAgAEAAABIAAEAICACAkAAAAAAAACABAAAA=</HashCode>
+      <FileName>Program.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CourseProject0_1.GlobalVariables" Collapsed="true">
+    <Position X="0.5" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAJCAAEAAAAIhIhAAAgAgAghQAAQEAAABAAUAAA=</HashCode>
+      <FileName>Program.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CourseProject0_1.FormHelp" Collapsed="true">
+    <Position X="12.5" Y="2.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAQAAAAACAAABCAAACAAAACAAAAAAAACAAAAAAAAAA=</HashCode>
+      <FileName>FormHelp.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CourseProject0_1.FormListPlayer" Collapsed="true">
+    <Position X="7.25" Y="2.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>3GM9uYikFfUkLO8Jww/wRP6jerW5jNHcGoR3/LbTl2Q=</HashCode>
+      <FileName>FormListPlayer.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CourseProject0_1.MainForm" Collapsed="true">
+    <Position X="9" Y="2.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAQAbAFAGAAgBCAEACIgAASBAAAAgKACAgAAIATAAE=</HashCode>
+      <FileName>MainForm.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CourseProject0_1.MyProfile" Collapsed="true">
+    <Position X="10.75" Y="2.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AEABwAAANCBBBuIAAQvAACCCCBQxABBcKiRGBAAQAGA=</HashCode>
+      <FileName>MyProfile.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="System.Windows.Forms.Form" Collapsed="true">
+    <Position X="9.75" Y="1" Width="1.5" />
+    <TypeIdentifier />
   </Class>
   <Font Name="Segoe UI" Size="9" />
 </ClassDiagram>
